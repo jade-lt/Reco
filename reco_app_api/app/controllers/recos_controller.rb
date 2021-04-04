@@ -1,8 +1,6 @@
 class RecosController < ApplicationController
     def index
-        # render json: Reco.all
-        render json: { message: 'TEST' }
-
+        render json: Reco.all
     end
 
     def create

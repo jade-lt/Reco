@@ -1,4 +1,5 @@
 class Api::RecosController < ApplicationController
+    before_action :user_exists, except: [:index]
     def index
         render json: Reco.all
     end

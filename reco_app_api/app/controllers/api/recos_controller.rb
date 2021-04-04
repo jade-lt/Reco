@@ -24,13 +24,11 @@ class Api::RecosController < ApplicationController
         reco = Reco.find(params[:id])
         reco.update(category: params[:category], name: params[:name], cost: params[:cost], source: params[:source], description: params[:description])
         render json: {type: 'Successfully updated recommendation!'}
-
     end
 
     def destroy
         Reco.destroy(params[:id])
         render json: {message: 'Successfully deleted recommendation!'}
-
     end
 
 

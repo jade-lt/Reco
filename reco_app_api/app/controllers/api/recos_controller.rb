@@ -1,4 +1,4 @@
-class RecosController < ApplicationController
+class Api::RecosController < ApplicationController
     def index
         render json: Reco.all
     end

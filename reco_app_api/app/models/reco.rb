@@ -1,3 +1,2 @@
 class Reco < ApplicationRecord
-    
 end

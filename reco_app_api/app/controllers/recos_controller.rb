@@ -16,16 +16,20 @@ class RecosController < ApplicationController
     end
 
     def show
-        render json: { message: 'SHOW' }
+        puts params[:id]
+        render json: Reco.find(params[:id])
     end
 
     def update
-        render json: { message: 'UPDATE' }
+        reco = Reco.find(params[:id])
+        reco.update(category: params[:category], name: params[:name], cost: params[:cost], source: params[:source], description: params[:description])
+        render json: {type: 'Successfully updated recommendation!'}
 
     end
 
     def destroy
-        render json: { message: 'DESTROY' }
+        Reco.destroy(params[:id])
+        render json: {message: 'Successfully deleted recommendation!'}
 
     end
 

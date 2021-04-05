@@ -27,9 +27,10 @@ export const UserLoginForm = () => {
         })
         .then(response => response.json())
         .then(data => {
+            console.log('token data', data)
             window.localStorage.setItem('token', data.token)
             if(data.token) {
-                history.replace('/')
+                history.replace('/my-recos')
             }
         })
     }

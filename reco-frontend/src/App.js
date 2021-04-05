@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { UserLoginForm } from "./components/user/UserLoginForm";
 import { RecoList } from "./components/reco/RecoList";
+import { RecoEditDelete } from "./components/reco/RecoEditDelete";
+import { UserRecos } from "./components/user/UserRecos";
 
 
 function App() {
@@ -18,16 +20,16 @@ function App() {
         </Route>
 
         <Route exact path="/reco/edit/:id">
-          <h1>Edit a Reco</h1>
+          <RecoEditDelete />
         </Route>
 
-        <Route exact path="/reco/delete/:id">
-          <h1>Delete a reco</h1>
+        <Route exact path="/my-recos">
+          <UserRecos />
         </Route>
 
         <Route exact path="/">
           <h1>Home</h1>
-          <RecoList />
+          {/* <RecoList /> */}
         </Route>
 
       </Switch>

@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { UserLoginForm } from "./components/user/UserLoginForm";
+import { RecoList } from "./components/reco/RecoList";
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
 
         <Route exact path="/">
           <h1>Home</h1>
+          <RecoList />
         </Route>
 
       </Switch>

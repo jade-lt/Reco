@@ -44,7 +44,7 @@ export const UserLoginForm = () => {
             </label>
             <label>
               Password:
-              <input name="password" value={form.password} onChange={changeHandler} />
+              <input name="password" type="password" value={form.password} onChange={changeHandler} />
             </label>
             <button type="submit" >Submit</button>
           </form>

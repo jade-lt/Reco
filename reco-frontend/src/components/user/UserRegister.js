@@ -3,7 +3,7 @@ import { useHistory } from "react-router";
 import Button from 'react-bootstrap/Button';
 
 
-export const UserLoginForm = () => {
+export const UserRegister = () => {
 
     const [form, setForm] = useState({
         name: '',
@@ -20,26 +20,20 @@ export const UserLoginForm = () => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        fetch('api/auth/login', {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(form)
+        fetch('/api/users', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(form)
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('token data', data)
-            window.localStorage.setItem('token', data.token)
-            if(data.token) {
-                history.replace('/my-recos')
-            }
-        })
-    }
+          .then(response => response.json())
+          .then(history.push('/login'))
+      }
 
     return (
         <div className="main">
-          <h1>Login</h1>
+          <h1>Register</h1>
           <form onSubmit={submitHandler}>
             <label>
               Username:
@@ -47,9 +41,9 @@ export const UserLoginForm = () => {
             </label>
             <label>
               Password:
-              <input name="password" type="password" value={form.password} onChange={changeHandler} />
+              <input name="password" value={form.password} onChange={changeHandler} />
             </label>
-            <Button variant="outline-primary" type="submit" >Submit</Button>
+            <Button variant="outline-primary" type="submit">Submit</Button>
           </form>
         </div>
       );

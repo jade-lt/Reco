@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { UserLoginForm } from "./components/user/UserLoginForm";
-import { RecoList } from "./components/reco/RecoList";
 import { RecoEditDelete } from "./components/reco/RecoEditDelete";
 import { UserRecos } from "./components/user/UserRecos";
+import { RecoCreate } from './components/reco/RecoCreate';
+import { HomePage } from './components/HomePage';
+import { UserRegister } from './components/user/UserRegister'
 
 
 function App() {
@@ -15,8 +17,12 @@ function App() {
           <UserLoginForm />
         </Route>
 
+        <Route exact path="/register">
+          <UserRegister />
+        </Route>
+
         <Route exact path="/reco/create">
-          <h1>Add new reco</h1>
+          <RecoCreate />
         </Route>
 
         <Route exact path="/reco/edit/:id">
@@ -28,8 +34,7 @@ function App() {
         </Route>
 
         <Route exact path="/">
-          <h1>Home</h1>
-          {/* <RecoList /> */}
+          <HomePage />
         </Route>
 
       </Switch>

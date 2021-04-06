@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router";
+import Button from 'react-bootstrap/Button';
+
 
 
 
@@ -62,7 +64,7 @@ export const RecoEditDelete = () => {
       }
 
     return (
-    <div>
+      <div className="main">
             <h1>Edit or Delete a Reco</h1>
             <form>
                 <label>
@@ -90,8 +92,8 @@ export const RecoEditDelete = () => {
                     Description/Comment
                     <input name="description" value={reco.description} onChange={changeHandler} />
                 </label>
-                <button type="submit" onClick={submitEditHandler} >Edit</button>
-                <button type="submit" onClick={submitDeleteHandler} >Delete</button>
+                <Button variant="outline-warning" type="submit" onClick={submitEditHandler} >Edit</Button>
+                <Button variant="outline-danger" type="submit" onClick={submitDeleteHandler} >Delete</Button>
 
             </form>
         </div>

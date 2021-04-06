@@ -10,10 +10,11 @@ export const RecoEditDelete = () => {
     const [reco, setReco] = useState({
         category: '',
         name: '',
-        genre: '',
         cost: '',
         source: '',
-        description: ''
+        description: '',
+        genre: '',
+        img: ''
     })
 
   const history = useHistory();
@@ -79,7 +80,6 @@ export const RecoEditDelete = () => {
                     Genre
                     <input name="genre" value={reco.genre} onChange={changeHandler} />
                 </label>
-                <label></label>
                 <label>
                     Cost
                     <input name="cost" value={reco.cost} onChange={changeHandler} />
@@ -91,6 +91,10 @@ export const RecoEditDelete = () => {
                 <label>
                     Description/Comment
                     <input name="description" value={reco.description} onChange={changeHandler} />
+                </label>
+                <label>
+                    Image Url
+                    <input name="img" value={reco.img} onChange={changeHandler} />
                 </label>
                 <Button variant="outline-warning" type="submit" onClick={submitEditHandler} >Edit</Button>
                 <Button variant="outline-danger" type="submit" onClick={submitDeleteHandler} >Delete</Button>

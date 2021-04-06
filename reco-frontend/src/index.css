@@ -7,11 +7,20 @@ ul {
 }
 
 .user-recos-list {
-  background-color: rgba(236, 100, 100, 0.952);
+  /* background-color: rgba(236, 100, 100, 0.952); */
   float: left;
   width: 30%;
   margin: 1%;
-  border: 2px solid rgba(236, 100, 100, 0.952);
+  border: 2px solid;
   border-radius: 6%;
   text-align: left;
+}
+
+.reco-name {
+  text-align: center;
+}
+
+.reco-img {
+  max-width: 100%;
+  border-radius: 5%;
 }

@@ -9,10 +9,11 @@ export const RecoCreate = () => {
     const [reco, setReco] = useState({
         category: '',
         name: '',
-        genre: '',
         cost: '',
         source: '',
-        description: ''
+        description: '',
+        genre: '',
+        img: ''
     })
 
     const history = useHistory();

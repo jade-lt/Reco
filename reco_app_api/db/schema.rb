@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2021_04_05_085636) do
     t.money "cost", scale: 2
     t.string "source"
     t.string "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    # t.datetime "created_at", precision: 6, null: false
+    # t.datetime "updated_at", precision: 6, null: false
     t.string "genre"
   end
 

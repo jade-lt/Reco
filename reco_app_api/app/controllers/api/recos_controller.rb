@@ -5,7 +5,7 @@ class Api::RecosController < ApplicationController
     end
 
     def create
-        reco = Reco.create(category: params[:category], name: params[:name], cost: params[:cost], source: params[:source], description: params[:description])
+        reco = Reco.create(category: params[:category], name: params[:name], cost: params[:cost], source: params[:source], description: params[:description], genre: params[:genre], img: params[:img])
         reco_valid = reco.valid?
         p reco
         p reco_valid
@@ -23,7 +23,7 @@ class Api::RecosController < ApplicationController
 
     def update
         reco = Reco.find(params[:id])
-        reco.update(category: params[:category], name: params[:name], cost: params[:cost], source: params[:source], description: params[:description])
+        reco.update(category: params[:category], name: params[:name], cost: params[:cost], source: params[:source], description: params[:description], genre: params[:genre], img: params[:img])
         render json: {type: 'Successfully updated recommendation!'}
     end
 

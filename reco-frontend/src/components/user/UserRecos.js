@@ -46,13 +46,15 @@ export const UserRecos = () => {
           <div className="user-recos-list">
             <li key={el.id}>
               <h6 className="reco-name">{el.name}</h6>
-          <img className="reco-img"src={el.image} alt=""></img>
+          <img className="reco-img"src={el.img} alt=""></img>
               <br />
               Category: {el.category}
               <br />
-              Source: {el.source}
+              Source/Author: {el.source}
               <br />
-              <Link to={`/reco/edit/${el.id}`}>Edit or Delete</Link>
+              <Link to={`/reco/edit/${el.id}`}>Edit</Link>|
+              <Link to={`/reco/delete/${el.id}`}>Delete</Link>
+
             </li>
           </div>
         ))}

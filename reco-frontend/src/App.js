@@ -1,11 +1,13 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { UserLoginForm } from "./components/user/UserLoginForm";
-import { RecoEditDelete } from "./components/reco/RecoEditDelete";
+import { RecoEdit } from "./components/reco/RecoEdit";
 import { UserRecos } from "./components/user/UserRecos";
 import { RecoCreate } from './components/reco/RecoCreate';
 import { HomePage } from './components/HomePage';
-import { UserRegister } from './components/user/UserRegister'
+import { UserRegister } from './components/user/UserRegister';
+import { RecoDelete } from './components/reco/RecoDelete';
+
 
 
 function App() {
@@ -26,7 +28,11 @@ function App() {
         </Route>
 
         <Route exact path="/reco/edit/:id">
-          <RecoEditDelete />
+          <RecoEdit />
+        </Route>
+
+        <Route exact path="/reco/delete/:id">
+          <RecoDelete />
         </Route>
 
         <Route exact path="/my-recos">

@@ -11,9 +11,10 @@ ul {
   float: left;
   width: 30%;
   margin: 1%;
-  border: 2px solid;
+  /* border: 2px solid; */
   border-radius: 6%;
   text-align: left;
+  padding: 2%; 
 }
 
 .reco-name {
@@ -24,3 +25,4 @@ ul {
   max-width: 100%;
   border-radius: 5%;
 }
+

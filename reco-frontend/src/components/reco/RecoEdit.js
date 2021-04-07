@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 
 
-export const RecoEditDelete = () => {
+export const RecoEdit = () => {
 
     const [reco, setReco] = useState({
         category: '',
@@ -38,7 +38,7 @@ export const RecoEditDelete = () => {
         setReco(newFormState);
     }
 
-      const submitEditHandler = (e) => {
+      const submitHandler = (e) => {
         e.preventDefault();
         fetch(`/api/recos/${params.id}`, {
           method: "PATCH",
@@ -49,18 +49,6 @@ export const RecoEditDelete = () => {
           body: JSON.stringify(reco)
         })
           .then(response => response.json())
-          .then(history.push('/my-recos'))
-      }
-
-      const submitDeleteHandler = (e) => {
-        e.preventDefault();
-        fetch(`/api/recos/${params.id}`, {
-          method: "DELETE",
-          headers: {
-            'Content-Type': 'application/json',
-            'token': window.localStorage.getItem('token')
-          }
-        })
           .then(history.push('/my-recos'))
       }
 
@@ -96,8 +84,7 @@ export const RecoEditDelete = () => {
                     Image Url
                     <input name="img" value={reco.img} onChange={changeHandler} />
                 </label>
-                <Button variant="outline-warning" type="submit" onClick={submitEditHandler} >Edit</Button>
-                <Button variant="outline-danger" type="submit" onClick={submitDeleteHandler} >Delete</Button>
+                <Button variant="outline-warning" type="submit" onClick={submitHandler} >Edit</Button>
 
             </form>
         </div>

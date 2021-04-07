@@ -67,6 +67,10 @@ export const RecoCreate = () => {
                         Description/Comment
                         <input name="description" value={reco.description} onChange={changeHandler} />
                     </label>
+                    <label>
+                    Image Url
+                    <input name="img" value={reco.img} onChange={changeHandler} />
+                </label>
                     <Button variant="outline-success" type="submit">Create</Button>
     
                 </form>

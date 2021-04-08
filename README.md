@@ -4,6 +4,11 @@ A working full stack CRUD app for writing, sharing and finding recommendations f
 
 The app includes registration for new users, login/logout functionality, and protected routes for creating, updating or deleting recommendations, with users needing to be logged in to access these features.
 
+![Image of Home page](Reco-home.png)
+
+![Image of Rego page](reco-rego.png)
+
+
 Once logged in, the user is routed to a list of recommendations, with each having a clickable edit or delete link. The edit link 
 routes to a form with pre-filled input fields relevant to the recommendation, and from there a user can change the input fields and save the updates. The delete link routes to a component with the relevant recommendation name and image, and asks the user if they are sure they want to delete. Upon clicking the delete button, the recommendation is deleted from the database.
 

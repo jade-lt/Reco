@@ -6,11 +6,37 @@ The app includes registration for new users, login/logout functionality, and pro
 
 ![Image of Home page](https://github.com/jade-lt/Reco/blob/main/images/Reco-home.png?raw=true)
 
-![Image of Rego page](reco-rego.png)
+![Image of Rego page](https://github.com/jade-lt/Reco/blob/main/images/reco-rego.png?raw=true)
 
 
-Once logged in, the user is routed to a list of recommendations, with each having a clickable edit or delete link. The edit link 
+Once logged in, the user is routed to a list of recommendations, with each having a clickable edit or delete link. There is also the option to create a new recommendation or logout.
+
+![Image of my recos 1](https://github.com/jade-lt/Reco/blob/main/images/my-recos-1.png?raw=true)
+
+![Image of my recos 2](https://github.com/jade-lt/Reco/blob/main/images/my-recos-2.png?raw=true)
+
+![Image of my recos 3](https://github.com/jade-lt/Reco/blob/main/images/my-recos-3.png?raw=true)
+
+
+When a user clicks to create a new recommendation, they are routed to a form to create a new entry that posts to the database.
+
+![Image of create 1](https://github.com/jade-lt/Reco/blob/main/images/reco-create-1.png?raw=true)
+
+![Image of create 2](https://github.com/jade-lt/Reco/blob/main/images/reco-create-2.png?raw=true)
+
+
+
+The edit link 
 routes to a form with pre-filled input fields relevant to the recommendation, and from there a user can change the input fields and save the updates. The delete link routes to a component with the relevant recommendation name and image, and asks the user if they are sure they want to delete. Upon clicking the delete button, the recommendation is deleted from the database.
+
+![Image of edit 1](https://github.com/jade-lt/Reco/blob/main/images/reco-edit-1.png?raw=true)
+
+![Image of edit 2](https://github.com/jade-lt/Reco/blob/main/images/reco-edit-2.png?raw=true)
+
+![Image of delete 1](https://github.com/jade-lt/Reco/blob/main/images/reco-delete-1.png?raw=true)
+
+![Image of delete 2](https://github.com/jade-lt/Reco/blob/main/images/reco-delete-2.png?raw=true)
+
 
 Issues/things to fix
 

@@ -4,7 +4,7 @@ A working full stack CRUD app for writing, sharing and finding recommendations f
 
 The app includes registration for new users, login/logout functionality, and protected routes for creating, updating or deleting recommendations, with users needing to be logged in to access these features.
 
-![Image of Home page](Reco-home.png)
+![Image of Home page](https://github.com/jade-lt/Reco/blob/main/images/Reco-home.png?raw=true)
 
 ![Image of Rego page](reco-rego.png)
 

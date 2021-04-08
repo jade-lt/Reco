@@ -38,18 +38,20 @@ export const UserLoginForm = () => {
     }
 
     return (
-        <div className="main">
+        <div className="main" id="login-form">
+            {/* <div className="header-text" id="header-login">
           <h1>Login</h1>
+          </div> */}
           <form onSubmit={submitHandler}>
             <label>
-              Username:
+              Username: <br />
               <input name="name" value={form.name} onChange={changeHandler} />
-            </label>
+            </label><br />
             <label>
-              Password:
+              Password: <br />
               <input name="password" type="password" value={form.password} onChange={changeHandler} />
-            </label>
-            <Button variant="outline-primary" type="submit" >Submit</Button>
+            </label><br />
+            <Button variant="primary" type="submit" >Login</Button>
           </form>
         </div>
       );

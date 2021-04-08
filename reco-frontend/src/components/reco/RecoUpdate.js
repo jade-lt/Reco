@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 
 
 
-export const RecoEdit = () => {
+export const RecoUpdate = () => {
 
     const [reco, setReco] = useState({
         category: '',
@@ -53,40 +53,44 @@ export const RecoEdit = () => {
       }
 
     return (
-      <div className="main">
-            <h1>Edit or Delete a Reco</h1>
+        <div className="main">
+        <div className="header-text" id="header-update">
+            <h1>Edit</h1>
+            </div>
+            <div>
             <form>
                 <label>
-                    Category
+                    Category<br />
                     <input name="category" value={reco.category} onChange={changeHandler} />
-                </label>
+                </label><br />
                 <label>
-                    Name
+                    Name<br />
                     <input name="name" value={reco.name} onChange={changeHandler} />
-                </label>
+                </label><br />
                 <label>
-                    Genre
+                    Genre<br />
                     <input name="genre" value={reco.genre} onChange={changeHandler} />
-                </label>
+                </label><br />
                 <label>
-                    Cost
+                    Cost<br />
                     <input name="cost" value={reco.cost} onChange={changeHandler} />
-                </label>
+                </label><br />
                 <label>
-                    Source/Author
+                    Source/Author<br />
                     <input name="source" value={reco.source} onChange={changeHandler} />
-                </label>
+                </label><br />
                 <label>
-                    Description/Comment
+                    Description/Comment<br />
                     <input name="description" value={reco.description} onChange={changeHandler} />
-                </label>
+                </label><br />
                 <label>
-                    Image Url
+                    Image Url<br />
                     <input name="img" value={reco.img} onChange={changeHandler} />
-                </label>
-                <Button variant="outline-warning" type="submit" onClick={submitHandler} >Edit</Button>
+                </label><br />
+                <Button variant="primary" type="submit" onClick={submitHandler} >Edit</Button>
 
             </form>
+            </div>
         </div>
     )
     

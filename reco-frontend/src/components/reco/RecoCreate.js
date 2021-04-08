@@ -40,38 +40,39 @@ export const RecoCreate = () => {
 
       return (
         <div className="main">
-                <h1>Create a Reco</h1>
+            <div className="header-text" id="header-create">
+                <h1>Add a new Reco</h1>
+                </div>
                 <form onSubmit={submitHandler}>
                     <label>
-                        Category
+                        Category<br />
                         <input name="category" value={reco.category} onChange={changeHandler} />
-                    </label>
+                    </label><br />
                     <label>
-                        Name
+                        Name<br />
                         <input name="name" value={reco.name} onChange={changeHandler} />
-                    </label>
+                    </label><br />
                     <label>
-                        Genre
+                        Genre<br />
                         <input name="genre" value={reco.genre} onChange={changeHandler} />
-                    </label>
-                    <label></label>
+                    </label><br />
                     <label>
-                        Cost
+                        Cost<br />
                         <input name="cost" value={reco.cost} onChange={changeHandler} />
-                    </label>
+                    </label><br />
                     <label>
-                        Source/Author
+                        Source/Author<br />
                         <input name="source" value={reco.source} onChange={changeHandler} />
-                    </label>
+                    </label><br />
                     <label>
-                        Description/Comment
+                        Description/Comment<br />
                         <input name="description" value={reco.description} onChange={changeHandler} />
-                    </label>
+                    </label><br />
                     <label>
-                    Image Url
+                    Image Url<br />
                     <input name="img" value={reco.img} onChange={changeHandler} />
-                </label>
-                    <Button variant="outline-success" type="submit">Create</Button>
+                </label><br />
+                    <Button variant="primary" type="submit">Create</Button>
     
                 </form>
             </div>

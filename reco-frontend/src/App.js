@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 import { UserLoginForm } from "./components/user/UserLoginForm";
-import { RecoEdit } from "./components/reco/RecoEdit";
+import { RecoUpdate } from "./components/reco/RecoUpdate";
 import { UserRecos } from "./components/user/UserRecos";
 import { RecoCreate } from './components/reco/RecoCreate';
 import { HomePage } from './components/HomePage';
@@ -28,7 +28,7 @@ function App() {
         </Route>
 
         <Route exact path="/reco/edit/:id">
-          <RecoEdit />
+          <RecoUpdate />
         </Route>
 
         <Route exact path="/reco/delete/:id">

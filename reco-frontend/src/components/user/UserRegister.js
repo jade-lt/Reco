@@ -28,23 +28,27 @@ export const UserRegister = () => {
           body: JSON.stringify(form)
         })
           .then(response => response.json())
-          .then(history.push('/login'))
+          .then(history.push('/'))
       }
 
     return (
-        <div className="main">
+        <div className="main" >
+            <div className="header-text" id="header-register">
           <h1>Register</h1>
-          <form onSubmit={submitHandler}>
+          </div>
+          <div >
+          <form onSubmit={submitHandler} id="rego-form">
             <label>
-              Username:
-              <input name="name" value={form.name} onChange={changeHandler} />
-            </label>
+              Username:<br />
+              <input name="name" value={form.name} onChange={changeHandler} placeholder="Enter a Username" />
+            </label><br />
             <label>
-              Password:
-              <input name="password" value={form.password} onChange={changeHandler} />
-            </label>
-            <Button variant="outline-primary" type="submit">Submit</Button>
+              Password:<br />
+              <input name="password" value={form.password} onChange={changeHandler} placeholder="Enter a Username" />
+            </label><br/>
+            <Button variant="primary" type="submit">Submit</Button>
           </form>
+          </div>
         </div>
       );
 }

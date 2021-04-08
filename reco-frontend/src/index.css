@@ -1,5 +1,84 @@
+body {
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.itl.cat%2Fpics%2Fb%2F4%2F48898_rainbow-polka-dot-wallpaper.jpg&f=1&nofb=1);
+}
+
+div {
+  /* border-style: solid; */
+}
+
 .main {
   text-align: center;
+}
+
+#home-options {
+  display: inline;
+
+
+}
+
+.header-text {
+  color: white;
+  text-align: center;
+  padding: 15%;
+  width: 100%;
+  max-height: 20%;
+  opacity: 80%;
+}
+
+p {
+  font-size: 300%;
+  padding: 0;
+}
+
+#header-home {
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpublicdomainpictures.net%2Fpictures%2F130000%2Fvelka%2Frainbow-background-1438899140wt8.jpg&f=1&nofb=1)
+
+}
+
+#about {
+
+}
+
+#rego {
+  margin-top: 2%;
+  margin-right: 20%;
+  text-align: right;
+  max-width: 30%;
+  float: right;
+}
+
+#login-form {
+  text-align: left;
+  margin-left: 15%;
+  margin-bottom: 20%;
+  max-width: 30%;
+}
+
+#header-register {
+  background-color: purple;
+}
+
+#header-my-recos {
+  background-color: rgb(59, 59, 190);
+  margin-bottom: 2%;
+}
+
+#header-create {
+  background-color: rgb(45, 160, 45);
+  margin-bottom: 2%;
+
+}
+
+#header-update {
+  background-color: rgb(223, 223, 35);
+  margin-bottom: 2%;
+
+}
+
+#header-delete {
+  background-color: red;
+  margin-bottom: 2%;
+
 }
 
 ul {
@@ -11,10 +90,11 @@ ul {
   float: left;
   width: 30%;
   margin: 1%;
-  /* border: 2px solid; */
+  /* border: 2px solid rgb(59, 59, 190); */
   border-radius: 6%;
   text-align: left;
   padding: 2%; 
+  background-color: white;
 }
 
 .reco-name {
@@ -24,5 +104,39 @@ ul {
 .reco-img {
   max-width: 100%;
   border-radius: 5%;
+  margin-bottom: 2%;
 }
 
+.delete-reco {
+  width: 30%;
+  margin: 1%;
+  border-radius: 6%;
+  text-align: center;
+  padding: 5%; 
+}
+
+#delete-text {
+  margin: 2%;
+}
+
+#login-text {
+  margin-left: 15%;
+}
+
+#rego-text {
+  margin-bottom: 7%;
+}
+
+#rego-form {
+  margin-top: 2%;
+}
+
+#my-reco-text {
+  text-align: left;
+  margin-left: 10%;
+}
+
+form {
+  margin-bottom: 20%;
+  
+}

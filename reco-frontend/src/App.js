@@ -7,6 +7,10 @@ import { RecoCreate } from './components/reco/RecoCreate';
 import { HomePage } from './components/HomePage';
 import { UserRegister } from './components/user/UserRegister';
 import { RecoDelete } from './components/reco/RecoDelete';
+import { Search } from './components/Search';
+import { About } from './components/About';
+import { Categories } from './components/Categories';
+import { Clubs } from './components/Clubs';
 
 
 
@@ -37,6 +41,22 @@ function App() {
 
         <Route exact path="/my-recos">
           <UserRecos />
+        </Route>
+
+        <Route exact path="/search">
+          <Search />
+        </Route>
+
+        <Route exact path="/about">
+          <About />
+        </Route>
+
+        <Route exact path="/categories">
+          <Categories />
+        </Route>
+
+        <Route exact path="/clubs">
+          <Clubs />
         </Route>
 
         <Route exact path="/">

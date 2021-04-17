@@ -29,7 +29,7 @@ const clickDeleteHandler = (e) => {
         'token': window.localStorage.getItem('token')
       }
     })
-      .then(history.push('/my-recos'))
+      .then(() => history.push('/my-recos'))
   }
 
   const clickNoHandler = () => {

@@ -49,7 +49,7 @@ export const RecoUpdate = () => {
           body: JSON.stringify(reco)
         })
           .then(response => response.json())
-          .then(history.push('/my-recos'))
+          .then(() => history.push('/my-recos'))
       }
 
     return (

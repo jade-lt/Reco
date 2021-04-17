@@ -1,31 +1,57 @@
 import * as React from "react";
-import { AppBar, Toolbar, IconButton, List, ListItem, ListItemText } from "@material-ui/core";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+  Container,
+} from "@material-ui/core";
 import { Home } from "@material-ui/icons";
+import { useHistory } from "react-router";
 
 const navLinks = [
-  { title: `search`, path: `/search` },
-  { title: `clubs`, path: `/clubs` },
-  { title: `categories`, path: `/categories` },
-  { title: `about`, path: `/about` },
-  { title: `login`, path: `/login` },
+  { name: "Search", path: "/search" },
+  { name: "Clubs", path: "/clubs" },
+  { name: "Categories", path: "/categories" },
+  { name: "About", path: "/about" },
+  { name: "Login", path: "/login" },
 ];
 
 export const Navbar = () => {
+  const history = useHistory();
+
+  const homeClickHandler = () => {
+      console.log("home icon button clicked");
+    // history.replace("/");
+  };
+
   return (
     <AppBar position="static">
-      <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="home">
-          <Home fontSize="large" />
-        </IconButton>
-        <List component="nav" aria-labelledby="main navigation">
-    {navLinks.map(({ title, path }) => (
-      <a href={path} key={title}>
-        <ListItem button>
-          <ListItemText primary={title} />
-        </ListItem>
-      </a>
-    ))}
-  </List>
+      <Toolbar className="navbar">
+        <Container className="navbar-display-flex">
+          <IconButton
+            edge="start"
+            color="inherit"
+            className="home"
+            onClick={homeClickHandler}
+          >
+            <Home fontSize="large"/>
+          </IconButton>
+          <List
+            component="nav"
+            className="navbar-display"
+          >
+            {navLinks.map(({ name, path }) => (
+              <a href={path} key={name} className="navbar-links">
+                <ListItem button>
+                  <ListItemText primary={name} />
+                </ListItem>
+              </a>
+            ))}
+          </List>
+        </Container>
       </Toolbar>
     </AppBar>
   );

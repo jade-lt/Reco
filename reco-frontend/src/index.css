@@ -158,3 +158,20 @@ form {
   margin-bottom: 20%;
   
 }
+
+.Book-category, .Movie-category, .TV-category {
+  padding: 10%;
+  border-radius: 6%;
+}
+
+.Book-category {
+  background-color: rgb(247, 198, 107);
+}
+
+.Movie-category {
+  background-color: rgb(108, 155, 224);
+}
+
+.TV-category {
+  background-color: rgb(114, 201, 114);
+}

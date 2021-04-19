@@ -34,12 +34,13 @@ export const UserRecos = () => {
 
   return (
     <div className="main">
-            <div className="header-text" id="header-my-recos">
-      <h1>My Reco's</h1>
+      <div className="header-text" id="header-my-recos">
+        <h1>My Reco's</h1>
       </div>
       <Button variant="primary" onClick={clickCreateHandler}>
         Create a new Reco
-      </Button><h1>   </h1>
+      </Button>
+      <h1> </h1>
       <Button variant="primary" onClick={clickLogoutHandler}>
         Logout
       </Button>
@@ -47,9 +48,10 @@ export const UserRecos = () => {
       <ul>
         {recos.map((el) => (
           <div className="user-recos-list">
+            <div className={`${el.category}-category`}>
             <li key={el.id}>
               <h5 className="reco-name">{el.name}</h5>
-          <img className="reco-img"src={el.img} alt=""></img>
+              <img className="reco-img" src={el.img} alt=""></img>
               <br />
               Category: {el.category}
               <br />
@@ -57,8 +59,8 @@ export const UserRecos = () => {
               <br />
               <Link to={`/reco/edit/${el.id}`}>Edit </Link>|
               <Link to={`/reco/delete/${el.id}`}> Delete</Link>
-
             </li>
+          </div>
           </div>
         ))}
       </ul>

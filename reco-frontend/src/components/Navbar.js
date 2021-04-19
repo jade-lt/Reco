@@ -8,7 +8,7 @@ import {
   ListItemText,
   Container,
 } from "@material-ui/core";
-import { Home } from "@material-ui/icons";
+import { AccountCircle, Home } from "@material-ui/icons";
 import { useHistory } from "react-router";
 
 const navLinks = [
@@ -16,16 +16,21 @@ const navLinks = [
   { name: "Clubs", path: "/clubs" },
   { name: "Categories", path: "/categories" },
   { name: "About", path: "/about" },
-  { name: "Login", path: "/login" },
 ];
 
 export const Navbar = () => {
+
   const history = useHistory();
 
   const homeClickHandler = () => {
       console.log("home icon button clicked");
-    // history.replace("/");
+    history.replace("/");
   };
+
+  const accountClickHandler = () => {
+    console.log("account icon button clicked");
+  history.replace("/my-recos");
+};
 
   return (
     <AppBar position="static">
@@ -51,6 +56,14 @@ export const Navbar = () => {
               </a>
             ))}
           </List>
+          <IconButton
+            edge="end"
+            color="inherit"
+            className="account"
+            onClick={accountClickHandler}
+          >
+            <AccountCircle fontSize="large"/>
+          </IconButton>
         </Container>
       </Toolbar>
     </AppBar>

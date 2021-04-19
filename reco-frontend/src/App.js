@@ -11,6 +11,8 @@ import { Search } from './components/Search';
 import { About } from './components/About';
 import { Categories } from './components/Categories';
 import { Clubs } from './components/Clubs';
+import { Navbar } from "./components/Navbar";
+
 
 
 
@@ -18,6 +20,7 @@ function App() {
   return (
     <BrowserRouter>
     <div className="App">
+    <Navbar />
       <Switch>
         <Route exact path="/login">
           <UserLoginForm />

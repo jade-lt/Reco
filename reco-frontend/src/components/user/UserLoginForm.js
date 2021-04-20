@@ -37,7 +37,13 @@ export const UserLoginForm = () => {
         })
     }
 
+    const clickRegisterHandler = () => {
+      history.push('/register')
+
+    }
+
     return (
+      <div>
         <div className="main" id="login-form">
             {/* <div className="header-text" id="header-login">
           <h1>Login</h1>
@@ -52,8 +58,13 @@ export const UserLoginForm = () => {
               Password: <br />
               <input name="password" type="password" value={form.password} onChange={changeHandler} />
             </label><br />
-            <Button variant="primary" type="submit" >Login</Button>
+            <Button variant="primary" type="submit">Login</Button>
           </form>
+        </div>
+        <div>
+          <h2>Not a Member? Register Now!</h2>
+          <Button variant="primary" type="submit" onClick={clickRegisterHandler}>Register</Button>
+        </div>
         </div>
       );
 }

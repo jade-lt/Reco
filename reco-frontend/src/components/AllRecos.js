@@ -1,15 +1,10 @@
 import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router";
 
 
 
-
-export const UserDashboard =() => {
-
+export const AllRecos = () => {
   const [recos, setRecos] = useState([]);
-
-  const history = useHistory();
 
 
   useEffect(() => {
@@ -21,26 +16,16 @@ export const UserDashboard =() => {
       .then((response) => response.json())
       .then((data) => {
         if (data.length) {
-          setRecos([data[0], data[1], data[2]]);
+          setRecos(data);
         }
       })
       .catch((error) => console.log("catch error:", error));
   }, []);
 
-
-const clickAllRecosHandler = () => {
-    history.replace("/my-recos");
-  };
-
-    return (
-        <div>
-
-        
-        <h2 id="my-reco-text">My Reco's</h2>
-
+  return (
+    <div className="main">
       <ul>
-
-      {recos.map((el) => (
+        {recos.map((el) => (
           <div className="user-recos-list">
             <div className={`${el.category}-category`}>
             <li key={el.id}>
@@ -54,14 +39,7 @@ const clickAllRecosHandler = () => {
           </div>
           </div>
         ))}
-
-
-        </ul>
-        <Button variant="primary" onClick={clickAllRecosHandler}>
-        See All
-      </Button>
-
-        </div>
-
-    )
-}
+      </ul>
+    </div>
+  );
+};

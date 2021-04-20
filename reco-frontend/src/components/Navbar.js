@@ -7,8 +7,9 @@ import {
   ListItem,
   ListItemText,
   Container,
+  Button,
 } from "@material-ui/core";
-import { AccountCircle, Home } from "@material-ui/icons";
+import { AccountCircle, Home, Search } from "@material-ui/icons";
 import { useHistory } from "react-router";
 
 const navLinks = [
@@ -18,9 +19,20 @@ const navLinks = [
   { name: "About", path: "/about" },
 ];
 
+const navLinksLoggedIn = [
+  { name: "Search", path: "/search" },
+  { name: "Clubs", path: "/clubs" },
+  { name: "Categories", path: "/categories" },
+  { name: "My Reco's", path: "/my-recos" },
+  { name: "My List", path: "/my-list" },
+  { name: "Sign Out", path: "/" },
+]
+
 export const Navbar = () => {
 
   const history = useHistory();
+
+  const isAuthenticated = localStorage.getItem('token');
 
   const homeClickHandler = () => {
       console.log("home icon button clicked");
@@ -32,8 +44,14 @@ export const Navbar = () => {
   history.replace("/dashboard");
 };
 
-  return (
-    <AppBar position="static">
+const clickSignOutHandler = () => {
+  localStorage.removeItem("token");
+  history.replace("/");
+};
+
+return isAuthenticated ? (
+  
+<AppBar position="static">
       <Toolbar className="navbar">
         <Container className="navbar-display-flex">
           <IconButton
@@ -44,18 +62,23 @@ export const Navbar = () => {
           >
             <Home fontSize="large"/>
           </IconButton>
-          <List
-            component="nav"
-            className="navbar-display"
+
+          <IconButton
+            edge="start"
+            color="inherit"
+            className="home"
+            // onClick={homeClickHandler}
           >
-            {navLinks.map(({ name, path }) => (
-              <a href={path} key={name} className="navbar-links">
-                <ListItem button>
-                  <ListItemText primary={name} />
-                </ListItem>
-              </a>
-            ))}
-          </List>
+            <Search fontSize="large"/>
+          </IconButton>
+
+          <Button color="inherit">Search</Button>
+          <Button color="inherit">Clubs</Button>
+          <Button color="inherit">Categories</Button>
+          <Button color="inherit">My Reco's</Button>
+          <Button color="inherit">My List</Button>
+          <Button color="inherit" onClick={clickSignOutHandler}>Sign Out</Button>
+
           <IconButton
             edge="end"
             color="inherit"
@@ -67,5 +90,51 @@ export const Navbar = () => {
         </Container>
       </Toolbar>
     </AppBar>
-  );
-};
+
+)
+    :
+(
+  
+
+<AppBar position="static">
+      <Toolbar className="navbar">
+        <Container className="navbar-display-flex">
+          <IconButton
+            edge="start"
+            color="inherit"
+            className="home"
+            onClick={homeClickHandler}
+          >
+            <Home fontSize="large"/>
+          </IconButton>
+
+          <IconButton
+            edge="start"
+            color="inherit"
+            className="home"
+            // onClick={homeClickHandler}
+          >
+            <Search fontSize="large"/>
+          </IconButton>
+
+          <Button color="inherit">Search</Button>
+          <Button color="inherit">Clubs</Button>
+          <Button color="inherit">Categories</Button>
+          <Button color="inherit">About</Button>
+
+          <IconButton
+            edge="end"
+            color="inherit"
+            className="account"
+            onClick={accountClickHandler}
+          >
+            <AccountCircle fontSize="large"/>
+          </IconButton>
+        </Container>
+      </Toolbar>
+    </AppBar>
+    
+
+    )
+
+  }

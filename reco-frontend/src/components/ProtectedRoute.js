@@ -1,6 +1,6 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
-import { ProtectedNavbar } from './ProtectedNavbar';
+// import { ProtectedNavbar } from './ProtectedNavbar';
 
 class ProtectedRoute extends React.Component {
 
@@ -11,7 +11,7 @@ class ProtectedRoute extends React.Component {
       
         return isAuthenticated ? (
             <div>
-                <ProtectedNavbar />
+                {/* <ProtectedNavbar /> */}
             <Component />
             </div>
 

@@ -15,25 +15,33 @@ import { Navbar } from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserList } from "./components/user/UserList";
 import { UserDashboard } from "./components/user/UserDashboard";
+import { AllRecos } from "./components/AllRecos"
 
 
 function App() {
+
+
   return (
     <BrowserRouter>
       <div className="App">
+        <Navbar />
         <Switch>
           <Route exact path="/login">
-            <Navbar />
+            {/* <Navbar /> */}
             <UserLoginForm />
           </Route>
 
           <Route exact path="/register">
-            <Navbar />
+            {/* <Navbar /> */}
             <UserRegister />
           </Route>
 
-          <ProtectedRoute path="/dashboard" component={UserDashboard} />
+          <Route exact path="/all-recos">
+            {/* <Navbar /> */}
+            <AllRecos />
+          </Route>
 
+          <ProtectedRoute path="/dashboard" component={UserDashboard} />
 
           <ProtectedRoute path="/reco/create" component={RecoCreate} />
 
@@ -46,27 +54,27 @@ function App() {
           <ProtectedRoute path="/my-list" component={UserList} />
 
           <Route exact path="/search">
-            <Navbar />
+            {/* <Navbar /> */}
             <Search />
           </Route>
 
           <Route exact path="/about">
-            <Navbar />
+            {/* <Navbar /> */}
             <About />
           </Route>
 
           <Route exact path="/categories">
-            <Navbar />
+            {/* <Navbar /> */}
             <Categories />
           </Route>
 
           <Route exact path="/clubs">
-            <Navbar />
+            {/* <Navbar /> */}
             <Clubs />
           </Route>
 
           <Route exact path="/">
-            <Navbar />
+            {/* <Navbar /> */}
             <HomePage />
           </Route>
         </Switch>

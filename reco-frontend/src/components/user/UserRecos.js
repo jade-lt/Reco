@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import Button from "react-bootstrap/Button";
+import { IconButton } from "@material-ui/core";
+import { Edit, Delete } from "@material-ui/icons";
+
 
 export const UserRecos = () => {
   const [recos, setRecos] = useState([]);
+
+
 
   const history = useHistory();
 
@@ -32,6 +37,14 @@ export const UserRecos = () => {
     history.replace("/");
   };
 
+  const clickEditIconHandler = () => {
+    console.log("edit icon was clicked")
+  }
+
+  const clickDeleteIconHandler = () => {
+    console.log("delete icon was clicked")
+  }
+
   return (
     <div className="main">
       <div className="header-text" id="header-my-recos">
@@ -57,8 +70,23 @@ export const UserRecos = () => {
               <br />
               Source/Author: {el.source}
               <br />
-              <Link to={`/reco/edit/${el.id}`}>Edit </Link>|
-              <Link to={`/reco/delete/${el.id}`}> Delete</Link>
+              <IconButton 
+              edge="start"
+              color="inherit"
+              onClick={clickEditIconHandler}
+              // onClick={history.replace(`/reco/edit/${el.id}`)}
+
+              >
+                <Edit fontSize="small"/>
+                </IconButton>
+                <IconButton 
+              edge="start"
+              color="inherit"
+              onClick={clickDeleteIconHandler}
+              >
+                <Delete fontSize="small"/>
+                </IconButton>
+              {/* <Link to={`/reco/delete/${el.id}`}> Delete</Link> */}
             </li>
           </div>
           </div>

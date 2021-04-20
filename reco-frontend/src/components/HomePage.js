@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Button from 'react-bootstrap/Button';
 import { UserLoginForm } from "./user/UserLoginForm";
@@ -5,11 +6,40 @@ import { UserLoginForm } from "./user/UserLoginForm";
 
 export const HomePage = () => {
 
+    const [recos, setRecos] = useState([]);
+
     const history = useHistory();
+
+    useEffect(() => {
+        fetch("/api/recos", {
+          headers: {
+            token: window.localStorage.getItem("token"),
+          },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.length) {
+              setRecos(data);
+            }
+          })
+          .catch((error) => console.log("catch error:", error));
+      }, []);
+
+
+
 
     const clickRegisterHandler = () => {
         history.replace('/register')
     }
+
+     
+      const randomReco = recos[Math.floor(Math.random() * recos.length)];
+
+
+    console.log(randomReco);
+    // console.log(randomReco.name)
+
+
 
     return (
         <div className="main">
@@ -27,6 +57,15 @@ export const HomePage = () => {
             <h6 id="login-text">Member Login</h6>
             <UserLoginForm />
             </div>
+            </div>
+            <div>
+            {/* <ul>
+            <li key={randomReco.id}>
+                <h5>{randomReco.name}</h5>
+              <img className="reco-img" src={randomReco.img} alt=""></img>
+
+            </li>
+        </ul> */}
             </div>
         </div>
     )

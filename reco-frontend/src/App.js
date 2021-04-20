@@ -30,19 +30,13 @@ function App() {
           <UserRegister />
         </Route>
 
-        <ProtectedRoute path="/reco/create" component={RecoCreate}/>
+        <ProtectedRoute path="/reco/create" component={RecoCreate} />
 
-        <Route exact path="/reco/edit/:id">
-          <RecoUpdate />
-        </Route>
+        <ProtectedRoute path="/reco/edit/:id" component={RecoUpdate} />
 
-        <Route exact path="/reco/delete/:id">
-          <RecoDelete />
-        </Route>
+        <ProtectedRoute path="/reco/delete/:id" component={RecoDelete} />
 
-        <Route exact path="/my-recos">
-          <UserRecos />
-        </Route>
+        <ProtectedRoute path="/my-recos" component={UserRecos} />
 
         <Route exact path="/search">
           <Search />

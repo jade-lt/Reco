@@ -32,7 +32,7 @@ export const UserLoginForm = () => {
             console.log('token data', data)
             window.localStorage.setItem('token', data.token)
             if(data.token) {
-                history.replace('/my-recos')
+                history.push('/my-recos')
             }
         })
     }
@@ -42,6 +42,7 @@ export const UserLoginForm = () => {
             {/* <div className="header-text" id="header-login">
           <h1>Login</h1>
           </div> */}
+          <h2>Please Login</h2>
           <form onSubmit={submitHandler}>
             <label>
               Username: <br />

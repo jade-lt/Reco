@@ -1,0 +1,22 @@
+import React from 'react'
+import { Redirect } from 'react-router-dom'
+
+class ProtectedRoute extends React.Component {
+
+    render() {
+        const Component = this.props.component;
+        const isAuthenticated = localStorage.getItem('token');
+      
+        return isAuthenticated ? (
+            <Component />
+        ) : (
+            <div>
+            <h1>Please login first</h1>
+            <Redirect to={{ pathname: '/login' }} />
+            </div>
+        );
+    }
+}
+
+export default ProtectedRoute;
+

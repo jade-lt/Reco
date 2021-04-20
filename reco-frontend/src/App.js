@@ -12,7 +12,7 @@ import { About } from './components/About';
 import { Categories } from './components/Categories';
 import { Clubs } from './components/Clubs';
 import { Navbar } from "./components/Navbar";
-
+import ProtectedRoute from "./components/ProtectedRoute"
 
 
 
@@ -30,9 +30,7 @@ function App() {
           <UserRegister />
         </Route>
 
-        <Route exact path="/reco/create">
-          <RecoCreate />
-        </Route>
+        <ProtectedRoute path="/reco/create" component={RecoCreate}/>
 
         <Route exact path="/reco/edit/:id">
           <RecoUpdate />

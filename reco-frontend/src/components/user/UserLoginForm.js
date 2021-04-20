@@ -32,7 +32,7 @@ export const UserLoginForm = () => {
             console.log('token data', data)
             window.localStorage.setItem('token', data.token)
             if(data.token) {
-                history.push('/my-recos')
+                history.push('/dashboard')
             }
         })
     }

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
 import Button from 'react-bootstrap/Button';
+import { ProtectedNavbar } from "../ProtectedNavbar";
 
 
 
@@ -39,7 +40,9 @@ export const RecoCreate = () => {
       }
 
       return (
+          
         <div className="main">
+            <ProtectedNavbar />
             <div className="header-text" id="header-create">
                 <h1>Add a new Reco</h1>
                 </div>

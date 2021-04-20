@@ -15,10 +15,12 @@ const navLinks = [
   { name: "Search", path: "/search" },
   { name: "Clubs", path: "/clubs" },
   { name: "Categories", path: "/categories" },
-  { name: "About", path: "/about" },
+  { name: "My Reco's", path: "/my-recos" },
+  { name: "My List", path: "/my-list" },
+  { name: "Sign Out", path: "/" },
 ];
 
-export const Navbar = () => {
+export const ProtectedNavbar = () => {
 
   const history = useHistory();
 

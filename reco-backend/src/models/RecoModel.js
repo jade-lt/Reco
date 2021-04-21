@@ -4,7 +4,7 @@ const RecoSchema = new mongoose.Schema({
   category: String,
   name: String,
   cost: String,
-  source: Number,
+  source: String,
   description: String,
   genre: String,
   img: String,

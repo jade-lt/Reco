@@ -29,6 +29,10 @@ export const HomePage = () => {
     history.replace("/all-recos");
   };
 
+  const clickAllClubsHandler = () => {
+    history.replace("/clubs");
+  };
+
 
   return (
     <div className="main">
@@ -74,7 +78,7 @@ export const HomePage = () => {
           <h1>Featured Clubs</h1>
       <ul>
       </ul>
-      <Button variant="primary">
+      <Button variant="primary" onClick={clickAllClubsHandler}>
         See All
       </Button>
       </div>

@@ -35,12 +35,34 @@ export const Navbar = () => {
   const isAuthenticated = localStorage.getItem('token');
 
   const homeClickHandler = () => {
-      console.log("home icon button clicked");
     history.replace("/");
   };
 
+  const searchClickHandler = () => {
+  history.replace("/search");
+};
+
+const clubsClickHandler = () => {
+history.replace("/clubs");
+};
+
+const categoriesClickHandler = () => {
+history.replace("/categories");
+};
+
+const myRecosClickHandler = () => {
+history.replace("/my-recos");
+};
+
+const myListClickHandler = () => {
+history.replace("/my-list");
+};
+
+const aboutClickHandler = () => {
+history.replace("/about");
+};
+
   const accountClickHandler = () => {
-    console.log("account icon button clicked");
   history.replace("/dashboard");
 };
 
@@ -67,16 +89,16 @@ return isAuthenticated ? (
             edge="start"
             color="inherit"
             className="home"
-            // onClick={homeClickHandler}
+            onClick={searchClickHandler}
+
           >
             <Search fontSize="large"/>
           </IconButton>
 
-          <Button color="inherit">Search</Button>
-          <Button color="inherit">Clubs</Button>
-          <Button color="inherit">Categories</Button>
-          <Button color="inherit">My Reco's</Button>
-          <Button color="inherit">My List</Button>
+          <Button color="inherit" onClick={clubsClickHandler}>Clubs</Button>
+          <Button color="inherit" onClick={categoriesClickHandler}>Categories</Button>
+          <Button color="inherit" onClick={myRecosClickHandler}>My Reco's</Button>
+          <Button color="inherit" onClick={myListClickHandler}>My List</Button>
           <Button color="inherit" onClick={clickSignOutHandler}>Sign Out</Button>
 
           <IconButton
@@ -112,15 +134,14 @@ return isAuthenticated ? (
             edge="start"
             color="inherit"
             className="home"
-            // onClick={homeClickHandler}
+            onClick={searchClickHandler}
           >
             <Search fontSize="large"/>
           </IconButton>
 
-          <Button color="inherit">Search</Button>
-          <Button color="inherit">Clubs</Button>
-          <Button color="inherit">Categories</Button>
-          <Button color="inherit">About</Button>
+          <Button color="inherit" onClick={clubsClickHandler}>Clubs</Button>
+          <Button color="inherit" onClick={categoriesClickHandler}>Categories</Button>
+          <Button color="inherit" onClick={aboutClickHandler}>About</Button>
 
           <IconButton
             edge="end"

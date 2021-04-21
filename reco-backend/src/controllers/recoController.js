@@ -30,4 +30,13 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res, next) => {
+  try {
+    const foundReco = await Reco.findById(req.params.id);
+    res.json({ status: { code: 200, message: "Success" }, data: foundReco });
+  } catch (err) {
+    res.send(err);
+  }
+});
+
 module.exports = router;

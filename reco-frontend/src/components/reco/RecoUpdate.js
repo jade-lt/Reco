@@ -52,6 +52,10 @@ export const RecoUpdate = () => {
           .then(() => history.push('/my-recos'))
       }
 
+      const clickCancelHandler = () => {
+        history.replace("/my-recos");
+      };
+
     return (
         <div className="main">
         <div className="header-text" id="header-update">
@@ -87,6 +91,8 @@ export const RecoUpdate = () => {
                     Image Url<br />
                     <input name="img" value={reco.img} onChange={changeHandler} />
                 </label><br />
+                <Button variant="outline-primary" onClick={clickCancelHandler} >Cancel</Button>
+
                 <Button variant="primary" type="submit" onClick={submitHandler} >Edit</Button>
 
             </form>

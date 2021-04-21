@@ -39,15 +39,30 @@ router.get("/:id", async (req, res, next) => {
   }
 });
 
-router.put('/:id', async (req, res) => {
-    try {
-      const updatedReco = await Reco.findByIdAndUpdate(req.params.id, req.body, {new: true});
-      res.json({status: {code: 201,message: "Successfully updated the reco"},
-        data: updatedReco
-      });
-    } catch(err){
-      res.send(err)
-    }
-  });
+router.put("/:id", async (req, res) => {
+  try {
+    const updatedReco = await Reco.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });
+    res.json({
+      status: { code: 201, message: "Successfully updated the reco" },
+      data: updatedReco,
+    });
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const deletedReco = await Reco.findByIdAndRemove(req.params.id);
+    res.json({
+      status: { code: 200, message: "Successfully deleted reco" },
+      data: deletedReco,
+    });
+  } catch (err) {
+    res.send(err);
+  }
+});
 
 module.exports = router;

@@ -32,11 +32,6 @@ export const UserRecos = () => {
     history.replace("/reco/create");
   };
 
-  const clickLogoutHandler = () => {
-    localStorage.removeItem("token");
-    history.replace("/");
-  };
-
   const clickEditIconHandler = () => {
     console.log("edit icon was clicked")
   }
@@ -54,9 +49,6 @@ export const UserRecos = () => {
         Create a new Reco
       </Button>
       <h1> </h1>
-      <Button variant="primary" onClick={clickLogoutHandler}>
-        Logout
-      </Button>
       <h2 id="my-reco-text">My Reco's</h2>
       <ul>
         {recos.map((el) => (

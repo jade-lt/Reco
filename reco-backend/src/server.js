@@ -30,7 +30,7 @@ app.use("/api/recos", recoController);
 app.use("api/users", userController);
 
 app.listen(process.env.PORT || 9000, () => {
-  console.log("listening on port 9000");
-});
+    console.log(`listening on port ${process.env.PORT || 9000}`);
+  });
 
 console.log("app is running");

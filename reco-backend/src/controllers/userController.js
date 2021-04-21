@@ -7,9 +7,8 @@ const User = require("../models/UserModel");
 
 const secretKey = "87CB9E5B-7C0B-4717-8D14-CCC3C41B6BBB";
 
-router.get("/", async (req, res) => {
-    console.log("this is the user router")
-})
+router.get("/", (req, res) => res.send("this is the user router"));
+
 
 router.post('/register', async (req, res) => {
     const password = req.body.password;

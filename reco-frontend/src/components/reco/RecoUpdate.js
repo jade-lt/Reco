@@ -22,13 +22,18 @@ export const RecoUpdate = () => {
 
   const params = useParams();
 
+
+
     useEffect(() => {
-        fetch(`/api/recos/${params.id}`, {
+        fetch(`/api/recos/${params._id}`, {
+            method: "GET",
             headers: {
                 'token': window.localStorage.getItem('token')
               }
         })
+        .then(console.log(req.params))
         .then(response => response.json())
+        
         .then(data => setReco(data))
     }, [])
 
@@ -40,7 +45,7 @@ export const RecoUpdate = () => {
 
       const submitHandler = (e) => {
         e.preventDefault();
-        fetch(`/api/recos/${params.id}`, {
+        fetch(`/api/recos/${params._id}`, {
           method: "PATCH",
           headers: {
             'Content-Type': 'application/json',

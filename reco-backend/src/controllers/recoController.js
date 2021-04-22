@@ -8,10 +8,7 @@ const router = express.Router();
 router.get("/", async (req, res, next) => {
   try {
     const allRecos = await Reco.find();
-    res.json({
-      status: { code: 200, message: "Successfully got all recos!" },
-      data: allRecos,
-    });
+    res.json(allRecos);
   } catch (err) {
     res.send(err);
   }
@@ -20,10 +17,7 @@ router.get("/", async (req, res, next) => {
 router.post("/", async (req, res) => {
   try {
     const newReco = await Reco.create(req.body);
-    res.json({
-      status: { code: 201, message: "Successfully added a new reco!" },
-      data: newReco,
-    });
+    res.json(newReco);
   } catch (err) {
     console.log(err);
     res.send(err);
@@ -33,7 +27,7 @@ router.post("/", async (req, res) => {
 router.get("/:id", async (req, res, next) => {
   try {
     const foundReco = await Reco.findById(req.params.id);
-    res.json({ status: { code: 200, message: "Success" }, data: foundReco });
+    res.json(foundReco);
   } catch (err) {
     res.send(err);
   }
@@ -44,10 +38,7 @@ router.put("/:id", async (req, res) => {
     const updatedReco = await Reco.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
     });
-    res.json({
-      status: { code: 201, message: "Successfully updated the reco" },
-      data: updatedReco,
-    });
+    res.json(updatedReco);
   } catch (err) {
     res.send(err);
   }
@@ -56,10 +47,7 @@ router.put("/:id", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const deletedReco = await Reco.findByIdAndRemove(req.params.id);
-    res.json({
-      status: { code: 200, message: "Successfully deleted reco" },
-      data: deletedReco,
-    });
+    res.json(deletedReco);
   } catch (err) {
     res.send(err);
   }

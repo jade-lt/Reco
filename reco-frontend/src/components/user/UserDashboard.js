@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router";
+import { IconButton } from "@material-ui/core";
+import { Edit, Delete } from "@material-ui/icons";
 
 
 
@@ -32,31 +34,55 @@ const clickAllRecosHandler = () => {
     history.replace("/my-recos");
   };
 
+  const clickEditIconHandler = () => {
+    console.log("edit icon was clicked");
+  };
+
+  const clickDeleteIconHandler = () => {
+    console.log("delete icon was clicked");
+  };
+
     return (
         <div>
 
         
         <h2 id="my-reco-text">My Reco's</h2>
 
-      <ul>
-
-      {recos.map((el) => (
+        <ul>
+        {recos.map((el) => (
           <div className="user-recos-list">
             <div className={`${el.category}-category`}>
-            <li key={el.id}>
-              <h5 className="reco-name">{el.name}</h5>
-              <img className="reco-img" src={el.img} alt=""></img>
-              <br />
-              Category: {el.category}
-              <br />
-              Source/Author: {el.source}
-            </li>
-          </div>
+              <li key={el.id}>
+                <h5 className="reco-name">{el.name}</h5>
+                <img className="reco-img" src={el.img} alt=""></img>
+                <br />
+                Category: {el.category}
+                <br />
+                Source/Author: {el.source}
+                <br />
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  onClick={clickEditIconHandler}
+                  // onClick={history.replace(`/reco/edit/${el.id}`)}
+
+                  // <Link to={`/todo/edit/${el.id}`}>{el.title}</Link>
+                >
+                  <Edit fontSize="small" />
+                </IconButton>
+                <IconButton
+                  edge="start"
+                  color="inherit"
+                  onClick={clickDeleteIconHandler}
+                >
+                  <Delete fontSize="small" />
+                </IconButton>
+                {/* <Link to={`/reco/delete/${el.id}`}> Delete</Link> */}
+              </li>
+            </div>
           </div>
         ))}
-
-
-        </ul>
+      </ul>
         <Button variant="primary" onClick={clickAllRecosHandler}>
         See All
       </Button>

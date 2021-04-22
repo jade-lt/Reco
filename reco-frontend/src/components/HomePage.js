@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Button from "react-bootstrap/Button";
-import { UserLoginForm } from "./user/UserLoginForm";
-import { ShuffleSharp } from "@material-ui/icons";
 
 export const HomePage = () => {
   const [recos, setRecos] = useState([]);

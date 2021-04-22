@@ -1,3 +1,6 @@
+import { useState } from "react";
+import jwt from "jwt-decode";
+import moment from "moment";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { UserLoginForm } from "./components/user/UserLoginForm";
@@ -20,15 +23,33 @@ import { AllRecos } from "./components/AllRecos"
 
 function App() {
 
+  const isLoggedIn = () => {
+    const token = window.localStorage.getItem("token");
+  
+    if (token) {
+      const decoded = jwt(token);
+      const expires = moment.unix(decoded.exp);
+  
+      //todo set timoute for expiry to auto logout
+      //bonus: auto refresh token if user is active and expiry approaches
+  
+      //true if token exists & expiry < current time
+      return moment().isBefore(expires);
+    } else {
+      return false;
+    }
+  };
+
+  const [loggedIn, setLoggedIn] = useState(isLoggedIn);
 
   return (
     <BrowserRouter>
       <div className="App">
-        <Navbar />
+        <Navbar setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
         <Switch>
           <Route exact path="/login">
             {/* <Navbar /> */}
-            <UserLoginForm />
+            <UserLoginForm setLoginStatus={setLoggedIn} />
           </Route>
 
           <Route exact path="/register">

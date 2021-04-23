@@ -61,34 +61,6 @@ export function UserLoginForm(props) {
   );
 }
 
-// return (
-  //       <div>
-  //         <div className="main" id="login-form">
-  //             {/* <div className="header-text" id="header-login">
-  //           <h1>Login</h1>
-  //           </div> */}
-  //           <h2>Please Login</h2>
-  //           <form onSubmit={submitHandler}>
-  //             <label>
-  //               Username: <br />
-  //               <input name="username" value={form.username} onChange={changeHandler} />
-  //             </label><br />
-  //             <label>
-  //               Password: <br />
-  //               <input name="password" type="password" value={form.password} onChange={changeHandler} />
-  //             </label><br />
-  //             <Button variant="primary" type="submit">Login</Button>
-  //           </form>
-  //         </div>
-  //         <div>
-  //           <h2>Not a Member? Register Now!</h2>
-  //           <Button variant="primary" type="submit" onClick={clickRegisterHandler}>Register</Button>
-  //         </div>
-  //         </div>
-  //       );
-
-//export default LoginPage;
-
 
 
 // import { useState } from "react";

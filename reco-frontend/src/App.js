@@ -62,13 +62,23 @@ function App() {
             <AllRecos />
           </Route>
 
+          <Route exact path="/reco/edit/:id">
+            {/* <Navbar /> */}
+            <RecoUpdate />
+          </Route>
+
+          <Route exact path="/reco/delete/:id">
+            {/* <Navbar /> */}
+            <RecoDelete />
+          </Route>
+
           <ProtectedRoute path="/dashboard" component={UserDashboard} />
 
           <ProtectedRoute path="/reco/create" component={RecoCreate} />
 
-          <ProtectedRoute path="/reco/edit/:id" component={RecoUpdate} />
+          {/* <ProtectedRoute path="/reco/edit/:id" component={RecoUpdate} /> */}
 
-          <ProtectedRoute path="/reco/delete/:id" component={RecoDelete} />
+          {/* <ProtectedRoute exact path="/reco/delete/:id" component={RecoDelete} /> */}
 
           <ProtectedRoute path="/my-recos" component={UserRecos} />
 

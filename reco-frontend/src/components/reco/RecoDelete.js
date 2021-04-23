@@ -18,7 +18,7 @@ export const RecoDelete = () => {
     })
     .then(response => response.json())
     .then(data => setReco(data))
-}, [])
+}, [params.id])
 
 const clickDeleteHandler = (e) => {
     e.preventDefault();

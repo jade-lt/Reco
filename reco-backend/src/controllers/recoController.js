@@ -37,7 +37,7 @@ router.put("/:id", async (req, res) => {
   try {
     const updatedReco = await Reco.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
-    });
+    });x
     res.json(updatedReco);
   } catch (err) {
     res.send(err);

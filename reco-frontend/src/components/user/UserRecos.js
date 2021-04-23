@@ -30,13 +30,13 @@ export const UserRecos = () => {
     history.replace("/reco/create");
   };
 
-  const clickEditIconHandler = () => {
-    console.log("edit icon was clicked");
-  };
+  // const clickEditIconHandler = () => {
+  //   console.log("edit icon was clicked");
+  // };
 
-  const clickDeleteIconHandler = () => {
-    console.log("delete icon was clicked");
-  };
+  // const clickDeleteIconHandler = () => {
+  //   console.log("delete icon was clicked");
+  // };
 
   return (
     <div className="main">
@@ -63,9 +63,10 @@ export const UserRecos = () => {
                 <IconButton
                   edge="start"
                   color="inherit"
-                  onClick={clickEditIconHandler}
+                  // onClick={clickEditIconHandler}
                   component={ Link } 
                   to={`/reco/edit/${el._id}`}
+                  elId={el._id}
                   // onClick={history.replace(`/reco/edit/${el.id}`)}
 
                   // <Link to={`/todo/edit/${el.id}`}>Edit</Link>
@@ -78,7 +79,9 @@ export const UserRecos = () => {
                 <IconButton
                   edge="start"
                   color="inherit"
-                  onClick={clickDeleteIconHandler}
+                  // onClick={clickDeleteIconHandler}
+                  component={ Link } 
+                  to={`/reco/delete/${el._id}`}
                 >
                   <Delete fontSize="small" />
                 </IconButton>

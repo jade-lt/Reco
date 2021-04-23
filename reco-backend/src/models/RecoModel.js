@@ -8,6 +8,7 @@ const RecoSchema = new mongoose.Schema({
   description: String,
   genre: String,
   img: String,
+  userId: String,
 });
 
 module.exports = mongoose.model("Reco", RecoSchema);

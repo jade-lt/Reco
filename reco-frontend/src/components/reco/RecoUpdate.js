@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router";
+import { useParams, useHistory } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 
 
@@ -14,7 +14,8 @@ export const RecoUpdate = () => {
         source: '',
         description: '',
         genre: '',
-        img: ''
+        img: '',
+        userId: ''
     })
 
   const history = useHistory();
@@ -22,18 +23,15 @@ export const RecoUpdate = () => {
 
   const params = useParams();
 
-
-
     useEffect(() => {
-        fetch(`/api/recos/${params._id}`, {
-            method: "GET",
+        fetch(`/api/recos/${params.id}`, {
             headers: {
                 'token': window.localStorage.getItem('token')
               }
         })
-        .then(console.log(req.params))
+        .then(console.log(params))
+
         .then(response => response.json())
-        
         .then(data => setReco(data))
     }, [])
 
@@ -45,8 +43,8 @@ export const RecoUpdate = () => {
 
       const submitHandler = (e) => {
         e.preventDefault();
-        fetch(`/api/recos/${params._id}`, {
-          method: "PATCH",
+        fetch(`/api/recos/${params.id}`, {
+          method: "PUT",
           headers: {
             'Content-Type': 'application/json',
             'token': window.localStorage.getItem('token')

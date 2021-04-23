@@ -13,12 +13,14 @@ import { RecoDelete } from "./components/reco/RecoDelete";
 import { Search } from "./components/Search";
 import { About } from "./components/About";
 import { Categories } from "./components/Categories";
-import { Clubs } from "./components/Clubs";
 import { Navbar } from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserList } from "./components/user/UserList";
 import { UserDashboard } from "./components/user/UserDashboard";
 import { AllRecos } from "./components/AllRecos"
+import { RecoInfo } from "./components/reco/RecoInfo";
+import { AllClubs } from "./components/club/AllClubs";
+
 
 
 function App() {
@@ -72,9 +74,19 @@ function App() {
             <RecoDelete />
           </Route>
 
+          <Route exact path="/reco/create">
+            {/* <Navbar /> */}
+            <RecoCreate />
+          </Route>
+
+          <Route exact path="/reco/:id">
+            {/* <Navbar /> */}
+            <RecoInfo />
+          </Route>
+
           <ProtectedRoute path="/dashboard" component={UserDashboard} />
 
-          <ProtectedRoute path="/reco/create" component={RecoCreate} />
+          {/* <ProtectedRoute exact path="/reco/create" component={RecoCreate} /> */}
 
           {/* <ProtectedRoute path="/reco/edit/:id" component={RecoUpdate} /> */}
 
@@ -101,7 +113,7 @@ function App() {
 
           <Route exact path="/clubs">
             {/* <Navbar /> */}
-            <Clubs />
+            <AllClubs />
           </Route>
 
           <Route exact path="/">

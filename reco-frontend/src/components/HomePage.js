@@ -4,6 +4,8 @@ import Button from "react-bootstrap/Button";
 
 export const HomePage = () => {
   const [recos, setRecos] = useState([]);
+  const [clubs, setClubs] = useState([]);
+
 
   const history = useHistory();
 
@@ -21,7 +23,23 @@ export const HomePage = () => {
         }
       })
       .catch((error) => console.log("catch error:", error));
-  }, []);
+  }, [setRecos]);
+
+  useEffect(() => {
+    fetch("/api/clubs", {
+      headers: {
+        token: window.localStorage.getItem("token"),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.length) {
+          const shuffledArray = data.sort((a, b) => 0.5 - Math.random());
+          setClubs(shuffledArray.slice(0,3));
+        }
+      })
+      .catch((error) => console.log("catch error:", error));
+  }, [setClubs]);
 
   const clickAllRecosHandler = () => {
     history.replace("/all-recos");
@@ -75,6 +93,20 @@ export const HomePage = () => {
       <div>
           <h1>Featured Clubs</h1>
       <ul>
+      {clubs.map((el) => (
+          <div className="user-recos-list">
+            <div className={`${el.category}-category`}>
+            <li key={el.id}>
+              <h5 className="reco-name">{el.name}</h5>
+              <img className="reco-img" src={el.img} alt=""></img>
+              <br />
+              Category: {el.category}
+              <br />
+              Source/Author: {el.source}
+            </li>
+          </div>
+          </div>
+        ))}
       </ul>
       <Button variant="primary" onClick={clickAllClubsHandler}>
         See All

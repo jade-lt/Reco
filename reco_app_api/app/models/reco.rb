@@ -1,2 +1,0 @@
-class Reco < ApplicationRecord
-end

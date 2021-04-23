@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router";
-import { IconButton } from "@material-ui/core";
-import { Edit, Delete } from "@material-ui/icons";
-
+// import { IconButton } from "@material-ui/core";
+// import { Edit, Delete } from "@material-ui/icons";
+// import { Link } from 'react-router-dom';
 
 
 
@@ -34,13 +34,6 @@ const clickAllRecosHandler = () => {
     history.replace("/my-recos");
   };
 
-  const clickEditIconHandler = () => {
-    console.log("edit icon was clicked");
-  };
-
-  const clickDeleteIconHandler = () => {
-    console.log("delete icon was clicked");
-  };
 
     return (
         <div>
@@ -50,8 +43,8 @@ const clickAllRecosHandler = () => {
 
         <ul>
         {recos.map((el) => (
-          <div className="user-recos-list">
-            <div className={`${el.category}-category`}>
+          <div className="user-recos-list" id="user-dashboard-hoverable">
+            <div className={`${el.category}-category`} onClick={() => history.push(`/reco/${el._id}`)}>
               <li key={el.id}>
                 <h5 className="reco-name">{el.name}</h5>
                 <img className="reco-img" src={el.img} alt=""></img>
@@ -60,24 +53,22 @@ const clickAllRecosHandler = () => {
                 <br />
                 Source/Author: {el.source}
                 <br />
-                <IconButton
+                {/* <IconButton
                   edge="start"
                   color="inherit"
-                  onClick={clickEditIconHandler}
-                  // onClick={history.replace(`/reco/edit/${el.id}`)}
-
-                  // <Link to={`/todo/edit/${el.id}`}>{el.title}</Link>
+                  component={ Link } 
+                  to={`/reco/edit/${el._id}`}
                 >
                   <Edit fontSize="small" />
                 </IconButton>
                 <IconButton
                   edge="start"
                   color="inherit"
-                  onClick={clickDeleteIconHandler}
+                  component={ Link } 
+                  to={`/reco/delete/${el._id}`}
                 >
                   <Delete fontSize="small" />
-                </IconButton>
-                {/* <Link to={`/reco/delete/${el.id}`}> Delete</Link> */}
+                </IconButton> */}
               </li>
             </div>
           </div>

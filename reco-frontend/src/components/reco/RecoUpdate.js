@@ -33,7 +33,7 @@ export const RecoUpdate = () => {
 
         .then(response => response.json())
         .then(data => setReco(data))
-    }, [])
+    }, [params])
 
     const changeHandler = (e) => {
         const newFormState = { ...reco };
@@ -55,9 +55,9 @@ export const RecoUpdate = () => {
           .then(() => history.push('/my-recos'))
       }
 
-      const clickCancelHandler = () => {
-        history.replace("/my-recos");
-      };
+    //   const clickCancelHandler = () => {
+    //     history.replace("/my-recos");
+    //   };
 
     return (
         <div className="main">
@@ -94,9 +94,9 @@ export const RecoUpdate = () => {
                     Image Url<br />
                     <input name="img" value={reco.img} onChange={changeHandler} />
                 </label><br />
-                <Button variant="outline-primary" onClick={clickCancelHandler} >Cancel</Button>
+                <Button variant="outline-primary" onClick={() => history.push(`/reco/${reco._id}`)} >Cancel</Button>
 
-                <Button variant="primary" type="submit" onClick={submitHandler} >Edit</Button>
+                <Button variant="primary" type="submit" onClick={submitHandler} >Save</Button>
 
             </form>
             </div>

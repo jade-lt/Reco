@@ -32,9 +32,9 @@ const clickDeleteHandler = (e) => {
       .then(() => history.push('/my-recos'))
   }
 
-  const clickNoHandler = () => {
-    history.replace("/my-recos");
-  };
+  // const clickNoHandler = () => {
+  //   history.replace("/my-recos");
+  // };
 
 
   return (
@@ -50,8 +50,8 @@ const clickDeleteHandler = (e) => {
           <h4 className="reco-name">{reco.name}</h4>
 
           <img className="reco-img"src={reco.img} alt=""></img>
-          <Button variant="primary" onClick={clickDeleteHandler} >Yes, Delete</Button><h1>   </h1>
-          <Button variant="primary" onClick={clickNoHandler} >No, Go Back</Button>
+          <Button variant="primary" onClick={clickDeleteHandler} >Delete</Button><h1>   </h1>
+          <Button variant="primary" onClick={() => history.push(`/reco/${reco._id}`)} >Cancel</Button>
 
           </div>
       </div>

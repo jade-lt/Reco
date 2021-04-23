@@ -29,6 +29,13 @@ router.post('/register', async (req, res) => {
   
   });
 
+//   router.get('/:id', async (req, res) => {
+//       try {
+//       const foundUser = await User.findById({username: req.body.username});
+
+//       }
+//   })
+
 
 router.post('/login', async (req, res) => {
     try {

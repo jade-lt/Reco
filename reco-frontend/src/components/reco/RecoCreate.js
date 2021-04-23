@@ -80,7 +80,7 @@ export const RecoCreate = () => {
                 </label><br />
                 <Button variant="outline-primary" onClick={clickCancelHandler} >Cancel</Button>
 
-                    <Button variant="primary" type="submit">Create</Button>
+                    <Button variant="primary" type="submit">Save</Button>
     
                 </form>
             </div>

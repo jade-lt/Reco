@@ -38,20 +38,34 @@ export const Search = () => {
 
 
 
-const onChange =(e)=> {
+const onChange = (e) => {
     setResult(e.target.value);
 }
+ 
+
+
 
 return (
-<div>
+<div className="main">
+
+    <div className="header-text" >
+                <h1>Search for a Reco</h1>
+                </div>
+    <div id="search">
 <input 
     type="text"
-    placeholder="serch here .."
+    placeholder="Search Here"
     value={result}
     onChange={onChange}
 />
+</div>
+
+
 <ul>
 {data.map((el) => (
+
+
+
           <div className="user-recos-list" id="all-recos-hoverable">
             <div className={`${el.category}-category`} onClick={() => history.push(`/reco/${el._id}`)}>
             <li key={el._id}>

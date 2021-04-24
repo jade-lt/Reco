@@ -132,6 +132,10 @@ ul {
   opacity: 70%;
 }
 
+#all-recos-hoverable:hover {
+  opacity: 70%;
+}
+
 .reco-name {
   text-align: center;
 }

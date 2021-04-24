@@ -46,7 +46,7 @@ export const HomePage = () => {
   };
 
   const clickAllClubsHandler = () => {
-    history.replace("/clubs");
+    history.replace("/all-clubs");
   };
 
 
@@ -66,8 +66,8 @@ export const HomePage = () => {
           <h1>Featured Reco's</h1>
       <ul>
         {recos.map((el) => (
-          <div className="user-recos-list">
-            <div className={`${el.category}-category`}>
+          <div className="user-recos-list" id="recos-home-page-hoverable">
+            <div className={`${el.category}-category`} onClick={() => history.push(`/reco/${el._id}`)}>
             <li key={el.id}>
               <h5 className="reco-name">{el.name}</h5>
               <img className="reco-img" src={el.img} alt=""></img>
@@ -94,15 +94,15 @@ export const HomePage = () => {
           <h1>Featured Clubs</h1>
       <ul>
       {clubs.map((el) => (
-          <div className="user-recos-list">
-            <div className={`${el.category}-category`}>
+          <div className="user-recos-list" id="clubs-home-page-hoverable">
+            <div className={`${el.category}-category`} onClick={() => history.push(`/club/${el._id}`)}>
             <li key={el.id}>
               <h5 className="reco-name">{el.name}</h5>
               <img className="reco-img" src={el.img} alt=""></img>
-              <br />
+              {/* <br />
               Category: {el.category}
               <br />
-              Source/Author: {el.source}
+              Source/Author: {el.source} */}
             </li>
           </div>
           </div>

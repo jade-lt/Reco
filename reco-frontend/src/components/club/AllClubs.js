@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 
 export const AllClubs = () => {
   const [clubs, setClubs] = useState([]);
@@ -34,11 +34,11 @@ export const AllClubs = () => {
               <li key={el.id}>
                 <h5 className="reco-name">{el.name}</h5>
                 <img className="reco-img" src={el.img} alt=""></img>
-                <br />
+                {/* <br />
                 Category: {el.category}
                 <br />
                 Source/Author: {el.source}
-                <br />
+                <br /> */}
               </li>
             </div>
           </div>

@@ -45,7 +45,7 @@ export const Navbar = (props) => {
 };
 
 const clubsClickHandler = () => {
-history.replace("/clubs");
+history.replace("/all-clubs");
 };
 
 const categoriesClickHandler = () => {

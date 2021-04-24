@@ -111,7 +111,7 @@ function App() {
             <Categories />
           </Route>
 
-          <Route exact path="/clubs">
+          <Route exact path="/all-clubs">
             {/* <Navbar /> */}
             <AllClubs />
           </Route>

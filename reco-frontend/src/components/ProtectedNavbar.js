@@ -13,7 +13,7 @@ import { useHistory } from "react-router";
 
 const navLinks = [
   { name: "Search", path: "/search" },
-  { name: "Clubs", path: "/clubs" },
+  { name: "Clubs", path: "/all-clubs" },
   { name: "Categories", path: "/categories" },
   { name: "My Reco's", path: "/my-recos" },
   { name: "My List", path: "/my-list" },

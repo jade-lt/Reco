@@ -22,6 +22,8 @@ import { RecoInfo } from "./components/reco/RecoInfo";
 import { AllClubs } from "./components/club/AllClubs";
 import { ClubInfo } from "./components/club/ClubInfo";
 import { ListDelete } from "./components/user/ListDelete";
+import { MyClubs } from "./components/user/MyClubs";
+import { MyClubsDelete } from "./components/user/MyClubsDelete";
 
 
 
@@ -128,6 +130,16 @@ function App() {
           <Route exact path="/all-clubs">
             {/* <Navbar /> */}
             <AllClubs />
+          </Route>
+
+          <Route exact path="/my-club">
+            {/* <Navbar /> */}
+            <MyClubs />
+          </Route>
+
+          <Route exact path="/my-club/delete/:id">
+            {/* <Navbar /> */}
+            <MyClubsDelete />
           </Route>
 
           <Route exact path="/">

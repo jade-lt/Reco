@@ -1,18 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { useHistory } from "react-router";
 import { IconButton } from "@material-ui/core";
 import { Delete } from "@material-ui/icons";
 
+export const MyClubs = () => {
 
-export const MyList = () => {
+    const [clubs, setClubs] = useState([]);
 
-    const [recos, setRecos] = useState([]);
-
-    // const history = useHistory();
-  
     useEffect(() => {
-        fetch("/api/lists", {
+        fetch("/api/my-clubs", {
           headers: {
             token: window.localStorage.getItem("token"),
           },
@@ -20,24 +16,19 @@ export const MyList = () => {
           .then((response) => response.json())
           .then((data) => {
             if (data.length) {
-              setRecos(data);
+              setClubs(data);
             }
           })
           .catch((error) => console.log("catch error:", error));
-      }, [recos]);
-
-
-
-
-
+      }, []);
 
       return (
         <div className="main">
           <div className="header-text" id="header-my-recos">
-            <h1>My List</h1>
+            <h1>My Clubs</h1>
           </div>
           <ul>
-            {recos.map((el) => (
+            {clubs.map((el) => (
               <div className="user-recos-list" >
                 <div className={`${el.category}-category`}>
                   <li key={el._id}>
@@ -53,7 +44,7 @@ export const MyList = () => {
                       edge="start"
                       color="inherit"
                       component={Link}
-                      to={`/list/delete/${el._id}`}
+                      to={`/my-club/delete/${el._id}`}
                     >
                       <Delete fontSize="large" />
                     </IconButton>
@@ -65,11 +56,5 @@ export const MyList = () => {
           </ul>
         </div>
       );
-
-
-
-
-
-
 
 }

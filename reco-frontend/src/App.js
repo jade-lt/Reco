@@ -5,7 +5,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { UserLoginForm } from "./components/user/UserLoginForm";
 import { RecoUpdate } from "./components/reco/RecoUpdate";
-import { UserRecos } from "./components/user/UserRecos";
+import { MyRecos } from "./components/user/MyRecos";
 import { RecoCreate } from "./components/reco/RecoCreate";
 import { HomePage } from "./components/HomePage";
 import { UserRegister } from "./components/user/UserRegister";
@@ -15,11 +15,15 @@ import { About } from "./components/About";
 import { Categories } from "./components/Categories";
 import { Navbar } from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { UserList } from "./components/user/UserList";
+import { MyList } from "./components/user/MyList";
 import { UserDashboard } from "./components/user/UserDashboard";
 import { AllRecos } from "./components/AllRecos"
 import { RecoInfo } from "./components/reco/RecoInfo";
 import { AllClubs } from "./components/club/AllClubs";
+import { ClubInfo } from "./components/club/ClubInfo";
+import { ListDelete } from "./components/user/ListDelete";
+
+
 
 
 
@@ -81,7 +85,12 @@ function App() {
 
           <Route exact path="/reco/:id">
             {/* <Navbar /> */}
-            <RecoInfo />
+            <RecoInfo setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
+          </Route>
+
+          <Route exact path="/club/:id">
+            {/* <Navbar /> */}
+            <ClubInfo setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
           </Route>
 
           <ProtectedRoute path="/dashboard" component={UserDashboard} />
@@ -92,9 +101,14 @@ function App() {
 
           {/* <ProtectedRoute exact path="/reco/delete/:id" component={RecoDelete} /> */}
 
-          <ProtectedRoute path="/my-recos" component={UserRecos} />
+          <ProtectedRoute path="/my-recos" component={MyRecos} />
 
-          <ProtectedRoute path="/my-list" component={UserList} />
+          <ProtectedRoute path="/my-list" component={MyList} />
+
+          <Route exact path="/list/delete/:id">
+            {/* <Navbar /> */}
+            <ListDelete />
+          </Route>
 
           <Route exact path="/search">
             {/* <Navbar /> */}
@@ -111,7 +125,7 @@ function App() {
             <Categories />
           </Route>
 
-          <Route exact path="/clubs">
+          <Route exact path="/all-clubs">
             {/* <Navbar /> */}
             <AllClubs />
           </Route>

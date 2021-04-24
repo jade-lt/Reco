@@ -26,11 +26,15 @@ app.use(cors());
 const recoController = require("./controllers/recoController");
 const userController = require("./controllers/userController");
 const clubController = require("./controllers/clubController");
+const listController = require("./controllers/listController");
+
 
 
 app.use("/api/recos", recoController);
 app.use("/api/users", userController);
 app.use("/api/clubs", clubController);
+app.use("/api/lists", listController);
+
 
 
 app.listen(process.env.PORT || 9000, () => {

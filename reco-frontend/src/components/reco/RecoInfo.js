@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router";
 import { IconButton } from "@material-ui/core";
-import { Edit, Delete } from "@material-ui/icons";
+import { Edit, Delete, Star } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 
-export const RecoInfo = () => {
+export const RecoInfo = (props) => {
   const [reco, setReco] = useState([]);
 
   const history = useHistory();
@@ -24,6 +24,29 @@ export const RecoInfo = () => {
     .then(data => setReco(data))
 }, [params])
 
+const clickFavouriteHandler = () => {
+
+
+        fetch('/api/lists', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'token': window.localStorage.getItem('token')
+          },
+          body: JSON.stringify({
+            category: reco.category,
+            name: reco.name,
+            cost: reco.cost,
+            source: reco.source,
+            description: reco.description,
+            genre: reco.genre,
+            img: reco.img,
+        })
+        })
+          .then(response => response.json())
+          .then(history.push('/'))
+}
+
 
   return (
     <div className="main">
@@ -31,6 +54,14 @@ export const RecoInfo = () => {
           <div className="user-recos-list" >
             <div className={`${reco.category}-category`}>
               <li key={reco.id}>
+                
+                <IconButton
+                  edge="end"
+                  color="inherit"
+                  onClick={clickFavouriteHandler}
+                >
+                  <Star fontSize="large" />
+                </IconButton>
                 <h5 className="reco-name">{reco.name}</h5>
                 <img className="reco-img" src={reco.img} alt=""></img>
                 <br />
@@ -43,7 +74,10 @@ export const RecoInfo = () => {
                 Genre: {reco.genre}
                 <br />
                 Description: {reco.description}
-                <br />
+
+
+
+                {props.loginStatus && (<span> <br />
                 <IconButton
                   edge="start"
                   color="inherit"
@@ -59,7 +93,7 @@ export const RecoInfo = () => {
                   to={`/reco/delete/${reco._id}`}
                 >
                   <Delete fontSize="small" />
-                </IconButton>
+                </IconButton></span>)}
 
               </li>
 

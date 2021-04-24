@@ -6,7 +6,7 @@ import Button from "react-bootstrap/Button";
 // import { Edit, Delete } from "@material-ui/icons";
 // import { Link } from "react-router-dom";
 
-export const UserRecos = () => {
+export const MyRecos = () => {
   const [recos, setRecos] = useState([]);
 
   const history = useHistory();

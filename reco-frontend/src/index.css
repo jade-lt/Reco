@@ -120,7 +120,11 @@ ul {
   opacity: 70%;
 }
 
-#user-dashboard-hoverable:hover {
+#user-dashboard-recos-hoverable:hover {
+  opacity: 70%;
+}
+
+#user-dashboard-clubs-hoverable:hover {
   opacity: 70%;
 }
 
@@ -133,6 +137,10 @@ ul {
 }
 
 #all-recos-hoverable:hover {
+  opacity: 70%;
+}
+
+#my-clubs-hoverable:hover {
   opacity: 70%;
 }
 

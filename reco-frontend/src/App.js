@@ -25,6 +25,8 @@ import { ListDelete } from "./components/user/ListDelete";
 import { MyClubs } from "./components/user/MyClubs";
 import { MyClubsDelete } from "./components/user/MyClubsDelete";
 import { Genres } from "./components/Genres";
+import { BookClub } from "./components/club/BookClub";
+
 
 
 
@@ -141,6 +143,11 @@ function App() {
           <Route exact path="/my-club">
             {/* <Navbar /> */}
             <MyClubs />
+          </Route>
+
+          <Route exact path="/Book-Club">
+            {/* <Navbar /> */}
+            <BookClub />
           </Route>
 
           <Route exact path="/my-club/delete/:id">

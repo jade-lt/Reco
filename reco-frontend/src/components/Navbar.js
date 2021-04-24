@@ -60,6 +60,14 @@ const myListClickHandler = () => {
 history.replace("/my-list");
 };
 
+const myClubsClickHandler = () => {
+  history.replace("/my-club");
+  };
+
+  const genresClickHandler = () => {
+    history.replace("/genres");
+    };
+
 // const aboutClickHandler = () => {
 // history.replace("/about");
 // };
@@ -110,9 +118,13 @@ return (
           </IconButton>
 
           <Button color="inherit" onClick={clubsClickHandler}>Clubs</Button>
+          <Button color="inherit" onClick={genresClickHandler}>Genres</Button>
+
           <Button color="inherit" onClick={categoriesClickHandler}>Categories</Button>
 
-          {props.loginStatus && (<span><Button color="inherit" onClick={myRecosClickHandler}>My Reco's</Button>
+          {props.loginStatus && (<span>
+            <Button color="inherit" onClick={myClubsClickHandler}>My Clubs</Button>
+            <Button color="inherit" onClick={myRecosClickHandler}>My Reco's</Button>
           <Button color="inherit" onClick={myListClickHandler}>My List</Button>
           <Button color="inherit" onClick={signOutClickHandler}>Sign Out</Button></span>)}
           

@@ -24,6 +24,7 @@ import { ClubInfo } from "./components/club/ClubInfo";
 import { ListDelete } from "./components/user/ListDelete";
 import { MyClubs } from "./components/user/MyClubs";
 import { MyClubsDelete } from "./components/user/MyClubsDelete";
+import { Genres } from "./components/Genres";
 
 
 
@@ -120,6 +121,11 @@ function App() {
           <Route exact path="/about">
             {/* <Navbar /> */}
             <About />
+          </Route>
+
+          <Route exact path="/genres">
+            {/* <Navbar /> */}
+            <Genres />
           </Route>
 
           <Route exact path="/categories">

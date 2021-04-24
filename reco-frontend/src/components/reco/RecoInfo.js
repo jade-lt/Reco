@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router";
 import { IconButton } from "@material-ui/core";
-import { Edit, Delete } from "@material-ui/icons";
+import { Edit, Delete, Star } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
@@ -31,6 +31,15 @@ export const RecoInfo = (props) => {
           <div className="user-recos-list" >
             <div className={`${reco.category}-category`}>
               <li key={reco.id}>
+                
+                <IconButton
+                  edge="end"
+                  color="inherit"
+                //   component={Link}
+                //   to={`/reco/edit/${reco._id}`}
+                >
+                  <Star fontSize="large" />
+                </IconButton>
                 <h5 className="reco-name">{reco.name}</h5>
                 <img className="reco-img" src={reco.img} alt=""></img>
                 <br />

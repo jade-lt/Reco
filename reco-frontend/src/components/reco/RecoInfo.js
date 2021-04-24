@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 
-export const RecoInfo = () => {
+export const RecoInfo = (props) => {
   const [reco, setReco] = useState([]);
 
   const history = useHistory();
@@ -43,7 +43,10 @@ export const RecoInfo = () => {
                 Genre: {reco.genre}
                 <br />
                 Description: {reco.description}
-                <br />
+
+
+
+                {props.loginStatus && (<span> <br />
                 <IconButton
                   edge="start"
                   color="inherit"
@@ -59,7 +62,7 @@ export const RecoInfo = () => {
                   to={`/reco/delete/${reco._id}`}
                 >
                   <Delete fontSize="small" />
-                </IconButton>
+                </IconButton></span>)}
 
               </li>
 

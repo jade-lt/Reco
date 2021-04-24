@@ -40,7 +40,7 @@ export const MyList = () => {
             {recos.map((el) => (
               <div className="user-recos-list" >
                 <div className={`${el.category}-category`}>
-                  <li key={el.id}>
+                  <li key={el._id}>
                     <h5 className="reco-name">{el.name}</h5>
                     <img className="reco-img" src={el.img} alt=""></img>
                     <br />

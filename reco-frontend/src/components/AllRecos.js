@@ -30,7 +30,7 @@ export const AllRecos = () => {
         {recos.map((el) => (
           <div className="user-recos-list" id="all-recos-hoverable">
             <div className={`${el.category}-category`} onClick={() => history.push(`/reco/${el._id}`)}>
-            <li key={el.id}>
+            <li key={el._id}>
               <h5 className="reco-name">{el.name}</h5>
               <img className="reco-img" src={el.img} alt=""></img>
               <br />

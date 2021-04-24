@@ -27,6 +27,7 @@ const recoController = require("./controllers/recoController");
 const userController = require("./controllers/userController");
 const clubController = require("./controllers/clubController");
 const listController = require("./controllers/listController");
+const myClubController = require("./controllers/myClubController");
 
 
 
@@ -34,6 +35,8 @@ app.use("/api/recos", recoController);
 app.use("/api/users", userController);
 app.use("/api/clubs", clubController);
 app.use("/api/lists", listController);
+app.use("/api/my-clubs", myClubController);
+
 
 
 

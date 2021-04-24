@@ -20,6 +20,8 @@ import { UserDashboard } from "./components/user/UserDashboard";
 import { AllRecos } from "./components/AllRecos"
 import { RecoInfo } from "./components/reco/RecoInfo";
 import { AllClubs } from "./components/club/AllClubs";
+import { ClubInfo } from "./components/club/ClubInfo";
+
 
 
 
@@ -81,7 +83,12 @@ function App() {
 
           <Route exact path="/reco/:id">
             {/* <Navbar /> */}
-            <RecoInfo />
+            <RecoInfo setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
+          </Route>
+
+          <Route exact path="/club/:id">
+            {/* <Navbar /> */}
+            <ClubInfo setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
           </Route>
 
           <ProtectedRoute path="/dashboard" component={UserDashboard} />

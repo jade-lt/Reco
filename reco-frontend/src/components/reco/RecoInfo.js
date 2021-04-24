@@ -44,7 +44,7 @@ const clickFavouriteHandler = () => {
         })
         })
           .then(response => response.json())
-          .then(history.push('/'))
+          .then(history.push('/my-list'))
 }
 
 

@@ -20,7 +20,7 @@ export const MyClubs = () => {
             }
           })
           .catch((error) => console.log("catch error:", error));
-      }, []);
+      }, [clubs]);
 
       return (
         <div className="main">

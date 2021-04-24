@@ -24,6 +24,29 @@ export const RecoInfo = (props) => {
     .then(data => setReco(data))
 }, [params])
 
+const clickFavouriteHandler = () => {
+
+
+        fetch('/api/lists', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json',
+            'token': window.localStorage.getItem('token')
+          },
+          body: JSON.stringify({
+            category: reco.category,
+            name: reco.name,
+            cost: reco.cost,
+            source: reco.source,
+            description: reco.description,
+            genre: reco.genre,
+            img: reco.img,
+        })
+        })
+          .then(response => response.json())
+          .then(history.push('/'))
+}
+
 
   return (
     <div className="main">
@@ -35,8 +58,7 @@ export const RecoInfo = (props) => {
                 <IconButton
                   edge="end"
                   color="inherit"
-                //   component={Link}
-                //   to={`/reco/edit/${reco._id}`}
+                  onClick={clickFavouriteHandler}
                 >
                   <Star fontSize="large" />
                 </IconButton>

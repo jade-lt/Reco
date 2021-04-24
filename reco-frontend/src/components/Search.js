@@ -9,15 +9,15 @@ export const Search = () => {
   const history = useHistory();
 
 
-    const [data ,setData] = useState([]);
-    const [filtered ,setFilterd] = useState([]);
-    const [result , setResult] = useState("");
+    const [reco, setReco] = useState([]);
+    const [filtered, setFilterd] = useState([]);
+    const [result, setResult] = useState("");
 
     useEffect(()=>{
         const fetchData = async ()=> {
                 try{
                     const res = await axios.get('/api/recos');
-                    setData(res.data);
+                    setReco(res.data);
                     setFilterd(res.data);
                 }catch(err){
                     throw new Error(err);
@@ -33,7 +33,7 @@ export const Search = () => {
     const results = filtered.filter(res=> res.name.toLowerCase().includes(result)
 
     ); 
-    setData(results)
+    setReco(results)
 } ,[result])
 
 
@@ -62,7 +62,7 @@ return (
 
 
 <ul>
-{data.map((el) => (
+{reco.map((el) => (
 
 
 

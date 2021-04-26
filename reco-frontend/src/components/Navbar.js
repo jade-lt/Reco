@@ -83,6 +83,10 @@ const signOutClickHandler = () => {
   history.replace("/");
 };
 
+// const signInClickHandler = () => {
+//   history.replace("/login");
+// };
+
 // React.useEffect(() => {
 //   const isToken = localStorage.getItem('token');
 //   console.log(isToken)
@@ -119,7 +123,6 @@ return (
 
           <Button color="inherit" onClick={clubsClickHandler}>Clubs</Button>
           <Button color="inherit" onClick={genresClickHandler}>Genres</Button>
-
           <Button color="inherit" onClick={categoriesClickHandler}>Categories</Button>
 
           {props.loginStatus && (<span>
@@ -127,6 +130,13 @@ return (
             <Button color="inherit" onClick={myRecosClickHandler}>My Reco's</Button>
           <Button color="inherit" onClick={myListClickHandler}>My List</Button>
           <Button color="inherit" onClick={signOutClickHandler}>Sign Out</Button></span>)}
+
+          {/* {props.loginStatus(false) && (<span>
+            <Button color="inherit" onClick={myClubsClickHandler}>About</Button>
+            <Button color="inherit" onClick={signInClickHandler}>Sign In</Button>
+            <Button color="inherit" onClick={registerClickHandler}>Register</Button>
+</span>)} */}
+
           
 
           <IconButton

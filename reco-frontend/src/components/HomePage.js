@@ -42,7 +42,7 @@ export const HomePage = () => {
   }, [setClubs]);
 
   const clickAllRecosHandler = () => {
-    history.replace("/all-recos");
+    history.replace("/search");
   };
 
   const clickAllClubsHandler = () => {

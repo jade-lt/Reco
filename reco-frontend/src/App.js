@@ -12,7 +12,7 @@ import { UserRegister } from "./components/user/UserRegister";
 import { RecoDelete } from "./components/reco/RecoDelete";
 import { Search } from "./components/Search";
 import { About } from "./components/About";
-import { Categories } from "./components/Categories";
+import { AllCategories } from "./components/category/AllCategories";
 import { Navbar } from "./components/Navbar";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { MyList } from "./components/user/MyList";
@@ -24,7 +24,7 @@ import { ClubInfo } from "./components/club/ClubInfo";
 import { ListDelete } from "./components/user/ListDelete";
 import { MyClubs } from "./components/user/MyClubs";
 import { MyClubsDelete } from "./components/user/MyClubsDelete";
-import { Genres } from "./components/Genres";
+import { AllGenres } from "./components/genre/AllGenres";
 import { BookClub } from "./components/club/BookClub";
 
 
@@ -50,6 +50,14 @@ function App() {
       return false;
     }
   };
+
+  // const isLoggedOut = () => {
+  //   const token = window.localStorage.getItem("token");
+  //   if (!token) {
+      
+  //     return true;
+  //   }
+  // }
 
   const [loggedIn, setLoggedIn] = useState(isLoggedIn);
 
@@ -127,12 +135,12 @@ function App() {
 
           <Route exact path="/genres">
             {/* <Navbar /> */}
-            <Genres />
+            <AllGenres />
           </Route>
 
           <Route exact path="/categories">
             {/* <Navbar /> */}
-            <Categories />
+            <AllCategories />
           </Route>
 
           <Route exact path="/all-clubs">

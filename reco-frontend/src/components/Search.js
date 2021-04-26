@@ -10,7 +10,7 @@ export const Search = () => {
 
 
     const [reco, setReco] = useState([]);
-    const [filtered, setFilterd] = useState([]);
+    const [filteredRecos, setFilteredRecos] = useState([]);
     const [result, setResult] = useState("");
 
     useEffect(()=>{
@@ -18,7 +18,7 @@ export const Search = () => {
                 try{
                     const res = await axios.get('/api/recos');
                     setReco(res.data);
-                    setFilterd(res.data);
+                    setFilteredRecos(res.data);
                 }catch(err){
                     throw new Error(err);
                 }
@@ -30,7 +30,7 @@ export const Search = () => {
 
 
   useEffect(()=> {
-    const results = filtered.filter(res=> res.name.toLowerCase().includes(result)
+    const results = filteredRecos.filter(res=> res.name.toLowerCase().includes(result)
 
     ); 
     setReco(results)
@@ -48,13 +48,13 @@ const onChange = (e) => {
 return (
 <div className="main">
 
-    <div className="header-text" >
+    {/* <div className="header-text" >
                 <h1>Search for a Reco</h1>
-                </div>
+                </div> */}
     <div id="search">
 <input 
     type="text"
-    placeholder="Search Here"
+    placeholder="Search for a Reco"
     value={result}
     onChange={onChange}
 />

@@ -41,7 +41,7 @@ export const UserDashboard =() => {
       .then((response) => response.json())
       .then((data) => {
         if (data.length) {
-          setClubs([data[0], data[1], data[2]]);
+          setClubs(data);
         }
       })
       .catch((error) => console.log("catch error:", error));
@@ -56,6 +56,7 @@ const clickAllRecosHandler = () => {
     history.replace("/my-club");
   };
 
+  // console.log(clubs)
 
     return (
         <div>

@@ -28,8 +28,8 @@ export const AllGenres = () => {
       </div>
       <ul>
         {genres.map((el) => (
-          <div className="user-recos-list" id="user-recos-list-hoverable" >
-            <div className={`${el.name}-category`} onClick={() => history.push(`/${el.name}-genre`)}>
+          <div className="user-recos-list" id="genre-list-hoverable" >
+            <div id="genre-list" className={`${el.name}-category`} onClick={() => history.push(`/${el.name}-genre`)}>
               <li key={el._id}>
                 <h5 className="reco-name">{el.name}</h5>
                 <img className="reco-img" src={el.img} alt=""></img>

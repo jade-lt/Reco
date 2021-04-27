@@ -85,11 +85,11 @@ export const HomePage = () => {
         See All
       </Button>
       </div>
-      <div className="header-text" id="header-home">
+      {/* <div className="header-text" id="header-home">
         <h3 id="about">
           Join a Club!
         </h3>
-      </div>
+      </div> */}
       <div>
           <h1>Featured Clubs</h1>
       <ul>

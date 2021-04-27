@@ -30,6 +30,18 @@ import { MovieRecos } from "./components/reco/MovieRecos";
 import { TvRecos } from "./components/reco/TvRecos";
 import { GameRecos } from "./components/reco/GameRecos";
 import { Category } from "./components/category/Category";
+import { ComedyRecos } from "./components/genre/ComedyRecos";
+import { ActionRecos } from "./components/genre/ActionRecos";
+import { CrimeRecos } from "./components/genre/CrimeRecos";
+import { DramaRecos } from "./components/genre/DramaRecos";
+import { FantasyRecos } from "./components/genre/FantasyRecos";
+import { HorrorRecos } from "./components/genre/HorrorRecos";
+import { NonFictionRecos } from "./components/genre/NonFictionRecos";
+import { OtherRecos } from "./components/genre/OtherRecos";
+import { RomanceRecos } from "./components/genre/RomanceRecos";
+import { SciFiRecos } from "./components/genre/SciFiRecos";
+import { ThrillerRecos } from "./components/genre/ThrillerRecos";
+import { WesternRecos } from "./components/genre/WesternRecos";
 
 
 
@@ -133,6 +145,54 @@ function App() {
 
           <Route exact path="/genres">
             <AllGenres />
+          </Route>
+
+          <Route exact path="/Comedy-genre">
+            <ComedyRecos />
+          </Route>
+
+          <Route exact path="/Action-genre">
+            <ActionRecos />
+          </Route>
+
+          <Route exact path="/Crime-genre">
+            <CrimeRecos />
+          </Route>
+
+          <Route exact path="/Drama-genre">
+            <DramaRecos />
+          </Route>
+
+          <Route exact path="/Fantasy-genre">
+            <FantasyRecos />
+          </Route>
+
+          <Route exact path="/Horror-genre">
+            <HorrorRecos />
+          </Route>
+
+          <Route exact path="/Non-Fiction-genre">
+            <NonFictionRecos />
+          </Route>
+
+          <Route exact path="/Other-genre">
+            <OtherRecos />
+          </Route>
+
+          <Route exact path="/Romance-genre">
+            <RomanceRecos />
+          </Route>
+
+          <Route exact path="/Sci-Fi-genre">
+            <SciFiRecos />
+          </Route>
+
+          <Route exact path="/Thriller-genre">
+            <ThrillerRecos />
+          </Route>
+
+          <Route exact path="/Western-genre">
+            <WesternRecos />
           </Route>
 
           <Route exact path="/categories">

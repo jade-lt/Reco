@@ -13,8 +13,31 @@ export const UserDashboard =() => {
 
   const [clubs, setClubs] = useState([]);
 
+  const [list, setList] = useState([]);
+
+
 
   const history = useHistory();
+
+  useEffect(() => {
+    fetch("/api/lists", {
+      headers: {
+        token: window.localStorage.getItem("token"),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.length) {
+          if(data.length > 3) {
+            setList([data[0], data[1], data[2]]);
+          } else {
+            setList(data)
+          }
+          
+        }
+      })
+      .catch((error) => console.log("catch error:", error));
+  }, [list]);
 
 
   useEffect(() => {
@@ -26,7 +49,12 @@ export const UserDashboard =() => {
       .then((response) => response.json())
       .then((data) => {
         if (data.length) {
-          setRecos([data[0], data[1], data[2]]);
+          if(data.length > 3) {
+            setRecos([data[0], data[1], data[2]]);
+          } else {
+            setRecos(data)
+          }
+          
         }
       })
       .catch((error) => console.log("catch error:", error));
@@ -40,13 +68,18 @@ export const UserDashboard =() => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.length) {
-          setClubs(data);
+        if(data.length > 3) {
+          setClubs([data[0], data[1], data[2]]);
+        } else {
+          setClubs(data)
         }
       })
       .catch((error) => console.log("catch error:", error));
   }, [clubs]);
 
+  const clickAllListHandler = () => {
+    history.replace("/my-list");
+  };
 
 const clickAllRecosHandler = () => {
     history.replace("/my-recos");
@@ -60,6 +93,32 @@ const clickAllRecosHandler = () => {
 
     return (
         <div>
+
+<div>
+<h2 id="my-reco-text">My List</h2>
+
+<ul>
+{list.map((el) => (
+  <div className="user-recos-list" id="user-dashboard--hoverable">
+    <div className={`${el.category}-category`} onClick={() => history.push(`/my-list`)}>
+      <li key={el._id}>
+        <h5 className="reco-name">{el.name}</h5>
+        <img className="reco-img" src={el.img} alt=""></img>
+        <br />
+        Category: {el.category}
+        <br />
+        Source/Author: {el.source}
+        <br />
+      </li>
+    </div>
+  </div>
+))}
+</ul>
+<Button variant="primary" onClick={clickAllListHandler}>
+See All
+</Button>
+
+</div>
 
         
         <h2 id="my-reco-text">My Reco's</h2>

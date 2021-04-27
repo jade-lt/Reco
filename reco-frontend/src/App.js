@@ -25,24 +25,8 @@ import { ListDelete } from "./components/user/ListDelete";
 import { MyClubs } from "./components/user/MyClubs";
 import { MyClubsDelete } from "./components/user/MyClubsDelete";
 import { AllGenres } from "./components/genre/AllGenres";
+import { Genre } from "./components/genre/Genre";
 import { Category } from "./components/category/Category";
-import { ComedyRecos } from "./components/genre/ComedyRecos";
-import { ActionRecos } from "./components/genre/ActionRecos";
-import { CrimeRecos } from "./components/genre/CrimeRecos";
-import { DramaRecos } from "./components/genre/DramaRecos";
-import { FantasyRecos } from "./components/genre/FantasyRecos";
-import { HorrorRecos } from "./components/genre/HorrorRecos";
-import { NonFictionRecos } from "./components/genre/NonFictionRecos";
-import { OtherRecos } from "./components/genre/OtherRecos";
-import { RomanceRecos } from "./components/genre/RomanceRecos";
-import { SciFiRecos } from "./components/genre/SciFiRecos";
-import { ThrillerRecos } from "./components/genre/ThrillerRecos";
-import { WesternRecos } from "./components/genre/WesternRecos";
-
-
-
-
-
 
 
 function App() {
@@ -133,51 +117,62 @@ function App() {
           </Route>
 
           <Route exact path="/Comedy-genre">
-            <ComedyRecos />
+            <Genre genre="Comedy" />
           </Route>
 
           <Route exact path="/Action-genre">
-            <ActionRecos />
+          <Genre genre="Action" />
+
           </Route>
 
           <Route exact path="/Crime-genre">
-            <CrimeRecos />
+          <Genre genre="Crime" />
+
           </Route>
 
           <Route exact path="/Drama-genre">
-            <DramaRecos />
+          <Genre genre="Drama" />
+
           </Route>
 
           <Route exact path="/Fantasy-genre">
-            <FantasyRecos />
+          <Genre genre="Fantasy" />
+
           </Route>
 
           <Route exact path="/Horror-genre">
-            <HorrorRecos />
+          <Genre genre="Horror" />
+
           </Route>
 
           <Route exact path="/Non-Fiction-genre">
-            <NonFictionRecos />
+          <Genre genre="Non-Fiction" />
+
           </Route>
 
           <Route exact path="/Other-genre">
-            <OtherRecos />
+          <Genre genre="Other" />
+
           </Route>
 
           <Route exact path="/Romance-genre">
-            <RomanceRecos />
+          <Genre genre="Romance" />
+
           </Route>
 
           <Route exact path="/Sci-Fi-genre">
-            <SciFiRecos />
+          <Genre genre="Sci-Fi" />
+
           </Route>
 
           <Route exact path="/Thriller-genre">
-            <ThrillerRecos />
+          <Genre genre="Thriller" />
+
           </Route>
 
           <Route exact path="/Western-genre">
-            <WesternRecos />
+          <Genre genre="Western" />
+
           </Route>
 
           <Route exact path="/categories">

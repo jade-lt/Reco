@@ -139,19 +139,19 @@ function App() {
             <AllCategories />
           </Route>
 
-          <Route exact path="/category/Book">
+          <Route path="/all-categories/Book">
             <BookRecos />
           </Route>
 
-          <Route exact path="/category/Movie">
+          <Route exact path="/all-categories/Movie">
             <MovieRecos />
           </Route>
 
-          <Route exact path="/category/TV">
+          <Route exact path="/all-categories/TV">
             <TvRecos />
           </Route>
 
-          <Route exact path="/category/Game">
+          <Route exact path="/all-categories/Game">
             <GameRecos />
           </Route>
           

@@ -24,7 +24,6 @@ export const GameRecos = () => {
 
       const results = recos.filter(response => response.category.includes("Game"))
 
-      console.log(results)
 
 
     return (

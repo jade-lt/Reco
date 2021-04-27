@@ -24,7 +24,6 @@ export const BookRecos = () => {
 
       const results = recos.filter(response => response.category.includes("Book"))
 
-      console.log(results)
 
 
     return (

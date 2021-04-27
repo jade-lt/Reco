@@ -29,7 +29,7 @@ export const AllCategories = () => {
       <ul>
         {categories.map((el) => (
           <div className="user-recos-list" id="user-recos-list-hoverable" >
-            <div className={`${el.name}-category`} onClick={() => history.push(`/${el.name}-category`)}>
+            <div className={`${el.name}-category`} onClick={() => history.push(`/all-categories/${el.name}`)}>
               <li key={el._id}>
                 <h5 className="reco-name">{el.name}</h5>
                 <img className="reco-img" src={el.img} alt=""></img>

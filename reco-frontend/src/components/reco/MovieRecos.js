@@ -24,7 +24,6 @@ export const MovieRecos = () => {
 
       const results = recos.filter(response => response.category.includes("Movie"))
 
-      console.log(results)
 
 
     return (

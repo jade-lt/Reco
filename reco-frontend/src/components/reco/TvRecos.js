@@ -24,8 +24,6 @@ export const TvRecos = () => {
 
       const results = recos.filter(response => response.category.includes("TV"))
 
-      console.log(results)
-
 
     return (
         <ul>

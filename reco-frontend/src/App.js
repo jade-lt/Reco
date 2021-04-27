@@ -25,10 +25,6 @@ import { ListDelete } from "./components/user/ListDelete";
 import { MyClubs } from "./components/user/MyClubs";
 import { MyClubsDelete } from "./components/user/MyClubsDelete";
 import { AllGenres } from "./components/genre/AllGenres";
-import { BookRecos } from "./components/reco/BookRecos";
-import { MovieRecos } from "./components/reco/MovieRecos";
-import { TvRecos } from "./components/reco/TvRecos";
-import { GameRecos } from "./components/reco/GameRecos";
 import { Category } from "./components/category/Category";
 import { ComedyRecos } from "./components/genre/ComedyRecos";
 import { ActionRecos } from "./components/genre/ActionRecos";
@@ -58,23 +54,12 @@ function App() {
       const decoded = jwt(token);
       const expires = moment.unix(decoded.exp);
   
-      //todo set timoute for expiry to auto logout
-      //bonus: auto refresh token if user is active and expiry approaches
-  
-      //true if token exists & expiry < current time
       return moment().isBefore(expires);
     } else {
       return false;
     }
   };
 
-  // const isLoggedOut = () => {
-  //   const token = window.localStorage.getItem("token");
-  //   if (!token) {
-      
-  //     return true;
-  //   }
-  // }
 
   const [loggedIn, setLoggedIn] = useState(isLoggedIn);
 
@@ -200,19 +185,19 @@ function App() {
           </Route>
 
           <Route path="/all-categories/Book">
-            <BookRecos />
+            <Category category="Book" />
           </Route>
 
           <Route exact path="/all-categories/Movie">
-            <MovieRecos />
+            <Category category="Movie" />
           </Route>
 
           <Route exact path="/all-categories/TV">
-            <TvRecos />
+            <Category category="TV" />
           </Route>
 
           <Route exact path="/all-categories/Game">
-            <GameRecos />
+            <Category category="Game" />
           </Route>
           
 
@@ -225,19 +210,22 @@ function App() {
           </Route>
 
           <Route exact path="/Book-Club">
-            <BookRecos />
+          <Category category="Book" />
+
           </Route>
 
           <Route exact path="/Movie-Club">
-            <MovieRecos />
+            <Category category="Movie" />
           </Route>
 
           <Route exact path="/TV-Club">
-            <TvRecos />
+          <Category category="TV" />
+
           </Route>
 
           <Route exact path="/Game-Club">
-            <GameRecos />
+          <Category category="Game" />
+
           </Route>
 
           <Route exact path="/my-club/delete/:id">

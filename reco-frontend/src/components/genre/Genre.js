@@ -27,6 +27,9 @@ export const Genre = (props) => {
 
 
     return (
+        <div className="main">
+            <h1>{`${props.genre} Reco's`}</h1>
+        
         <ul>
         {results.map((el) => (
         
@@ -46,5 +49,6 @@ export const Genre = (props) => {
                   </div>
                 ))}
                 </ul>
+                </div>
     )
 }

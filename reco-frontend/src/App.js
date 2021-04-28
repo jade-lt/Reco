@@ -27,6 +27,7 @@ import { MyClubsDelete } from "./components/user/MyClubsDelete";
 import { AllGenres } from "./components/genre/AllGenres";
 import { Genre } from "./components/genre/Genre";
 import { Category } from "./components/category/Category";
+import { ClubChat } from "./components/club/ClubChat";
 
 
 function App() {
@@ -180,18 +181,25 @@ function App() {
           </Route>
 
           <Route path="/all-categories/Book">
+            <h1>Books</h1>
             <Category category="Book" />
           </Route>
 
           <Route exact path="/all-categories/Movie">
+          <h1>Movies</h1>
+
             <Category category="Movie" />
           </Route>
 
           <Route exact path="/all-categories/TV">
+          <h1>TV Shows</h1>
+
             <Category category="TV" />
           </Route>
 
           <Route exact path="/all-categories/Game">
+          <h1>Games</h1>
+            
             <Category category="Game" />
           </Route>
           
@@ -206,21 +214,23 @@ function App() {
 
           <Route exact path="/Book-Club">
           <Category category="Book" />
-
+          <ClubChat club="Book" username="jade1234" />
           </Route>
 
           <Route exact path="/Movie-Club">
             <Category category="Movie" />
+          <ClubChat club="Movie" username="jade1234" />
+
           </Route>
 
           <Route exact path="/TV-Club">
           <Category category="TV" />
-
+          <ClubChat club="TV" username="jade1234" />
           </Route>
 
           <Route exact path="/Game-Club">
           <Category category="Game" />
-
+          <ClubChat club="Game" username="jade1234" />
           </Route>
 
           <Route exact path="/my-club/delete/:id">

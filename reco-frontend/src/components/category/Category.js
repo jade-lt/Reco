@@ -27,7 +27,6 @@ export const Category = (props) => {
 
     return (
       <div className="main">
-      <h1>{`${props.category} Category`}</h1>
         <ul>
         {results.map((el) => (
         

@@ -34,7 +34,7 @@ export const Search = () => {
 
     ); 
     setReco(results)
-} ,[result])
+}, [filteredRecos, result])
 
 
 

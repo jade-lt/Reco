@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get("/", async (req, res, next) => {
   try {
-    const allChats = await Chats.find();
+    const allChats = await Chat.find();
     res.json(allChats);
   } catch (err) {
     res.send(err);

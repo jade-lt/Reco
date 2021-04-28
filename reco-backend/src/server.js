@@ -30,6 +30,7 @@ const listController = require("./controllers/listController");
 const myClubController = require("./controllers/myClubController");
 const categoryController = require("./controllers/categoryController");
 const genreController = require("./controllers/genreController");
+const chatController = require("./controllers/chatController");
 
 
 
@@ -40,6 +41,7 @@ app.use("/api/lists", listController);
 app.use("/api/my-clubs", myClubController);
 app.use("/api/categories", categoryController);
 app.use("/api/genres", genreController);
+app.use("/api/chats", chatController);
 
 
 

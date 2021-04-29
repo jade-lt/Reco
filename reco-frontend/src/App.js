@@ -28,6 +28,7 @@ import { AllGenres } from "./components/genre/AllGenres";
 import { Genre } from "./components/genre/Genre";
 import { Category } from "./components/category/Category";
 import { ClubChat } from "./components/club/ClubChat";
+import { RecoCreateViaApi } from "./components/reco/RecoCreateViaApi";
 
 
 function App() {
@@ -53,6 +54,27 @@ function App() {
       <div className="App">
         <Navbar setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
         <Switch>
+
+
+
+
+        <Route exact path="/test">
+            <RecoCreateViaApi />
+          </Route>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <Route exact path="/login">
             <UserLoginForm setLoginStatus={setLoggedIn} />
           </Route>

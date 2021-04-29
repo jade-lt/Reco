@@ -10,9 +10,9 @@ module.exports = function(app) {
   );
 
   app.use(
-    '/external-api',
+    '/tmdb',
     createProxyMiddleware({
-      target: 'https://movie-database-imdb-alternative.p.rapidapi.com/',
+      target: 'http://api.themoviedb.org',
       changeOrigin: true,
     })
   );

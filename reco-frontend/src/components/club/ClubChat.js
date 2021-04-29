@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
 import Button from 'react-bootstrap/Button';
 
 
 export const ClubChat = (props) => {
-
-    const history = useHistory();
 
   const [chat, setChat] = useState([]);
 

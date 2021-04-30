@@ -43,9 +43,6 @@ export const TvCreate = () => {
       .catch((err) => console.error(err));
   };
 
-  const clickAddManuallyHandler = () => {
-    history.push("/reco/add-manually");
-  };
 
   return (
     <div className="main">

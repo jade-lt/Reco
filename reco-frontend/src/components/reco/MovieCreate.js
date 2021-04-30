@@ -25,7 +25,7 @@ export const MovieCreate = () => {
   const categoryInput = form.category.toLowerCase();
 
   const inputUrl = encodeURI(
-    `http://api.themoviedb.org/3/search/${categoryInput}?api_key=dd5b5fb0f236579b40c792f17042106b&query=${nameInput}`
+    `http://api.themoviedb.org/3/search/movie?api_key=dd5b5fb0f236579b40c792f17042106b&query=${nameInput}`
   );
 
   const submitSearchHandler = (e) => {
@@ -39,14 +39,11 @@ export const MovieCreate = () => {
         const array = data.results;
         setSearchResults(array);
         console.log("setSearchResults ", searchResults);
-        console.log(array[0].genre_ids[0]);
+
       })
       .catch((err) => console.error(err));
   };
 
-  const clickAddManuallyHandler = () => {
-    history.push("/reco/add-manually");
-  };
 
   return (
     <div className="main">
@@ -88,7 +85,7 @@ export const MovieCreate = () => {
                         token: window.localStorage.getItem("token"),
                       },
                       body: JSON.stringify({
-                        category: form.category,
+                        category: "Movie",
                         name: el.title,
                         cost: "",
                         source: "",

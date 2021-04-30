@@ -57,9 +57,6 @@ export const BookCreate = () => {
       .catch((err) => console.error(err));
   };
 
-  const clickAddManuallyHandler = () => {
-      history.push('/reco/add-manually')
-  }
 
 
 

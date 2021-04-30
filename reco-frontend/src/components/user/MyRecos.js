@@ -24,7 +24,7 @@ export const MyRecos = () => {
         }
       })
       .catch((error) => console.log("catch error:", error));
-  }, []);
+  }, [recos]);
 
   const clickCreateHandler = () => {
     history.replace("/reco/create");

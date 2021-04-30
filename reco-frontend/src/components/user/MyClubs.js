@@ -31,19 +31,21 @@ export const MyClubs = () => {
       </div>
       <ul>
         {clubs.map((el) => (
-          <div className="user-recos-list" id="my-clubs-hoverable">
+          <div className="user-recos-list" >
             <div
               className={`${el.category}-category`}
-              onClick={() => history.push(`/${el.category}-club`)}
+              
             >
               <li key={el._id}>
+                <div id="my-clubs-hoverable">
                 <h5 className="reco-name">{el.name}</h5>
-                <img className="reco-img" src={el.img} alt=""></img>
+                <img className="reco-img" src={el.img} alt="" onClick={() => history.push(`/${el.category}-club`)}></img>
                 <br />
                 Category: {el.category}
                 <br />
                 Source/Author: {el.source}
                 <br />
+                </div>
                 <IconButton
                   edge="start"
                   color="inherit"
@@ -52,6 +54,7 @@ export const MyClubs = () => {
                 >
                   <Delete fontSize="large" />
                 </IconButton>
+                
               </li>
             </div>
           </div>

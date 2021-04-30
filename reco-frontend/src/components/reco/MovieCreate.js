@@ -22,7 +22,7 @@ export const MovieCreate = () => {
   useEffect(() => {});
 
   const nameInput = form.name;
-  const categoryInput = form.category.toLowerCase();
+
 
   const inputUrl = encodeURI(
     `http://api.themoviedb.org/3/search/movie?api_key=dd5b5fb0f236579b40c792f17042106b&query=${nameInput}`

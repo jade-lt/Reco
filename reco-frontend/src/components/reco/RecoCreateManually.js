@@ -46,9 +46,7 @@ export const RecoCreateManually = () => {
       return (
           
         <div className="main">
-            <div className="header-text" id="header-create">
-                <h1>Add a new Reco</h1>
-                </div>
+
                 <form onSubmit={submitHandler}>
                     <label>
                         Category<br />

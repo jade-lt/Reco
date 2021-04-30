@@ -30,6 +30,12 @@ import { Category } from "./components/category/Category";
 import { ClubChat } from "./components/club/ClubChat";
 import { RecoCreate } from "./components/reco/RecoCreate";
 import { ClubMembership } from "./components/club/ClubMembership";
+import { BookCreate } from "./components/reco/BookCreate";
+import { GameCreate } from "./components/reco/GameCreate";
+import { MovieCreate } from "./components/reco/MovieCreate";
+import { TvCreate } from "./components/reco/TvCreate";
+
+
 
 function App() {
   const isLoggedIn = () => {
@@ -56,6 +62,16 @@ function App() {
             <RecoCreateManually />
           </Route>
 
+
+
+          {/* <Route exact path="/test">
+            <TvCreate />
+          </Route> */}
+
+
+
+
+
           <Route exact path="/login">
             <UserLoginForm setLoginStatus={setLoggedIn} />
           </Route>
@@ -77,7 +93,13 @@ function App() {
           </Route>
 
           <Route exact path="/reco/create">
-            <RecoCreate />
+            <MovieCreate />
+            <TvCreate />
+            <BookCreate />
+            <GameCreate />
+            <h3 className="main">Or add a Reco Manually</h3>
+            <RecoCreateManually />
+
           </Route>
 
           <Route exact path="/reco/:id">

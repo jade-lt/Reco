@@ -1,14 +1,10 @@
-import { useEffect, useState } from "react";
-import { useParams, useHistory } from "react-router";
+import { useHistory } from "react-router";
 import Button from "react-bootstrap/Button";
 
 
 export const ClubMembership = (props) => {
 
   const history = useHistory();
-
-
-//   const [club, setClub] = useState([]);
 
 const clickJoinClubHandler = () => {
     fetch('/api/my-clubs', {

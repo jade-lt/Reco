@@ -60,13 +60,17 @@ const clickFavouriteHandler = () => {
             <div className={`${reco.category}-category`}>
               <li key={reco.id}>
                 
+
+               {reco.userId !== currentUserId && (<span> <br />
                 <IconButton
                   edge="end"
                   color="inherit"
                   onClick={clickFavouriteHandler}
                 >
                   <Star fontSize="large" />
-                </IconButton>
+                  </IconButton></span>)}
+
+
                 <h5 className="reco-name">{reco.name}</h5>
                 <img className="reco-img" src={reco.img} alt=""></img>
                 <br />

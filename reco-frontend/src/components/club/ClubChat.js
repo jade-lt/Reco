@@ -6,6 +6,9 @@ export const ClubChat = (props) => {
 
   const [chat, setChat] = useState([]);
 
+  const currentUserId = window.localStorage.getItem("id");
+
+
   const [newChat, setNewChat] = useState({
     club: "",
     username: "",
@@ -39,6 +42,7 @@ export const ClubChat = (props) => {
         username: props.username,
         dateTime: new Date(),
         comment: newChat.comment,
+        userId: currentUserId,
       }),
     })
       .then((response) => response.json())
@@ -47,6 +51,8 @@ export const ClubChat = (props) => {
         username: "",
         dateTime: "",
         comment: "",
+        userId: currentUserId,
+
       }));
   };
 

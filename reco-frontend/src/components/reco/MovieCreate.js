@@ -5,6 +5,8 @@ import Button from "react-bootstrap/Button";
 
 export const MovieCreate = () => {
   const history = useHistory();
+  const currentUserId = window.localStorage.getItem("id");
+
 
   const [searchResults, setSearchResults] = useState([]);
 
@@ -92,6 +94,7 @@ export const MovieCreate = () => {
                         description: el.overview,
                         genre: "",
                         img: `https://image.tmdb.org/t/p/w200/${el.poster_path}`,
+                        userId: currentUserId,
                       }),
                     })
                       .then((response) => response.json())

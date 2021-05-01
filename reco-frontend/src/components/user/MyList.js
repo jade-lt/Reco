@@ -19,9 +19,12 @@ export const MyList = () => {
         })
           .then((response) => response.json())
           .then((data) => {
-            if (data.length) {
-              setRecos(data);
-            }
+            const currentUserId = window.localStorage.getItem("id");
+            const results = data.filter(
+              (result) => result.userId === currentUserId
+            );
+    
+            setRecos(results);
           })
           .catch((error) => console.log("catch error:", error));
       }, [recos]);

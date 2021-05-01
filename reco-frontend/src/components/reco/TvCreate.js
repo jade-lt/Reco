@@ -6,6 +6,9 @@ import Button from "react-bootstrap/Button";
 export const TvCreate = () => {
   const history = useHistory();
 
+  const currentUserId = window.localStorage.getItem("id");
+
+
   const [searchResults, setSearchResults] = useState([]);
 
   const [form, setForm] = useState({
@@ -97,6 +100,7 @@ export const TvCreate = () => {
                         description: el.overview,
                         genre: "",
                         img: `https://image.tmdb.org/t/p/w200/${el.poster_path}`,
+                        userId: currentUserId,
                       }),
                     })
                       .then((response) => response.json())

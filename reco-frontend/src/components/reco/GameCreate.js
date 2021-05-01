@@ -8,6 +8,9 @@ export const GameCreate = () => {
     const history = useHistory();
   
     const [searchResults, setSearchResults] = useState([]);
+
+    const currentUserId = window.localStorage.getItem("id");
+
   
     const [form, setForm] = useState({
       name: "",
@@ -103,6 +106,7 @@ export const GameCreate = () => {
                         description: "",
                         genre: "",
                         img: el.background_image,
+                        userId: currentUserId,
                       }),
                     })
                       .then((response) => response.json())

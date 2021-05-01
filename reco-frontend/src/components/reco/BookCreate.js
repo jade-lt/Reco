@@ -5,6 +5,9 @@ import Button from "react-bootstrap/Button";
 
 export const BookCreate = () => {
 
+  const currentUserId = window.localStorage.getItem("id");
+
+
     const history = useHistory();
   
     const [searchResults, setSearchResults] = useState([]);
@@ -101,6 +104,7 @@ export const BookCreate = () => {
                         description: el.volumeInfo.description,
                         genre: el.volumeInfo.categories[0],
                         img: el.volumeInfo.imageLinks.thumbnail,
+                        userId: currentUserId,
                       }),
                     })
                       .then((response) => response.json())

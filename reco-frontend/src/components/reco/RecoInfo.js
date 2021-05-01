@@ -26,6 +26,8 @@ export const RecoInfo = (props) => {
 
 const clickFavouriteHandler = () => {
 
+  const currentUserId = window.localStorage.getItem("id");
+
 
         fetch('/api/lists', {
           method: "POST",
@@ -41,6 +43,7 @@ const clickFavouriteHandler = () => {
             description: reco.description,
             genre: reco.genre,
             img: reco.img,
+            userId: currentUserId
         })
         })
           .then(response => response.json())

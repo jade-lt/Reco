@@ -6,6 +6,9 @@ export const ClubMembership = (props) => {
 
   const history = useHistory();
 
+  const currentUserId = window.localStorage.getItem("id");
+
+
 const clickJoinClubHandler = () => {
     fetch('/api/my-clubs', {
         method: "POST",
@@ -18,6 +21,7 @@ const clickJoinClubHandler = () => {
           name: props.name,
           description: props.description,
           img: props.img,
+          userId: currentUserId,
       })
       })
         .then(response => response.json())

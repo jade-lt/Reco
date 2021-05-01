@@ -17,9 +17,12 @@ export const MyClubs = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.length) {
-          setClubs(data);
-        }
+        const currentUserId = window.localStorage.getItem("id");
+        const results = data.filter(
+          (result) => result.userId === currentUserId
+        );
+
+        setClubs(results);
       })
       .catch((error) => console.log("catch error:", error));
   }, [clubs]);

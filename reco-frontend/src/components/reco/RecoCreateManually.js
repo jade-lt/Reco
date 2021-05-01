@@ -7,6 +7,9 @@ import Button from 'react-bootstrap/Button';
 
 export const RecoCreateManually = () => {
 
+
+    const currentUserId = window.localStorage.getItem("id");
+
     const [reco, setReco] = useState({
         category: '',
         name: '',
@@ -33,7 +36,16 @@ export const RecoCreateManually = () => {
             'Content-Type': 'application/json',
             'token': window.localStorage.getItem('token')
           },
-          body: JSON.stringify(reco)
+          body: JSON.stringify({
+            category: reco.category,
+            name: reco.name,
+            cost: reco.cost,
+            source: reco.source,
+            description: reco.description,
+            genre: reco.genre,
+            img: reco.img,
+            userId: currentUserId,
+          })
         })
           .then(response => response.json())
           .then(history.push('/my-recos'))

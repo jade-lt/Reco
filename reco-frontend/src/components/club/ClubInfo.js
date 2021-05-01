@@ -13,6 +13,8 @@ export const ClubInfo = (props) => {
 
   const params = useParams();
 
+  const currentUserId = window.localStorage.getItem("id");
+
 
   useEffect(() => {
     fetch(`/api/clubs/${params.id}`, {
@@ -41,6 +43,7 @@ const clickFavouriteHandler = () => {
       description: club.description,
       genre: club.genre,
       img: club.img,
+      userId: currentUserId,
   })
   })
     .then(response => response.json())

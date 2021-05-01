@@ -27,14 +27,12 @@ export const UserDashboard =() => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.length) {
-          if(data.length > 3) {
-            setList([data[0], data[1], data[2]]);
-          } else {
-            setList(data)
-          }
-          
-        }
+        const currentUserId = window.localStorage.getItem("id");
+        const results = data.filter(
+          (result) => result.userId === currentUserId
+        );
+
+        setList(results);
       })
       .catch((error) => console.log("catch error:", error));
   }, [list]);
@@ -48,14 +46,12 @@ export const UserDashboard =() => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.length) {
-          if(data.length > 3) {
-            setRecos([data[0], data[1], data[2]]);
-          } else {
-            setRecos(data)
-          }
-          
-        }
+        const currentUserId = window.localStorage.getItem("id");
+        const results = data.filter(
+          (result) => result.userId === currentUserId
+        );
+
+        setRecos(results);
       })
       .catch((error) => console.log("catch error:", error));
   }, [recos]);
@@ -68,11 +64,12 @@ export const UserDashboard =() => {
     })
       .then((response) => response.json())
       .then((data) => {
-        if(data.length > 3) {
-          setClubs([data[0], data[1], data[2]]);
-        } else {
-          setClubs(data)
-        }
+        const currentUserId = window.localStorage.getItem("id");
+        const results = data.filter(
+          (result) => result.userId === currentUserId
+        );
+
+        setClubs(results);
       })
       .catch((error) => console.log("catch error:", error));
   }, [clubs]);

@@ -8,6 +8,9 @@ export const RecoCreate = () => {
 
   const [searchResults, setSearchResults] = useState([]);
 
+  const currentUserId = window.localStorage.getItem("id");
+
+
   const [form, setForm] = useState({
     name: "",
     category: "",
@@ -101,6 +104,7 @@ export const RecoCreate = () => {
                         description: el.overview,
                         genre: "",
                         img: `https://image.tmdb.org/t/p/w200/${el.poster_path}`,
+                        userId: currentUserId,
                       }),
                     })
                       .then((response) => response.json())

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
 import jwt_decode from "jwt-decode";
@@ -20,11 +20,7 @@ export function UserLoginForm(props) {
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
-  const [id, setId] = useState("");
 
-  // useEffect(
-    
-  // )
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +28,6 @@ export function UserLoginForm(props) {
     login({
       username: username,
       password: password,
-      // id: id,
     })
       .then((token) => {
         var decoded = jwt_decode(token);

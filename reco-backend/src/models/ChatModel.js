@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const ChatSchema = new mongoose.Schema({
   club: String,
   username: String,
+  userId: String,
   dateTime: String,
   comment: String,
 });

@@ -6,6 +6,7 @@ const MyClubSchema = new mongoose.Schema({
     name: String,
     description: String,
     img: String,
+    userId: String,
   });
   
   module.exports = mongoose.model("MyClub", MyClubSchema);

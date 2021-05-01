@@ -7,7 +7,14 @@ const User = require("../models/UserModel");
 
 const secretKey = "87CB9E5B-7C0B-4717-8D14-CCC3C41B6BBB";
 
-router.get("/", (req, res) => res.send("this is the user router"));
+router.get("/", async (req, res, next) => {
+  try {
+    const allUsers = await User.find();
+    res.json(allUsers);
+  } catch (err) {
+    res.send(err);
+  }
+});
 
 
 

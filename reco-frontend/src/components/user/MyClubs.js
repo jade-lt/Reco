@@ -25,7 +25,7 @@ export const MyClubs = () => {
         setClubs(results);
       })
       .catch((error) => console.log("catch error:", error));
-  }, [clubs]);
+  }, []);
 
   return (
     <div className="main">

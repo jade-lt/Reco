@@ -31,7 +31,7 @@ export const UserDashboard = () => {
         }
       })
       .catch((error) => console.log("catch error:", error));
-  }, [list]);
+  }, []);
 
   useEffect(() => {
     fetch("/api/recos", {
@@ -53,7 +53,7 @@ export const UserDashboard = () => {
         }
       })
       .catch((error) => console.log("catch error:", error));
-  }, [recos]);
+  }, []);
 
   useEffect(() => {
     fetch("/api/my-clubs", {
@@ -75,7 +75,7 @@ export const UserDashboard = () => {
         }
       })
       .catch((error) => console.log("catch error:", error));
-  }, [clubs]);
+  }, []);
 
   const clickAllListHandler = () => {
     history.replace("/my-list");

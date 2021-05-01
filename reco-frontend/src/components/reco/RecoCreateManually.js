@@ -2,11 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router";
 import Button from 'react-bootstrap/Button';
 
-
-
-
 export const RecoCreateManually = () => {
-
 
     const currentUserId = window.localStorage.getItem("id");
 
@@ -60,10 +56,34 @@ export const RecoCreateManually = () => {
         <div className="main">
 
                 <form onSubmit={submitHandler}>
-                    <label>
+
+
+
+                
+         {/* <select name="category" value="option">
+            <option value="Book">Book</option>
+            <option value="Game">Game</option>
+            <option value="Movie">Movie</option>
+            <option value="TV">TV</option>
+         </select> */}
+     
+
+
+         {/* <option value={reco.category}>TV</option> */}
+
+
+
+
+
+
+
+
+
+
+                    {/* <label>
                         Category<br />
                         <input name="category" value={reco.category} onChange={changeHandler} />
-                    </label><br />
+                    </label><br /> */}
                     <label>
                         Name<br />
                         <input name="name" value={reco.name} onChange={changeHandler} />

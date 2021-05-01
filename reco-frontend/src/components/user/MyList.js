@@ -27,7 +27,7 @@ export const MyList = () => {
             setRecos(results);
           })
           .catch((error) => console.log("catch error:", error));
-      }, [recos]);
+      }, []);
 
 
 

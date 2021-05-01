@@ -30,7 +30,7 @@ export const MyRecos = () => {
         setRecos(results);
       })
       .catch((error) => console.log("catch error:", error));
-  }, [recos]);
+  }, []);
 
   const clickCreateHandler = () => {
     history.replace("/reco/create");

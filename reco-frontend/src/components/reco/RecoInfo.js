@@ -9,6 +9,9 @@ import Button from "react-bootstrap/Button";
 export const RecoInfo = (props) => {
   const [reco, setReco] = useState([]);
 
+  const currentUserId = window.localStorage.getItem("id");
+
+
   const history = useHistory();
 
   const params = useParams();
@@ -26,7 +29,6 @@ export const RecoInfo = (props) => {
 
 const clickFavouriteHandler = () => {
 
-  const currentUserId = window.localStorage.getItem("id");
 
 
         fetch('/api/lists', {
@@ -80,7 +82,7 @@ const clickFavouriteHandler = () => {
 
 
 
-                {props.loginStatus && (<span> <br />
+                {reco.userId === currentUserId && (<span> <br />
                 <IconButton
                   edge="start"
                   color="inherit"

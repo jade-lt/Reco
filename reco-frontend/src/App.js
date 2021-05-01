@@ -33,7 +33,7 @@ import { BookCreate } from "./components/reco/BookCreate";
 import { GameCreate } from "./components/reco/GameCreate";
 import { MovieCreate } from "./components/reco/MovieCreate";
 import { TvCreate } from "./components/reco/TvCreate";
-
+import { RecoCard } from "./components/RecoCard";
 
 function App() {
   const isLoggedIn = () => {
@@ -63,9 +63,9 @@ function App() {
 
 
 
-          {/* <Route exact path="/test">
-            <TvCreate />
-          </Route> */}
+          <Route exact path="/test">
+            <RecoCard />
+          </Route>
 
 
 

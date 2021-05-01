@@ -1,6 +1,7 @@
-/* body {
-  background-image: url("https://media.istockphoto.com/vectors/rainbow-colorful-seamless-vector-pattern-background-illustration-with-vector-id698071900?k=6&m=698071900&s=170667a&w=0&h=nI5dFAKc0e1Cg3jxC843_e2PCiD_ORiNpFWax74pNaA=");
-} */
+body {
+  text-align: center;
+  
+}
 
 .navbar {
   background-color: rgb(106, 211, 243);
@@ -202,24 +203,33 @@ form {
   
 }
 
-.Book-category, .Movie-category, .TV-category, .Game-category {
-  padding: 10%;
-  border-radius: 6%;
+.reco-card{
+  /* padding: 10%;
+  border-radius: 6%; */
+  /* background-color: rgba(236, 100, 100, 0.952); */
+  float: left;
+  width: 30%;
+  margin: 1%;
+  /* border: 10px solid rgb(59, 59, 190); */
+  border-radius: 1%;
+  /* text-align: left; */
+  /* padding: 2%;  */
+  /* background-color: white; */
 }
 
-.Book-category {
+.Book-category-header {
   background-color: rgb(247, 198, 107);
 }
 
-.Movie-category {
+.Movie-category-header {
   background-color: rgb(108, 155, 224);
 }
 
-.TV-category {
+.TV-category-header {
   background-color: rgb(114, 201, 114);
 }
 
-.Game-category {
+.Game-category-header {
   background-color: rgb(235, 177, 206);
 }
 

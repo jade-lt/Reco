@@ -142,11 +142,6 @@ return (
           <Button color="inherit" onClick={myListClickHandler}>My List</Button>
           <Button color="inherit" onClick={signOutClickHandler}>Sign Out</Button></span>)}
 
-          {/* {props.loginStatus(false) && (<span>
-            <Button color="inherit" onClick={myClubsClickHandler}>About</Button>
-            <Button color="inherit" onClick={signInClickHandler}>Sign In</Button>
-            <Button color="inherit" onClick={registerClickHandler}>Register</Button>
-</span>)} */}
 
           
 

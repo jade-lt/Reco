@@ -1,21 +1,13 @@
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router";
-// import { IconButton } from "@material-ui/core";
-// import { Edit, Delete } from "@material-ui/icons";
-// import { Link } from 'react-router-dom';
 
-
-
-export const UserDashboard =() => {
-
+export const UserDashboard = () => {
   const [recos, setRecos] = useState([]);
 
   const [clubs, setClubs] = useState([]);
 
   const [list, setList] = useState([]);
-
-
 
   const history = useHistory();
 
@@ -32,11 +24,14 @@ export const UserDashboard =() => {
           (result) => result.userId === currentUserId
         );
 
-        setList(results);
+        if (results.length > 3) {
+          setList([results[0], results[1], results[2]]);
+        } else {
+          setList(results);
+        }
       })
       .catch((error) => console.log("catch error:", error));
   }, [list]);
-
 
   useEffect(() => {
     fetch("/api/recos", {
@@ -51,7 +46,11 @@ export const UserDashboard =() => {
           (result) => result.userId === currentUserId
         );
 
-        setRecos(results);
+        if (results.length > 3) {
+          setRecos([results[0], results[1], results[2]]);
+        } else {
+          setRecos(results);
+        }
       })
       .catch((error) => console.log("catch error:", error));
   }, [recos]);
@@ -69,7 +68,11 @@ export const UserDashboard =() => {
           (result) => result.userId === currentUserId
         );
 
-        setClubs(results);
+        if (results.length > 3) {
+          setClubs([results[0], results[1], results[2]]);
+        } else {
+          setClubs(results);
+        }
       })
       .catch((error) => console.log("catch error:", error));
   }, [clubs]);
@@ -78,7 +81,7 @@ export const UserDashboard =() => {
     history.replace("/my-list");
   };
 
-const clickAllRecosHandler = () => {
+  const clickAllRecosHandler = () => {
     history.replace("/my-recos");
   };
 
@@ -86,44 +89,47 @@ const clickAllRecosHandler = () => {
     history.replace("/my-club");
   };
 
-  // console.log(clubs)
-
-    return (
-        <div>
-
-<div>
-<h2 id="my-reco-text">My List</h2>
-
-<ul>
-{list.map((el) => (
-  <div className="user-recos-list" id="user-dashboard--hoverable">
-    <div className={`${el.category}-category`} onClick={() => history.push(`/my-list`)}>
-      <li key={el._id}>
-        <h5 className="reco-name">{el.name}</h5>
-        <img className="reco-img" src={el.img} alt=""></img>
-        <br />
-        Category: {el.category}
-        <br />
-        Source/Author: {el.source}
-        <br />
-      </li>
-    </div>
-  </div>
-))}
-</ul>
-<Button variant="primary" onClick={clickAllListHandler}>
-See All
-</Button>
-
-</div>
-
-        
-        <h2 id="my-reco-text">My Reco's</h2>
+  return (
+    <div>
+      <div>
+        <h2 id="my-reco-text">My List</h2>
 
         <ul>
+          {list.map((el) => (
+            <div className="user-recos-list" id="user-dashboard--hoverable">
+              <div
+                className={`${el.category}-category`}
+                onClick={() => history.push(`/my-list`)}
+              >
+                <li key={el._id}>
+                  <h5 className="reco-name">{el.name}</h5>
+                  <img className="reco-img" src={el.img} alt=""></img>
+                  <br />
+                  Category: {el.category}
+                  <br />
+                  Source/Author: {el.source}
+                  <br />
+                </li>
+              </div>
+            </div>
+          ))}
+        </ul>
+        <br />
+        <Button variant="primary" onClick={clickAllListHandler}>
+          See All
+        </Button>
+        <br />
+      </div>
+
+      <h2 id="my-reco-text">My Reco's</h2>
+
+      <ul>
         {recos.map((el) => (
           <div className="user-recos-list" id="user-dashboard-recos-hoverable">
-            <div className={`${el.category}-category`} onClick={() => history.push(`/reco/${el._id}`)}>
+            <div
+              className={`${el.category}-category`}
+              onClick={() => history.push(`/reco/${el._id}`)}
+            >
               <li key={el._id}>
                 <h5 className="reco-name">{el.name}</h5>
                 <img className="reco-img" src={el.img} alt=""></img>
@@ -137,38 +143,43 @@ See All
           </div>
         ))}
       </ul>
-        <Button variant="primary" onClick={clickAllRecosHandler}>
+      <br />
+      <Button variant="primary" onClick={clickAllRecosHandler}>
         See All
       </Button>
+      <br />
+      <div>
+        <h2 id="my-reco-text">My Clubs</h2>
 
-<div>
-<h2 id="my-reco-text">My Clubs</h2>
-
-<ul>
-{clubs.map((el) => (
-  <div className="user-recos-list" id="user-dashboard-clubs-hoverable">
-    <div className={`${el.category}-category`} onClick={() => history.push(`/${el.category}-club`)}>
-      <li key={el._id}>
-        <h5 className="reco-name">{el.name}</h5>
-        <img className="reco-img" src={el.img} alt=""></img>
+        <ul>
+          {clubs.map((el) => (
+            <div
+              className="user-recos-list"
+              id="user-dashboard-clubs-hoverable"
+            >
+              <div
+                className={`${el.category}-category`}
+                onClick={() => history.push(`/${el.category}-club`)}
+              >
+                <li key={el._id}>
+                  <h5 className="reco-name">{el.name}</h5>
+                  <img className="reco-img" src={el.img} alt=""></img>
+                  <br />
+                  Category: {el.category}
+                  <br />
+                  Source/Author: {el.source}
+                  <br />
+                </li>
+              </div>
+            </div>
+          ))}
+        </ul>
         <br />
-        Category: {el.category}
+        <Button variant="primary" onClick={clickAllClubsHandler}>
+          See All
+        </Button>
         <br />
-        Source/Author: {el.source}
-        <br />
-      </li>
+      </div>
     </div>
-  </div>
-))}
-</ul>
-<Button variant="primary" onClick={clickAllClubsHandler}>
-See All
-</Button>
-
-</div>
-
-
-        </div>
-
-    )
-}
+  );
+};

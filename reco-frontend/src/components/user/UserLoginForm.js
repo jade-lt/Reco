@@ -1,9 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Button from 'react-bootstrap/Button';
-
+import jwt_decode from "jwt-decode";
 import { login, updateHeaderOptions } from "../api";
 // import jwt from "jwt-decode";
+
+
+
+
+
+
+ 
+
+
 
 
 export function UserLoginForm(props) {
@@ -11,6 +20,11 @@ export function UserLoginForm(props) {
 
   const [username, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [id, setId] = useState("");
+
+  // useEffect(
+    
+  // )
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,17 +32,42 @@ export function UserLoginForm(props) {
     login({
       username: username,
       password: password,
+      // id: id,
     })
       .then((token) => {
+        var decoded = jwt_decode(token);
+         
+        console.log("decoded token", decoded);
+        console.log("decoded user id", decoded.id);
+        const decodedUserId = decoded.id
+
+
+
         localStorage.setItem("token", token); 
+        localStorage.setItem("id", decodedUserId); 
+
+
         props.setLoginStatus(true);  
         updateHeaderOptions(); 
         history.push("/dashboard"); 
+        console.log("token", token);
+        
+        
+        
+  
+
+
+
+
       })
+     
+      
       .catch((e) => {
         console.log(e);
       });
   };
+
+
 
   return (
     <div>
@@ -56,6 +95,7 @@ export function UserLoginForm(props) {
 
         <Button variant="primary" type="submit">Login</Button>
       </form>
+
     </div>
     </div>
   );

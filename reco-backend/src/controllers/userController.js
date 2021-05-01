@@ -10,6 +10,9 @@ const secretKey = "87CB9E5B-7C0B-4717-8D14-CCC3C41B6BBB";
 router.get("/", (req, res) => res.send("this is the user router"));
 
 
+
+
+
 router.post('/register', async (req, res) => {
     const password = req.body.password;
   
@@ -29,13 +32,6 @@ router.post('/register', async (req, res) => {
   
   });
 
-//   router.get('/:id', async (req, res) => {
-//       try {
-//       const foundUser = await User.findById({username: req.body.username});
-
-//       }
-//   })
-
 
 router.post('/login', async (req, res) => {
     try {
@@ -50,9 +46,13 @@ router.post('/login', async (req, res) => {
         };
   
         jwt.sign(payload, secretKey, {expiresIn: '1h'}, (err, token) => {
-          res.set('token', token);
+          res.set('token', token);             
+
           res.send();
+
         })
+
+
   
       } else {
         res.status(404).send();

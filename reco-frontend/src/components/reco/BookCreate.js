@@ -6,9 +6,6 @@ import Button from "react-bootstrap/Button";
 export const BookCreate = () => {
 
     const history = useHistory();
-
-
-
   
     const [searchResults, setSearchResults] = useState([]);
   
@@ -53,18 +50,10 @@ export const BookCreate = () => {
         const thumbnail = bookImage.thumbnail
         console.log("thumbnail", thumbnail);
 
-
-
         setSearchResults(array);
-        // console.log("setSearchResults ", searchResults);
-        // console.log(array[0].genre_ids[0])
       })
       .catch((err) => console.error(err));
   };
-
-
-
-
 
 
   return (
@@ -73,7 +62,6 @@ export const BookCreate = () => {
       <h3>Add a Book</h3>
       <form onSubmit={submitSearchHandler}>
         <label>
-         
           <input name="name" value={form.name} placeholder="Enter a title or author" onChange={changeHandler} />
         </label>
         <Button variant="primary" type="submit">
@@ -131,13 +119,6 @@ export const BookCreate = () => {
         </ul>
         <br />
       </div>
-      {/* <div>
-
-      <h3>Or add a new Reco manually</h3>
-      <Button variant="primary" onClick={clickAddManuallyHandler}>
-          Manualy Add a Reco
-        </Button>
-        </div> */}
     </div>
   );
 

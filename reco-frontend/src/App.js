@@ -28,7 +28,6 @@ import { AllGenres } from "./components/genre/AllGenres";
 import { Genre } from "./components/genre/Genre";
 import { Category } from "./components/category/Category";
 import { ClubChat } from "./components/club/ClubChat";
-
 import { ClubMembership } from "./components/club/ClubMembership";
 import { BookCreate } from "./components/reco/BookCreate";
 import { GameCreate } from "./components/reco/GameCreate";
@@ -36,10 +35,10 @@ import { MovieCreate } from "./components/reco/MovieCreate";
 import { TvCreate } from "./components/reco/TvCreate";
 
 
-
 function App() {
   const isLoggedIn = () => {
     const token = window.localStorage.getItem("token");
+    console.log("token", token)
 
     if (token) {
       const decoded = jwt(token);

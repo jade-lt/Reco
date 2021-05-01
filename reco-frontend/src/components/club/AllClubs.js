@@ -34,11 +34,6 @@ export const AllClubs = () => {
               <li key={el._id}>
                 <h5 className="reco-name">{el.name}</h5>
                 <img className="reco-img" src={el.img} alt=""></img>
-                {/* <br />
-                Category: {el.category}
-                <br />
-                Source/Author: {el.source}
-                <br /> */}
               </li>
             </div>
           </div>

@@ -78,6 +78,8 @@ const myClubsClickHandler = () => {
 
 const signOutClickHandler = () => {
   localStorage.removeItem("token");
+  localStorage.removeItem("id");
+
   // setIsAuthenticated(false);
   props.setLoginStatus(false)
   history.replace("/");

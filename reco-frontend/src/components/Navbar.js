@@ -32,9 +32,9 @@ export const Navbar = (props) => {
 
   const history = useHistory();
 
-  // const isAuthenticated = localStorage.getItem('token');
+  const currentUserToken = window.localStorage.getItem("token");
 
-  // const [isAuthenticated, setIsAuthenticated] = React.useState(false);
+
 
   const homeClickHandler = () => {
     history.replace("/");
@@ -68,9 +68,9 @@ const myClubsClickHandler = () => {
     history.replace("/genres");
     };
 
-// const aboutClickHandler = () => {
-// history.replace("/about");
-// };
+const aboutClickHandler = () => {
+history.replace("/about");
+};
 
   const accountClickHandler = () => {
   history.replace("/dashboard");
@@ -79,15 +79,17 @@ const myClubsClickHandler = () => {
 const signOutClickHandler = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("id");
-
-  // setIsAuthenticated(false);
   props.setLoginStatus(false)
   history.replace("/");
 };
 
-// const signInClickHandler = () => {
-//   history.replace("/login");
-// };
+const signInClickHandler = () => {
+  history.replace("/login");
+};
+
+const registerClickHandler = () => {
+  history.replace("/register");
+};
 
 // React.useEffect(() => {
 //   const isToken = localStorage.getItem('token');
@@ -126,6 +128,13 @@ return (
           <Button color="inherit" onClick={clubsClickHandler}>Clubs</Button>
           <Button color="inherit" onClick={genresClickHandler}>Genres</Button>
           <Button color="inherit" onClick={categoriesClickHandler}>Categories</Button>
+
+
+          {(currentUserToken === "undefined") || (currentUserToken === null) && (<span>
+            <Button color="inherit" onClick={aboutClickHandler}>About</Button>
+          <Button color="inherit" onClick={registerClickHandler}>Register</Button>
+          <Button color="inherit" onClick={signInClickHandler}>Sign In</Button></span>)}
+
 
           {props.loginStatus && (<span>
             <Button color="inherit" onClick={myClubsClickHandler}>My Clubs</Button>

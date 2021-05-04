@@ -1,4 +1,4 @@
-import { RecoCard } from "../reco/RecoCard"
+import { RecoCard } from "../reco/RecoCard";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Button from "react-bootstrap/Button";

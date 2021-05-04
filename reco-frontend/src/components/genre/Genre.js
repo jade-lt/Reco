@@ -1,54 +1,33 @@
+import { RecoCard } from "../reco/RecoCard";
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
 
 export const Genre = (props) => {
+  const [recos, setRecos] = useState([]);
 
-    const [recos, setRecos] = useState([]);
+  useEffect(() => {
+    fetch("/api/recos", {
+      headers: {
+        token: window.localStorage.getItem("token"),
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.length) {
+          setRecos(data);
+        }
+      })
+      .catch((error) => console.log("catch error:", error));
+  }, []);
 
-    const history = useHistory();
+  const results = recos.filter((response) =>
+    response.genre.includes(props.genre)
+  );
 
-    useEffect(() => {
-        fetch("/api/recos", {
-          headers: {
-            token: window.localStorage.getItem("token"),
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            if (data.length) {
-              setRecos(data);
-            }
-          })
-          .catch((error) => console.log("catch error:", error));
-      }, []);
+  return (
+    <div className="main">
+      <h1>{`${props.genre} Reco's`}</h1>
 
-      const results = recos.filter(response => response.genre.includes(props.genre))
-
-
-
-    return (
-        <div className="main">
-            <h1>{`${props.genre} Reco's`}</h1>
-        
-        <ul>
-        {results.map((el) => (
-        
-        
-        
-                  <div className="user-recos-list" id="all-recos-hoverable">
-                    <div className={`${el.category}-category`} onClick={() => history.push(`/reco/${el._id}`)}>
-                    <li key={el._id}>
-                      <h5 className="reco-name">{el.name}</h5>
-                      <img className="reco-img" src={el.img} alt=""></img>
-                      <br />
-                      Category: {el.category}
-                      <br />
-                      Source/Author: {el.source}
-                    </li>
-                  </div>
-                  </div>
-                ))}
-                </ul>
-                </div>
-    )
-}
+      <RecoCard listToMap={results} />
+    </div>
+  );
+};

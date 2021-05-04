@@ -63,9 +63,9 @@ function App() {
 
 
 
-          <Route exact path="/test">
+          {/* <Route exact path="/test">
             <RecoListTest />
-          </Route>
+          </Route> */}
 
 
 
@@ -229,7 +229,7 @@ function App() {
               category="Book"
               name="Book Club"
               description="a club for people to find and chat about books"
-              img="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_323457.png&f=1&nofb=1"
+              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F31%2F31635.png&f=1&nofb=1"
             />
             <Category category="Book" />
             <ClubChat club="Book" username="jade1234" />
@@ -251,7 +251,7 @@ function App() {
               category="TV"
               name="TV Club"
               description="a club for people to find and chat about tv shows"
-              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpurepng.com%2Fpublic%2Fuploads%2Flarge%2Fpurepng.com-old-televisiontvtelecommunicationmonochromeblack-and-whittelevisionoldblack-and-whiteclipart-1421526536100hrgmw.png&f=1&nofb=1"
+              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_431682.png&f=1&nofb=1"
             />
             <Category category="TV" />
             <ClubChat club="TV" username="jade1234" />

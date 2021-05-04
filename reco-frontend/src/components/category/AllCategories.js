@@ -1,10 +1,10 @@
+import { CategoryCard } from "../category/CategoryCard";
+
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
 export const AllCategories = () => {
   const [categories, setCategories] = useState([]);
-
-  const history = useHistory();
 
   useEffect(() => {
     fetch("/api/categories", {
@@ -26,23 +26,7 @@ export const AllCategories = () => {
       <div className="header-text" id="header-categories">
         <h1>Categories</h1>
       </div>
-      <ul>
-        {categories.map((el) => (
-          <div className="user-recos-list" id="user-recos-list-hoverable" >
-            <div className={`${el.name}-category`} onClick={() => history.push(`/all-categories/${el.name}`)}>
-              <li key={el._id}>
-                <h5 className="reco-name">{el.name}</h5>
-                <img className="reco-img" src={el.img} alt=""></img>
-                {/* <br />
-                Category: {el.category}
-                <br />
-                Source/Author: {el.source}
-                <br /> */}
-              </li>
-            </div>
-          </div>
-        ))}
-      </ul>
+      <CategoryCard listToMap={categories} />
     </div>
   );
 };

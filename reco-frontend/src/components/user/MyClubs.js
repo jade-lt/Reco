@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { ClubCard } from "../club/ClubCard";
+
 import { Link } from "react-router-dom";
 import { IconButton } from "@material-ui/core";
 import { Delete } from "@material-ui/icons";
@@ -32,37 +34,7 @@ export const MyClubs = () => {
       <div className="header-text" id="header-my-recos">
         <h1>My Clubs</h1>
       </div>
-      <ul>
-        {clubs.map((el) => (
-          <div className="user-recos-list" >
-            <div
-              className={`${el.category}-category`}
-              
-            >
-              <li key={el._id}>
-                <div id="my-clubs-hoverable">
-                <h5 className="reco-name">{el.name}</h5>
-                <img className="reco-img" src={el.img} alt="" onClick={() => history.push(`/${el.category}-club`)}></img>
-                <br />
-                Category: {el.category}
-                <br />
-                Source/Author: {el.source}
-                <br />
-                </div>
-                <IconButton
-                  edge="start"
-                  color="inherit"
-                  component={Link}
-                  to={`/my-club/delete/${el._id}`}
-                >
-                  <Delete fontSize="large" />
-                </IconButton>
-                
-              </li>
-            </div>
-          </div>
-        ))}
-      </ul>
+      <ClubCard listToMap={clubs}/>
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import { RecoCard } from "../reco/RecoCard";
+import { ClubCard } from "../club/ClubCard";
 import { useEffect, useState } from "react";
 import Button from "react-bootstrap/Button";
 import { useHistory } from "react-router";
@@ -69,8 +70,8 @@ export const UserDashboard = () => {
           (result) => result.userId === currentUserId
         );
 
-        if (results.length > 3) {
-          setClubs([results[0], results[1], results[2]]);
+        if (results.length > 2) {
+          setClubs([results[0], results[1]]);
         } else {
           setClubs(results);
         }
@@ -94,7 +95,7 @@ export const UserDashboard = () => {
     <div className="main">
       <div>
         <h2 id="my-reco-text">My List</h2>
-<RecoCard listToMap={list} />
+        <RecoCard listToMap={list} />
         <Button variant="primary" onClick={clickAllListHandler}>
           See All
         </Button>
@@ -102,38 +103,14 @@ export const UserDashboard = () => {
       </div>
 
       <h2 id="my-reco-text">My Reco's</h2>
-<RecoCard listToMap={recos} />
+      <RecoCard listToMap={recos} />
       <Button variant="primary" onClick={clickAllRecosHandler}>
         See All
       </Button>
       <br />
       <div>
         <h2 id="my-reco-text">My Clubs</h2>
-
-        <ul>
-          {clubs.map((el) => (
-            <div
-              className="user-recos-list"
-              id="user-dashboard-clubs-hoverable"
-            >
-              <div
-                className={`${el.category}-category`}
-                onClick={() => history.push(`/${el.category}-club`)}
-              >
-                <li key={el._id}>
-                  <h5 className="reco-name">{el.name}</h5>
-                  <img className="reco-img" src={el.img} alt=""></img>
-                  <br />
-                  Category: {el.category}
-                  <br />
-                  Source/Author: {el.source}
-                  <br />
-                </li>
-              </div>
-            </div>
-          ))}
-        </ul>
-        <br />
+        <ClubCard listToMap={clubs} />
         <Button variant="primary" onClick={clickAllClubsHandler}>
           See All
         </Button>

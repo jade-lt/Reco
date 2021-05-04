@@ -1,4 +1,5 @@
 import { RecoCard } from "./reco/RecoCard";
+import { ClubCard } from "./club/ClubCard";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import Button from "react-bootstrap/Button";
@@ -36,7 +37,7 @@ export const HomePage = () => {
       .then((data) => {
         if (data.length) {
           const shuffledArray = data.sort((a, b) => 0.5 - Math.random());
-          setClubs(shuffledArray.slice(0, 3));
+          setClubs(shuffledArray.slice(0, 2));
         }
       })
       .catch((error) => console.log("catch error:", error));
@@ -71,7 +72,7 @@ export const HomePage = () => {
       </div>
       <div>
         <h1>Featured Clubs</h1>
-        <RecoCard listToMap={clubs} />
+        <ClubCard listToMap={clubs} />
         <Button variant="primary" onClick={clickAllClubsHandler}>
           See All
         </Button>

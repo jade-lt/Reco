@@ -12,6 +12,7 @@ import { useHistory } from "react-router";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 300,
+    
   },
   media: {
     height: "auto",
@@ -28,6 +29,7 @@ export const RecoCard = (props) => {
     <div>
       <ul>
         {props.listToMap.map((el) => (
+          <li key={el.id}>
           <div
             className={"reco-card"}
             onClick={() => history.push(`/reco/${el._id}`)}
@@ -64,7 +66,9 @@ export const RecoCard = (props) => {
               ></CardActions>
             </Card>
           </div>
+          </li>
         ))}
+        
       </ul>
     </div>
   );

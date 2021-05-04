@@ -149,6 +149,10 @@ ul {
   opacity: 70%;
 }
 
+#card-hoverable:hover {
+  opacity: 70%;
+}
+
 #genre-list {
   padding: 10%;
   border-radius: 6%;

@@ -45,7 +45,7 @@ export const GenreCard = (props) => {
             >
               <CardHeader
                 className={`${el.name}-category-header`}
-                title={el.name}
+                title={el.name.toUpperCase()}
                 // subheader={el.category}
                 // style={{ color: grey[50] }}
               />

@@ -2,7 +2,8 @@ import { RecoCard } from "./reco/RecoCard";
 import { ClubCard } from "./club/ClubCard";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import Button from "react-bootstrap/Button";
+import { ButtonComponent } from "./ButtonComponent";
+
 
 export const HomePage = () => {
   const [recos, setRecos] = useState([]);
@@ -65,17 +66,13 @@ export const HomePage = () => {
       <div>
         <h1>Featured Reco's</h1>
         <RecoCard listToMap={recos} />
-        <br />
-        <Button variant="primary" onClick={clickAllRecosHandler}>
-          See All
-        </Button>
+        <ButtonComponent buttonLabel="See All" onClick={clickAllRecosHandler} />
+
       </div>
       <div>
         <h1>Featured Clubs</h1>
         <ClubCard listToMap={clubs} />
-        <Button variant="primary" onClick={clickAllClubsHandler}>
-          See All
-        </Button>
+        <ButtonComponent buttonLabel="See All" onClick={clickAllClubsHandler} />
       </div>
     </div>
   );

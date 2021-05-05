@@ -1,7 +1,7 @@
 import { RecoCard } from "../reco/RecoCard";
 import { ClubCard } from "../club/ClubCard";
 import { useEffect, useState } from "react";
-import Button from "react-bootstrap/Button";
+import { ButtonComponent } from "../ButtonComponent";
 import { useHistory } from "react-router";
 
 export const UserDashboard = () => {
@@ -93,29 +93,17 @@ export const UserDashboard = () => {
 
   return (
     <div className="main">
-      <div>
-        <h2>My List</h2>
-        <RecoCard listToMap={list} />
-        <Button variant="primary" onClick={clickAllListHandler}>
-          See All
-        </Button>
-        <br />
-      </div>
+      <h2>My List</h2>
+      <RecoCard listToMap={list} />
+      <ButtonComponent buttonLabel="See All" onClick={clickAllListHandler} />
 
       <h2>My Reco's</h2>
       <RecoCard listToMap={recos} />
-      <Button variant="primary" onClick={clickAllRecosHandler}>
-        See All
-      </Button>
-      <br />
-      <div>
-        <h2>My Clubs</h2>
-        <ClubCard listToMap={clubs} />
-        <Button variant="primary" onClick={clickAllClubsHandler}>
-          See All
-        </Button>
-        <br />
-      </div>
+      <ButtonComponent buttonLabel="See All" onClick={clickAllRecosHandler} />
+
+      <h2>My Clubs</h2>
+      <ClubCard listToMap={clubs} />
+      <ButtonComponent buttonLabel="See All" onClick={clickAllClubsHandler} />
     </div>
   );
 };

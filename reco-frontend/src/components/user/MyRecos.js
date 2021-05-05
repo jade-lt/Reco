@@ -1,7 +1,8 @@
 import { RecoCard } from "../reco/RecoCard";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import Button from "react-bootstrap/Button";
+import { ButtonComponent } from "../ButtonComponent";
+
 
 export const MyRecos = () => {
   const [recos, setRecos] = useState([]);
@@ -35,9 +36,7 @@ export const MyRecos = () => {
       <div>
         <h1>My Reco's</h1>
       </div>
-      <Button variant="primary" onClick={clickCreateHandler}>
-        Create a new Reco
-      </Button>
+      <ButtonComponent buttonLabel="Create a New Reco" onClick={clickCreateHandler} />
       <RecoCard listToMap={recos} />
     </div>
   );

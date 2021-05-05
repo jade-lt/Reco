@@ -35,12 +35,12 @@ const clickFavouriteHandler = () => {
             'token': window.localStorage.getItem('token')
           },
           body: JSON.stringify({
-            category: reco.category,
+            category: reco.category !== null ? reco.category : "Undefined",
             name: reco.name,
             cost: reco.cost,
             source: reco.source,
             description: reco.description,
-            genre: reco.genre,
+            genre: reco.genre !== null ? reco.genre : "Other",
             img: reco.img,
             userId: currentUserId
         })

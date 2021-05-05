@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
-import Button from "react-bootstrap/Button";
+import { ButtonComponent } from "../ButtonComponent";
 
 export const RecoDelete = () => {
   const [reco, setReco] = useState([]);
@@ -9,47 +9,41 @@ export const RecoDelete = () => {
 
   const params = useParams();
 
-
   useEffect(() => {
     fetch(`/api/recos/${params.id}`, {
-        headers: {
-            'token': window.localStorage.getItem('token')
-          }
+      headers: {
+        token: window.localStorage.getItem("token"),
+      },
     })
-    .then(response => response.json())
-    .then(data => setReco(data))
-}, [params.id])
+      .then((response) => response.json())
+      .then((data) => setReco(data));
+  }, [params.id]);
 
-const clickDeleteHandler = (e) => {
+  const clickDeleteHandler = (e) => {
     e.preventDefault();
     fetch(`/api/recos/${params.id}`, {
       method: "DELETE",
       headers: {
-        'Content-Type': 'application/json',
-        'token': window.localStorage.getItem('token')
-      }
-    })
-      .then(() => history.push('/my-recos'))
-  }
-
-  // const clickNoHandler = () => {
-  //   history.replace("/my-recos");
-  // };
-
+        "Content-Type": "application/json",
+        token: window.localStorage.getItem("token"),
+      },
+    }).then(() => history.push("/my-recos"));
+  };
 
   return (
     <div className="main">
-          <h3 id="delete-text">Are you sure you want to delete this reco?</h3>
+      <h3 id="delete-text">Are you sure you want to delete this reco?</h3>
 
-          <div className="delete-reco">
+      <div className="delete-reco">
+        <h4 className="reco-name">{reco.name}</h4>
 
-          <h4 className="reco-name">{reco.name}</h4>
-
-          <img className="reco-img"src={reco.img} alt=""></img>
-          <Button variant="primary" onClick={clickDeleteHandler} >Delete</Button><h1>   </h1>
-          <Button variant="primary" onClick={() => history.push(`/reco/${reco._id}`)} >Cancel</Button>
-
-          </div>
+        <img className="reco-img" src={reco.img} alt=""></img>
+        <ButtonComponent
+          buttonLabel="Cancel"
+          onClick={() => history.push(`/reco/${reco._id}`)}
+        />
+        <ButtonComponent buttonLabel="Delete" onClick={clickDeleteHandler} />
       </div>
-  )
+    </div>
+  );
 };

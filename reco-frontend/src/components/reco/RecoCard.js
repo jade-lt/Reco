@@ -45,7 +45,6 @@ export const RecoCard = (props) => {
                     ? el.name.substring(0, 17) + "..."
                     : el.name
                 }
-                // subheader={el.category}
                 style={{ color: grey[50] }}
               />
               <CardMedia

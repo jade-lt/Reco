@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
-import Button from 'react-bootstrap/Button';
-
+import { ButtonComponent } from "../ButtonComponent";
 
 export const ClubChat = (props) => {
-
   const [chat, setChat] = useState([]);
 
   const currentUserId = window.localStorage.getItem("id");
-
 
   const [newChat, setNewChat] = useState({
     club: "",
@@ -46,27 +43,28 @@ export const ClubChat = (props) => {
       }),
     })
       .then((response) => response.json())
-      .then(setNewChat({
-        club: "",
-        username: "",
-        dateTime: "",
-        comment: "",
-        userId: currentUserId,
-
-      }));
+      .then(
+        setNewChat({
+          club: "",
+          username: "",
+          dateTime: "",
+          comment: "",
+          userId: currentUserId,
+        })
+      );
   };
 
   const changeHandler = (e) => {
     const newFormState = { ...newChat };
     newFormState[e.target.name] = e.target.value;
     setNewChat(newFormState);
-}
+  };
 
   return (
     <div className="main">
-        <div className="club-chat-comments">
-      <ul>
-        {results.map((el) => (
+      <div className="club-chat-comments">
+        <ul>
+          {results.map((el) => (
             <li key={el.id}>
               <h5>{el.username}</h5>
               <br />
@@ -74,19 +72,23 @@ export const ClubChat = (props) => {
               <br />
               <p>{el.comment}</p>
             </li>
-          
-        ))}
-      </ul>
+          ))}
+        </ul>
       </div>
 
       <div className="new-chat-comment-form">
-          <h3>Add a comment</h3>
-          <form onSubmit={clickNewCommentHandler}>
-              <textarea name="comment" value={newChat.comment} onChange={changeHandler} />
-
-<Button variant="primary" type="submit">Add Comment</Button>
-          </form>
-
+        <h3>Add a comment</h3>
+        <form>
+          <textarea
+            name="comment"
+            value={newChat.comment}
+            onChange={changeHandler}
+          />
+          <ButtonComponent
+            buttonLabel="Add Comment"
+            onClick={clickNewCommentHandler}
+          />
+        </form>
       </div>
     </div>
   );

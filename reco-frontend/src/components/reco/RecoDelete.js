@@ -39,10 +39,6 @@ const clickDeleteHandler = (e) => {
 
   return (
     <div className="main">
-    <div className="header-text" id="header-delete">
-
-          <h1 >Delete</h1>
-          </div>
           <h3 id="delete-text">Are you sure you want to delete this reco?</h3>
 
           <div className="delete-reco">

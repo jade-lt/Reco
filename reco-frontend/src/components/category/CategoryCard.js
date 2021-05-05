@@ -31,7 +31,7 @@ export const CategoryCard = (props) => {
   const history = useHistory();
 
   return (
-    <div>
+    <div className="main">
       <ul>
         {props.listToMap.map((el) => (
           <li key={el.id}>

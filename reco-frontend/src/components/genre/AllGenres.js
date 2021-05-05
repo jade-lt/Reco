@@ -21,10 +21,8 @@ export const AllGenres = () => {
 
   return (
     <div className="main">
-      <div className="header-text" id="header-categories">
-        <h1>Genres</h1>
-      </div>
-      <GenreCard listToMap={genres}/>
+      <h1>Genres</h1>
+      <GenreCard listToMap={genres} />
     </div>
   );
 };

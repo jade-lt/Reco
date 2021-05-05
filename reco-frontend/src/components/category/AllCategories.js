@@ -23,9 +23,9 @@ export const AllCategories = () => {
 
   return (
     <div className="main">
-      <div className="header-text" id="header-categories">
+
         <h1>Categories</h1>
-      </div>
+
       <CategoryCard listToMap={categories} />
     </div>
   );

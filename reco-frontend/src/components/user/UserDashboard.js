@@ -94,7 +94,7 @@ export const UserDashboard = () => {
   return (
     <div className="main">
       <div>
-        <h2 id="my-reco-text">My List</h2>
+        <h2>My List</h2>
         <RecoCard listToMap={list} />
         <Button variant="primary" onClick={clickAllListHandler}>
           See All
@@ -102,14 +102,14 @@ export const UserDashboard = () => {
         <br />
       </div>
 
-      <h2 id="my-reco-text">My Reco's</h2>
+      <h2>My Reco's</h2>
       <RecoCard listToMap={recos} />
       <Button variant="primary" onClick={clickAllRecosHandler}>
         See All
       </Button>
       <br />
       <div>
-        <h2 id="my-reco-text">My Clubs</h2>
+        <h2>My Clubs</h2>
         <ClubCard listToMap={clubs} />
         <Button variant="primary" onClick={clickAllClubsHandler}>
           See All

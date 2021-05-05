@@ -31,7 +31,7 @@ export const MyClubs = () => {
 
   return (
     <div className="main">
-      <div className="header-text" id="header-my-recos">
+      <div>
         <h1>My Clubs</h1>
       </div>
       <ClubCard listToMap={clubs}/>

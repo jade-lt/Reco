@@ -1,6 +1,12 @@
+h1, h2, h3, h4, h5, h6 {
+  color: #ff5768;
+  padding: 2%;
+}
+
 
 .navbar {
-  background-color: rgb(106, 211, 243);
+  background-color: #ff5768;
+
 }
 
   .navbar-display {
@@ -92,11 +98,20 @@ ul {
   cursor: pointer;
 }
 
+
 #genre-list {
   padding: 10%;
   border-radius: 6%;
+  
   border-style: solid;
-  background-color: aquamarine;
+  /* color: aquamarine; */
+}
+
+.genre-card-hoverable:hover {
+  cursor: pointer;
+  background-color: #00a897;
+  /* color: white; */
+  filter: invert(100%);
 }
 
  /* .reco-name {
@@ -139,7 +154,7 @@ form {
   
 }
 
-.reco-card{
+.reco-card {
   float: left;
   width: 30%;
   margin: 1%;
@@ -151,7 +166,35 @@ form {
   width: 45%;
   margin: 1%;
   border-radius: 1%;
+}
 
+.reco-info-card {
+  float: left;
+  width: 95%;
+  margin: 1%;
+  border-radius: 1%;
+}
+
+.reco-info {
+  float: right;
+  max-width: 50%;
+}
+
+#reco-info-card-footer {
+  width: 100%;
+  text-align: right;
+
+}
+
+#edit-icon, #delete-icon {
+  text-align: right;
+}
+
+.genre-card {
+  float: left;
+  width: 30%;
+  margin: 1%;
+  border-radius: 1%;
 }
 
 #club-card-info {
@@ -189,19 +232,21 @@ form {
 } 
 
 .Book-category-header {
-  background-color: rgb(247, 198, 107);
+  background-color: #ffbf65;
 }
 
 .Movie-category-header {
-  background-color: rgb(108, 155, 224);
+  background-color: #00a5e3;
 }
 
 .TV-category-header {
-  background-color: rgb(114, 201, 114);
+  background-color: #8dd78f;
+
 }
 
 .Game-category-header {
-  background-color: rgb(235, 177, 206);
+  background-color: #ff96c5;
+
 }
 
 #search {

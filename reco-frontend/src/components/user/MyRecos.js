@@ -32,13 +32,12 @@ export const MyRecos = () => {
 
   return (
     <div className="main">
-      <div className="header-text" id="header-my-recos">
+      <div>
         <h1>My Reco's</h1>
       </div>
       <Button variant="primary" onClick={clickCreateHandler}>
         Create a new Reco
       </Button>
-      <h2 id="my-reco-text">My Reco's</h2>
       <RecoCard listToMap={recos} />
     </div>
   );

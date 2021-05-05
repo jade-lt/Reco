@@ -22,6 +22,10 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1000,
     padding: "2%",
   },
+  cardHover: {
+  cursor: "pointer",
+  
+  }
 }));
 
 export const ClubCard = (props) => {

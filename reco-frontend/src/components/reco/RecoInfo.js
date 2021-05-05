@@ -28,9 +28,6 @@ export const RecoInfo = (props) => {
 }, [params])
 
 const clickFavouriteHandler = () => {
-
-
-
         fetch('/api/lists', {
           method: "POST",
           headers: {

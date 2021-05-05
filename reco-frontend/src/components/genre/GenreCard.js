@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   media: {
     margin: "5%",
     width: "auto",
-    height: 400,
+    height: 200,
     borderRadius: "4px",
     // boxShadow: "0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23)",
     // position: "relative",
@@ -36,18 +36,18 @@ export const GenreCard = (props) => {
         {props.listToMap.map((el) => (
           <li key={el.id}>
           <div
-            className={"club-card"}
-            onClick={() => history.push(`/all-categories/${el.name}`)}
+            className={"genre-card"}
+            onClick={() => history.push(`/${el.name}-genre`)}
           >
             <Card
-              className={`${el.name}-category-header`}
-              id="card-hoverable"
+              id="genre-list"
+              className="genre-card-hoverable"
             >
               <CardHeader
                 className={`${el.name}-category-header`}
-                title={el.name !== "TV" ? `${el.name}s` : "TV Shows"}
+                title={el.name}
                 // subheader={el.category}
-                style={{ color: grey[50] }}
+                // style={{ color: grey[50] }}
               />
               <CardContent
                 className={classes.media}>

@@ -44,7 +44,7 @@ export const MyList = () => {
 
   return (
     <div className="main">
-      <div className="header-text" id="header-my-recos">
+      <div>
         <h1>My List</h1>
       </div>
       <div>

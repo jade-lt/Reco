@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import { ClubCard } from "./ClubCard"
-// import Button from "react-bootstrap/Button";
+import { ClubCard } from "./ClubCard";
 
 export const AllClubs = () => {
   const [clubs, setClubs] = useState([]);
@@ -25,10 +24,8 @@ export const AllClubs = () => {
 
   return (
     <div className="main">
-      <div className="header-text" id="header-clubs">
-        <h1>Clubs</h1>
-      </div>
-      <ClubCard listToMap={clubs}/>
+      <h1>Clubs</h1>
+      <ClubCard listToMap={clubs} />
     </div>
   );
 };

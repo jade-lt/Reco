@@ -33,7 +33,7 @@ import { BookCreate } from "./components/reco/BookCreate";
 import { GameCreate } from "./components/reco/GameCreate";
 import { MovieCreate } from "./components/reco/MovieCreate";
 import { TvCreate } from "./components/reco/TvCreate";
-import { RecoListTest } from "./components/RecoListTest";
+import { RecoInfoCard } from "./components/reco/RecoInfoCard";
 
 function App() {
   const isLoggedIn = () => {
@@ -64,7 +64,7 @@ function App() {
 
 
           {/* <Route exact path="/test">
-            <RecoListTest />
+            <RecoInfoCard />
           </Route> */}
 
 
@@ -102,7 +102,7 @@ function App() {
           </Route>
 
           <Route exact path="/reco/:id">
-            <RecoInfo setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
+            <RecoInfoCard setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
           </Route>
 
           <Route exact path="/club/:id">
@@ -194,24 +194,24 @@ function App() {
           </Route>
 
           <Route path="/all-categories/Book">
-            <h1>Books</h1>
+            <h1 className="main">Books</h1>
             <Category category="Book" />
           </Route>
 
           <Route exact path="/all-categories/Movie">
-            <h1>Movies</h1>
+            <h1 className="main">Movies</h1>
 
             <Category category="Movie" />
           </Route>
 
           <Route exact path="/all-categories/TV">
-            <h1>TV Shows</h1>
+            <h1 className="main">TV Shows</h1>
 
             <Category category="TV" />
           </Route>
 
           <Route exact path="/all-categories/Game">
-            <h1>Games</h1>
+            <h1 className="main">Games</h1>
 
             <Category category="Game" />
           </Route>

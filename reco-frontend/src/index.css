@@ -112,6 +112,11 @@ ul {
   /* color: aquamarine; */
 }
 
+.comment-cards-list {
+  width: 50%;
+
+}
+
 .genre-card-hoverable:hover {
   cursor: pointer;
   background-color: #00a897;

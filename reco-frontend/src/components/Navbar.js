@@ -79,6 +79,8 @@ history.replace("/about");
 const signOutClickHandler = () => {
   localStorage.removeItem("token");
   localStorage.removeItem("id");
+  localStorage.removeItem("username");
+
   props.setLoginStatus(false)
   history.replace("/");
 };

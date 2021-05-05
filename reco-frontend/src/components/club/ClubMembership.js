@@ -27,6 +27,7 @@ export const ClubMembership = (props) => {
 
   return (
     <div className="main">
+      <h1>Welcome to {props.category} Club!</h1>
     <ButtonComponent
       buttonLabel="Join this Club"
       onClick={clickJoinClubHandler}

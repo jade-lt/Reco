@@ -34,6 +34,8 @@ import { GameCreate } from "./components/reco/GameCreate";
 import { MovieCreate } from "./components/reco/MovieCreate";
 import { TvCreate } from "./components/reco/TvCreate";
 import { RecoInfoCard } from "./components/reco/RecoInfoCard";
+import { CommentCard } from "./components/club/CommentCard";
+import { AddComment } from "./components/club/AddComment";
 
 function App() {
   const isLoggedIn = () => {
@@ -232,7 +234,8 @@ function App() {
               img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F31%2F31635.png&f=1&nofb=1"
             />
             <Category category="Book" />
-            <ClubChat club="Book" username="jade1234" />
+            <CommentCard club="Book" />
+            <AddComment club="Book" />
           </Route>
 
           <Route exact path="/Movie-Club">
@@ -243,7 +246,8 @@ function App() {
               img="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2018%2F06%2FCinema.png&f=1&nofb=1"
             />
             <Category category="Movie" />
-            <ClubChat club="Movie" username="jade1234" />
+            <CommentCard club="Movie" />
+            <AddComment club="Movie" />
           </Route>
 
           <Route exact path="/TV-Club">
@@ -254,7 +258,8 @@ function App() {
               img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_431682.png&f=1&nofb=1"
             />
             <Category category="TV" />
-            <ClubChat club="TV" username="jade1234" />
+            <CommentCard club="TV" />
+            <AddComment club="TV" />
           </Route>
 
           <Route exact path="/Game-Club">
@@ -265,7 +270,8 @@ function App() {
               img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa7%2FVideo_game_controller_icon_designed_by_Maico_Amorim.svg%2F937px-Video_game_controller_icon_designed_by_Maico_Amorim.svg.png&f=1&nofb=1"
             />
             <Category category="Game" />
-            <ClubChat club="Game" username="jade1234" />
+            <CommentCard club="Game" />
+            <AddComment club="Game" />
           </Route>
 
           <Route exact path="/my-club/delete/:id">

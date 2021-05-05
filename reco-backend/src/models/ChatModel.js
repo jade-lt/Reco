@@ -5,6 +5,7 @@ const ChatSchema = new mongoose.Schema({
   username: String,
   userId: String,
   dateTime: String,
+  subject: String,
   comment: String,
 });
 

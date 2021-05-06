@@ -78,9 +78,6 @@ function App() {
             <UserRegister />
           </Route>
 
-          <Route exact path="/all-recos">
-            <AllRecos />
-          </Route>
 
           <Route exact path="/reco/edit/:id">
             <RecoUpdate />

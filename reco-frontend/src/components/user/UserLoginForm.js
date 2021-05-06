@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { ButtonComponent } from "../ButtonComponent";
 import jwt_decode from "jwt-decode";
-import { login, updateHeaderOptions } from "../api";
+import { login, updateHeaderOptions } from "../../api";
 
 export function UserLoginForm(props) {
   const history = useHistory();
@@ -23,16 +23,15 @@ export function UserLoginForm(props) {
 
         const decodedUserId = decoded.id;
 
-        const decodedUsername = decoded.user
+        const decodedUsername = decoded.user;
 
-        console.log("decoded username", decodedUsername)
+        console.log("decoded username", decodedUsername);
 
         localStorage.setItem("token", token);
 
         localStorage.setItem("id", decodedUserId);
 
         localStorage.setItem("username", decodedUsername);
-
 
         props.setLoginStatus(true);
         updateHeaderOptions();
@@ -72,8 +71,10 @@ export function UserLoginForm(props) {
           <ButtonComponent buttonLabel="Login" onClick={handleSubmit} />
         </form>
         <h3>Not a Member? Register Now!</h3>
-        <ButtonComponent buttonLabel="Register" onClick={() => history.push(`/register`)} />
-
+        <ButtonComponent
+          buttonLabel="Register"
+          onClick={() => history.push(`/register`)}
+        />
       </div>
     </div>
   );

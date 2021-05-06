@@ -84,8 +84,14 @@ export const RecoInfoCard = () => {
                   </CardContent>
                 </div>
                 <div className="reco-info">
-                  <h5>Genre: {reco.genre}</h5>
-                  <br />
+
+                {reco.category !== "Game" && (
+                  <span>
+                    <h5>Genre: {reco.genre}</h5>
+                    <br />
+                  </span>)}
+
+                  
                   <h5>Category: {reco.category}</h5>
                   <br />
                   <h5>

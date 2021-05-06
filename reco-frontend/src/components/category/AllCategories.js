@@ -1,7 +1,5 @@
 import { CategoryCard } from "../category/CategoryCard";
-
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
 
 export const AllCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -23,9 +21,7 @@ export const AllCategories = () => {
 
   return (
     <div className="main">
-
-        <h1>Categories</h1>
-
+      <h1>Categories</h1>
       <CategoryCard listToMap={categories} />
     </div>
   );

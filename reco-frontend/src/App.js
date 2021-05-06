@@ -18,7 +18,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { MyList } from "./components/user/MyList";
 import { UserDashboard } from "./components/user/UserDashboard";
 import { AllClubs } from "./components/club/AllClubs";
-import { ClubInfo } from "./components/club/ClubInfo";
 import { ListDelete } from "./components/user/ListDelete";
 import { MyClubs } from "./components/user/MyClubs";
 import { MyClubsDelete } from "./components/user/MyClubsDelete";
@@ -101,9 +100,9 @@ function App() {
             <RecoInfoCard setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
           </Route>
 
-          <Route exact path="/club/:id">
+          {/* <Route exact path="/club/:id">
             <ClubInfo setLoginStatus={setLoggedIn} loginStatus={loggedIn} />
-          </Route>
+          </Route> */}
 
           <Route exact path="/category/:name">
             <Category setLoginStatus={setLoggedIn} loginStatus={loggedIn} />

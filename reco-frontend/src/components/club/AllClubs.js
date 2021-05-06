@@ -1,11 +1,8 @@
 import { useEffect, useState } from "react";
-import { useHistory } from "react-router";
 import { ClubCard } from "./ClubCard";
 
 export const AllClubs = () => {
   const [clubs, setClubs] = useState([]);
-
-  const history = useHistory();
 
   useEffect(() => {
     fetch("/api/clubs", {

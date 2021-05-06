@@ -2,10 +2,8 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
-import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
-import Typography from "@material-ui/core/Typography";
 import { grey } from "@material-ui/core/colors";
 import { useEffect, useState } from "react";
 import { useParams, useHistory } from "react-router";
@@ -90,21 +88,22 @@ export const RecoInfoCard = () => {
                   <br />
                   <h5>Category: {reco.category}</h5>
                   <br />
-                  <h5>About: <br />{reco.description}</h5>
+                  <h5>
+                    About: <br />
+                    {reco.description}
+                  </h5>
                 </div>
               </div>
               <CardActions
                 disableSpacing
                 className={`${reco.category}-category-header`}
                 id="reco-info-card-footer"
-
               >
                 {reco.userId === currentUserId && (
                   <span>
                     <IconButton
-                    id="edit-icon"
-                align="right"
-                    //   edge="start"
+                      id="edit-icon"
+                      align="right"
                       color="inherit"
                       component={Link}
                       to={`/reco/edit/${reco._id}`}

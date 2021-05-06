@@ -1,9 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { useEffect, useState } from "react";
 
@@ -26,7 +24,6 @@ const useStyles = makeStyles({
 
 export const CommentCard = (props) => {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   const [chat, setChat] = useState([]);
 
@@ -55,7 +52,7 @@ export const CommentCard = (props) => {
                   color="textSecondary"
                   gutterBottom
                 >
-                 {el.username}
+                  {el.username}
                 </Typography>
                 <Typography variant="h5" component="h2">
                   {el.subject}

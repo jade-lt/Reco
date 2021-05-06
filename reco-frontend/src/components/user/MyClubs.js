@@ -1,15 +1,8 @@
 import { useEffect, useState } from "react";
 import { ClubCard } from "../club/ClubCard";
 
-import { Link } from "react-router-dom";
-import { IconButton } from "@material-ui/core";
-import { Delete } from "@material-ui/icons";
-import { useHistory } from "react-router";
-
 export const MyClubs = () => {
   const [clubs, setClubs] = useState([]);
-
-  const history = useHistory();
 
   useEffect(() => {
     fetch("/api/my-clubs", {
@@ -34,7 +27,7 @@ export const MyClubs = () => {
       <div>
         <h1>My Clubs</h1>
       </div>
-      <ClubCard listToMap={clubs}/>
+      <ClubCard listToMap={clubs} />
     </div>
   );
 };

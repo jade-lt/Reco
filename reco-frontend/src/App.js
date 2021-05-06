@@ -224,7 +224,7 @@ function App() {
               category="Book"
               name="Book Club"
               description="a club for people to find and chat about books"
-              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.flaticon.com%2Ficons%2Fpng%2F512%2F31%2F31635.png&f=1&nofb=1"
+              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn0.iconfinder.com%2Fdata%2Ficons%2Feducation-learning%2F128%2Freading-512.png&f=1&nofb=1"
             />
             <Category category="Book" />
             <CommentCard club="Book" />
@@ -234,10 +234,10 @@ function App() {
           <Route exact path="/Movie-Club">
           <ClubMembership
               category="Movie"
-              name="Movie Club"
+              name="Cinema Junkies"
               description="a club for people to find and chat about movies"
-              img="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.pngall.com%2Fwp-content%2Fuploads%2F2018%2F06%2FCinema.png&f=1&nofb=1"
-            />
+              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn0.iconfinder.com%2Fdata%2Ficons%2Ffood-and-drink-6%2F100%2Ffood-19-512.png&f=1&nofb=1"
+              />
             <Category category="Movie" />
             <CommentCard club="Movie" />
             <AddComment club="Movie" />
@@ -246,9 +246,9 @@ function App() {
           <Route exact path="/TV-Club">
           <ClubMembership
               category="TV"
-              name="TV Club"
+              name="Couch Potatoes"
               description="a club for people to find and chat about tv shows"
-              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_431682.png&f=1&nofb=1"
+              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwebstockreview.net%2Fimages%2Fclipart-tv-watched-tv-3.png&f=1&nofb=1"
             />
             <Category category="TV" />
             <CommentCard club="TV" />
@@ -258,9 +258,9 @@ function App() {
           <Route exact path="/Game-Club">
           <ClubMembership
               category="Game"
-              name="Game Club"
+              name="Gamers"
               description="a club for people to find and chat about games"
-              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa7%2FVideo_game_controller_icon_designed_by_Maico_Amorim.svg%2F937px-Video_game_controller_icon_designed_by_Maico_Amorim.svg.png&f=1&nofb=1"
+              img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.searchpng.com%2Fwp-content%2Fuploads%2F2018%2F12%2FGamer-Png-icon-715x715.png&f=1&nofb=1"
             />
             <Category category="Game" />
             <CommentCard club="Game" />

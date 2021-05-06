@@ -226,6 +226,11 @@ form {
   background-color: white;
 }
 
+.reco-img {
+  max-width: 100%;
+  border-radius: 5%;
+}
+
 #club-card-header-footer {
   width: 94%;
 }

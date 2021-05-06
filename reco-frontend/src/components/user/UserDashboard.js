@@ -1,4 +1,5 @@
 import { RecoCard } from "../reco/RecoCard";
+import { ListCard } from "../reco/ListCard";
 import { ClubCard } from "../club/ClubCard";
 import { useEffect, useState } from "react";
 import { ButtonComponent } from "../ButtonComponent";
@@ -94,7 +95,7 @@ export const UserDashboard = () => {
   return (
     <div className="main">
       <h2>My List</h2>
-      <RecoCard listToMap={list} />
+      <ListCard listToMap={list} />
       <ButtonComponent buttonLabel="See All" onClick={clickAllListHandler} />
 
       <h2>My Reco's</h2>

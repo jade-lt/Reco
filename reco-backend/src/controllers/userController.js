@@ -16,7 +16,34 @@ router.get("/", async (req, res, next) => {
   }
 });
 
+router.get("/:id", async (req, res, next) => {
+  try {
+    const foundUser = await User.findById(req.params.id);
+    res.json(foundUser);
+  } catch (err) {
+    res.send(err);
+  }
+});
 
+router.put("/:id", async (req, res) => {
+  try {
+    const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {
+      new: true,
+    });x
+    res.json(updatedUser);
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  try {
+    const deletedUser = await User.findByIdAndRemove(req.params.id);
+    res.json(deletedUser);
+  } catch (err) {
+    res.send(err);
+  }
+});
 
 
 
@@ -49,7 +76,8 @@ router.post('/login', async (req, res) => {
       if(bcrypt.compareSync(req.body.password, foundUser.password)){
         const payload = {
           id: foundUser._id,
-          user: foundUser.username
+          user: foundUser.username,
+          userType: foundUser.userType,
         };
   
         jwt.sign(payload, secretKey, {expiresIn: '1h'}, (err, token) => {

@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import { AccountCircle, Home, Search } from "@material-ui/icons";
 import { useHistory } from "react-router";
+import { Tooltip } from "@material-ui/core/";
 
 export const Navbar = (props) => {
   const history = useHistory();
@@ -75,22 +76,26 @@ export const Navbar = (props) => {
     <AppBar position="static">
       <Toolbar className="navbar">
         <Container className="navbar-display-flex">
-          <IconButton
-            edge="start"
-            color="inherit"
-            className="home"
-            onClick={homeClickHandler}
-          >
-            <Home fontSize="large" />
-          </IconButton>
-          <IconButton
-            edge="start"
-            color="inherit"
-            className="home"
-            onClick={searchClickHandler}
-          >
-            <Search fontSize="large" />
-          </IconButton>
+          <Tooltip title="Home" arrow="true">
+            <IconButton
+              edge="start"
+              color="inherit"
+              className="home"
+              onClick={homeClickHandler}
+            >
+              <Home fontSize="large" />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Search" arrow="true">
+            <IconButton
+              edge="start"
+              color="inherit"
+              className="home"
+              onClick={searchClickHandler}
+            >
+              <Search fontSize="large" />
+            </IconButton>
+          </Tooltip>
           <Button color="inherit" onClick={clubsClickHandler}>
             Clubs
           </Button>
@@ -100,20 +105,19 @@ export const Navbar = (props) => {
           <Button color="inherit" onClick={categoriesClickHandler}>
             Categories
           </Button>
-          {(currentUserToken === "undefined" ||
-            currentUserToken === null) && (
-              <span>
-                <Button color="inherit" onClick={aboutClickHandler}>
-                  About
-                </Button>
-                <Button color="inherit" onClick={registerClickHandler}>
-                  Register
-                </Button>
-                <Button color="inherit" onClick={signInClickHandler}>
-                  Sign In
-                </Button>
-              </span>
-            )}
+          {(currentUserToken === "undefined" || currentUserToken === null) && (
+            <span>
+              <Button color="inherit" onClick={aboutClickHandler}>
+                About
+              </Button>
+              <Button color="inherit" onClick={registerClickHandler}>
+                Register
+              </Button>
+              <Button color="inherit" onClick={signInClickHandler}>
+                Sign In
+              </Button>
+            </span>
+          )}
           {props.loginStatus && (
             <span>
               <Button color="inherit" onClick={myClubsClickHandler}>
@@ -130,14 +134,16 @@ export const Navbar = (props) => {
               </Button>
             </span>
           )}
-          <IconButton
-            edge="end"
-            color="inherit"
-            className="account"
-            onClick={accountClickHandler}
-          >
-            <AccountCircle fontSize="large" />
-          </IconButton>
+          <Tooltip title="Dashboard" arrow="true">
+            <IconButton
+              edge="end"
+              color="inherit"
+              className="account"
+              onClick={accountClickHandler}
+            >
+              <AccountCircle fontSize="large" />
+            </IconButton>
+          </Tooltip>
         </Container>
       </Toolbar>
     </AppBar>

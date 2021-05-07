@@ -10,6 +10,7 @@ import { useParams, useHistory } from "react-router";
 import { IconButton } from "@material-ui/core";
 import { Edit, Delete, Star } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import { Tooltip } from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -84,14 +85,13 @@ export const RecoInfoCard = () => {
                   </CardContent>
                 </div>
                 <div className="reco-info">
+                  {reco.category !== "Game" && (
+                    <span>
+                      <h5>Genre: {reco.genre}</h5>
+                      <br />
+                    </span>
+                  )}
 
-                {reco.category !== "Game" && (
-                  <span>
-                    <h5>Genre: {reco.genre}</h5>
-                    <br />
-                  </span>)}
-
-                  
                   <h5>Category: {reco.category}</h5>
                   <br />
                   <h5>
@@ -107,35 +107,41 @@ export const RecoInfoCard = () => {
               >
                 {reco.userId === currentUserId && (
                   <span>
-                    <IconButton
-                      id="edit-icon"
-                      align="right"
-                      color="inherit"
-                      component={Link}
-                      to={`/reco/edit/${reco._id}`}
-                    >
-                      <Edit fontSize="large" />
-                    </IconButton>
-                    <IconButton
-                      edge="end"
-                      color="inherit"
-                      component={Link}
-                      to={`/reco/delete/${reco._id}`}
-                    >
-                      <Delete fontSize="large" />
-                    </IconButton>
+                    <Tooltip title="Edit" arrow="true">
+                      <IconButton
+                        id="edit-icon"
+                        align="right"
+                        color="inherit"
+                        component={Link}
+                        to={`/reco/edit/${reco._id}`}
+                      >
+                        <Edit fontSize="large" />
+                      </IconButton>
+                    </Tooltip>
+                    <Tooltip title="Delee" arrow="true">
+                      <IconButton
+                        edge="end"
+                        color="inherit"
+                        component={Link}
+                        to={`/reco/delete/${reco._id}`}
+                      >
+                        <Delete fontSize="large" />
+                      </IconButton>
+                    </Tooltip>
                   </span>
                 )}
 
                 {reco.userId !== currentUserId && (
                   <span>
-                    <IconButton
-                      edge="end"
-                      color="inherit"
-                      onClick={clickFavouriteHandler}
-                    >
-                      <Star fontSize="large" />
-                    </IconButton>
+                    <Tooltip title="Add to My List" arrow="true">
+                      <IconButton
+                        edge="end"
+                        color="inherit"
+                        onClick={clickFavouriteHandler}
+                      >
+                        <Star fontSize="large" />
+                      </IconButton>
+                    </Tooltip>
                   </span>
                 )}
               </CardActions>

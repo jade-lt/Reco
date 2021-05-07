@@ -7,6 +7,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardActions from "@material-ui/core/CardActions";
 import { grey } from "@material-ui/core/colors";
+import { Tooltip } from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,14 +20,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const ListCard = (props) => {
-
   const classes = useStyles();
-
 
   return (
     <div className="main">
       <div>
-      <ul>
+        <ul>
           {props.listToMap.map((el) => (
             <div className={"reco-card"}>
               <Card className={`${el.category}-category-header`}>
@@ -48,14 +47,16 @@ export const ListCard = (props) => {
                   disableSpacing
                   className={`${el.category}-category-header`}
                 >
-                  <IconButton
-                    edge="start"
-                    color="inherit"
-                    component={Link}
-                    to={`/list/delete/${el._id}`}
-                  >
-                    <Delete fontSize="large" />
-                  </IconButton>
+                  <Tooltip title="Remove from My List" arrow="true">
+                    <IconButton
+                      edge="start"
+                      color="inherit"
+                      component={Link}
+                      to={`/list/delete/${el._id}`}
+                    >
+                      <Delete fontSize="large" />
+                    </IconButton>
+                  </Tooltip>
                 </CardActions>
               </Card>
             </div>

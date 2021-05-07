@@ -47,4 +47,6 @@ Start the servers in both terminals by using the "npm start" commands. If not au
 
 Built using MongoDB, Express, React, Node, Material UI, TMDb, Google Books and RAWG
 
+You can see initial wireframe here: https://www.figma.com/file/Rgm5ovPNVxM9xzCTyN5MVe/Reco-App?node-id=0%3A1
+
 

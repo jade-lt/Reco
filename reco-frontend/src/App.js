@@ -15,6 +15,7 @@ import { Search } from "./components/Search";
 import { About } from "./components/About";
 import { AllCategories } from "./components/category/AllCategories";
 import { Navbar } from "./components/Navbar";
+import { Footer } from "./components/Footer";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { MyList } from "./components/user/MyList";
 import { UserDashboard } from "./components/user/UserDashboard";
@@ -277,6 +278,10 @@ function App() {
             <HomePage />
           </Route>
         </Switch>
+        <div className="footer-overlap">
+
+        </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );

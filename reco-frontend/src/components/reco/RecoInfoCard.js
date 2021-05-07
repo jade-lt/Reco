@@ -91,7 +91,6 @@ export const RecoInfoCard = () => {
                       <br />
                     </span>
                   )}
-
                   <h5>Category: {reco.category}</h5>
                   <br />
                   <h5>
@@ -120,7 +119,7 @@ export const RecoInfoCard = () => {
                         <Edit fontSize="large" />
                       </IconButton>
                     </Tooltip>
-                    <Tooltip title="Delee" arrow="true">
+                    <Tooltip title="Delete" arrow="true">
                       <IconButton
                         edge="end"
                         style={{ color: grey[50] }}

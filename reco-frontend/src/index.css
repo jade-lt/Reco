@@ -29,6 +29,7 @@ h3 {
 
 .main {
   text-align: center;
+  min-height: 100%;
 }
 
 #home-options {
@@ -302,3 +303,35 @@ form {
   /* border: solid; */
   width: 30%;
 }
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 500px;
+}
+
+.footer-overlap {
+  min-height: 150px;
+}
+
+.footer {
+  position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	background-color: #ff5768;
+	color: white;
+	text-align: center;
+  margin-top: 50px;
+  height: 100px;
+}
+
+#footer-element {
+  float: left;
+  border-style: solid;
+  max-width: 20%;
+  height: 90%;
+}
+

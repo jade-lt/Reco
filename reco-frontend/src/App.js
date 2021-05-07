@@ -281,7 +281,7 @@ function App() {
         <div className="footer-overlap">
 
         </div>
-        <Footer />
+        
       </div>
     </BrowserRouter>
   );

@@ -3,6 +3,7 @@ import { ClubCard } from "./club/ClubCard";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { ButtonComponent } from "./ButtonComponent";
+import { Footer } from "./Footer";
 
 
 export const HomePage = () => {
@@ -70,6 +71,10 @@ export const HomePage = () => {
         <ClubCard listToMap={clubs} />
         <ButtonComponent buttonLabel="See All" onClick={clickAllClubsHandler} />
       </div>
+      <div>
+        <Footer />
+        
+        </div>
     </div>
   );
 };

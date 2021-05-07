@@ -31,7 +31,9 @@ export const Category = (props) => {
 
   return (
     <div className="main">
-                        {currentUserType === "admin" && (
+                        
+      <RecoCard listToMap={results} />
+      {/* {currentUserType === "admin" && (
                     <span>
                         <ButtonComponent
                           onClick={() => history.push(`/admin/edit/category-genre/${props.category}`)}
@@ -45,8 +47,7 @@ export const Category = (props) => {
                           />
                         
                     </span>
-                  )}
-      <RecoCard listToMap={results} />
+                  )} */}
     </div>
   );
 };

@@ -53,7 +53,7 @@ export const AddComment = (props) => {
   };
 
   return (
-    <div className="new-chat-comment-form">
+    <div className="main">
       <h3>Add a comment</h3>
       <form>
         <label>
@@ -75,6 +75,8 @@ export const AddComment = (props) => {
             onChange={changeHandler}
           />
         </label>
+        <br />
+
         <ButtonComponent
           buttonLabel="Add Comment"
           onClick={clickNewCommentHandler}

@@ -45,8 +45,14 @@ export const CommentCard = (props) => {
       <ul>
         {results.map((el) => (
           <li key={el.id}>
+            <div className="comment-card">
             <Card className={classes.root} variant="outlined">
-              <CardContent>
+              <CardContent className="comment-card-header">
+              <Typography variant="p" component="p">
+                  {el.subject}
+                </Typography>
+                </CardContent>
+                <CardContent>
                 <Typography
                   className={classes.title}
                   color="textSecondary"
@@ -54,18 +60,18 @@ export const CommentCard = (props) => {
                 >
                   {el.username}
                 </Typography>
-                <Typography variant="h5" component="h2">
-                  {el.subject}
-                </Typography>
-                <Typography className={classes.pos} color="textSecondary">
+                <Typography className={classes.pos} variant="body2" component="p" color="textSecondary">
                   {el.dateTime}
                 </Typography>
+                </CardContent>
+                <CardContent>
                 <Typography variant="body2" component="p">
                   {el.comment}
                   <br />
                 </Typography>
               </CardContent>
             </Card>
+            </div>
           </li>
         ))}
       </ul>

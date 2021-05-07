@@ -3,6 +3,7 @@ import jwt from "jwt-decode";
 import moment from "moment";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
+
 import { UserLoginForm } from "./components/user/UserLoginForm";
 import { RecoUpdate } from "./components/reco/RecoUpdate";
 import { MyRecos } from "./components/user/MyRecos";
@@ -227,6 +228,7 @@ function App() {
               img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn0.iconfinder.com%2Fdata%2Ficons%2Feducation-learning%2F128%2Freading-512.png&f=1&nofb=1"
             />
             <Category category="Book" />
+
             <CommentCard club="Book" />
             <AddComment club="Book" />
           </Route>

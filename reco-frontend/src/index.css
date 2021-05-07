@@ -1,4 +1,4 @@
-h1, h2 {
+h1, h2, h3 {
   color: #ff5768;
   padding: 2%;
   /* margin: 2%; */
@@ -119,6 +119,16 @@ ul {
 
 }
 
+.comment-card {
+  /* border-style: solid; */
+  margin: 1%;
+  /* border-radius: 10%; */
+}
+
+.comment-card-header {
+  background-color: rgb(185, 184, 185);
+}
+
 .genre-card-hoverable:hover {
   cursor: pointer;
   background-color: #00a897;
@@ -130,7 +140,14 @@ ul {
   text-align: center;
 } */
 
-
+/* #add-comment {
+  /* float: left; */
+  /* margin-left: 18%;
+} */
+/* 
+#comment-form {
+  margin-left: 2%;
+} */ 
 
 .delete-reco {
   width: 30%;

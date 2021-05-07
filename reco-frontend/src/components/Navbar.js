@@ -3,8 +3,8 @@ import {
   AppBar,
   Toolbar,
   IconButton,
-  Container,
   Button,
+  Box,
 } from "@material-ui/core";
 import { AccountCircle, Home, Search } from "@material-ui/icons";
 import { useHistory } from "react-router";
@@ -75,7 +75,8 @@ export const Navbar = (props) => {
   return (
     <AppBar position="static">
       <Toolbar className="navbar">
-        <Container className="navbar-display-flex">
+        {/* <Container className="navbar-display-flex"> */}
+        <Box display="flex" flexGrow={1}>
           <Tooltip title="Home" arrow="true">
             <IconButton
               edge="start"
@@ -96,55 +97,58 @@ export const Navbar = (props) => {
               <Search fontSize="large" />
             </IconButton>
           </Tooltip>
-          <Button color="inherit" onClick={clubsClickHandler}>
-            Clubs
-          </Button>
-          <Button color="inherit" onClick={genresClickHandler}>
-            Genres
-          </Button>
-          <Button color="inherit" onClick={categoriesClickHandler}>
-            Categories
-          </Button>
-          {(currentUserToken === "undefined" || currentUserToken === null) && (
-            <span>
-              <Button color="inherit" onClick={aboutClickHandler}>
-                About
-              </Button>
-              <Button color="inherit" onClick={registerClickHandler}>
-                Register
-              </Button>
-              <Button color="inherit" onClick={signInClickHandler}>
-                Sign In
-              </Button>
-            </span>
-          )}
-          {props.loginStatus && (
-            <span>
-              <Button color="inherit" onClick={myClubsClickHandler}>
-                My Clubs
-              </Button>
-              <Button color="inherit" onClick={myRecosClickHandler}>
-                My Reco's
-              </Button>
-              <Button color="inherit" onClick={myListClickHandler}>
-                My List
-              </Button>
-              <Button color="inherit" onClick={signOutClickHandler}>
-                Sign Out
-              </Button>
-            </span>
-          )}
-          <Tooltip title="Dashboard" arrow="true">
-            <IconButton
-              edge="end"
-              color="inherit"
-              className="account"
-              onClick={accountClickHandler}
-            >
-              <AccountCircle fontSize="large" />
-            </IconButton>
-          </Tooltip>
-        </Container>
+        </Box>
+        <Button color="inherit" onClick={clubsClickHandler}>
+          Clubs
+        </Button>
+        <Button color="inherit" onClick={genresClickHandler}>
+          Genres
+        </Button>
+        <Button color="inherit" onClick={categoriesClickHandler}>
+          Categories
+        </Button>
+        {(currentUserToken === "undefined" || currentUserToken === null) && (
+          <span>
+            <Button color="inherit" onClick={aboutClickHandler}>
+              About
+            </Button>
+            <Button color="inherit" onClick={registerClickHandler}>
+              Register
+            </Button>
+            <Button color="inherit" onClick={signInClickHandler}>
+              Sign In
+            </Button>
+          </span>
+        )}
+
+        {props.loginStatus && (
+          <span>
+            <Button color="inherit" onClick={myClubsClickHandler}>
+              My Clubs
+            </Button>
+            <Button color="inherit" onClick={myRecosClickHandler}>
+              My Reco's
+            </Button>
+            <Button color="inherit" onClick={myListClickHandler}>
+              My List
+            </Button>
+            <Button color="inherit" onClick={signOutClickHandler}>
+              Sign Out
+            </Button>
+
+            <Tooltip title="Dashboard" arrow="true">
+              <IconButton
+                edge="end"
+                color="inherit"
+                className="account"
+                onClick={accountClickHandler}
+              >
+                <AccountCircle fontSize="large" />
+              </IconButton>
+            </Tooltip>
+          </span>
+        )}
+        {/* </Container> */}
       </Toolbar>
     </AppBar>
   );

@@ -7,7 +7,7 @@ import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardActions from "@material-ui/core/CardActions";
 import { grey } from "@material-ui/core/colors";
-import { Tooltip } from "@material-ui/core/";
+import { Tooltip, Box } from "@material-ui/core/";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,6 +47,8 @@ export const ListCard = (props) => {
                   disableSpacing
                   className={`${el.category}-category-header`}
                 >
+                  <Box display="flex" flexGrow={1}></Box>
+
                   <Tooltip title="Remove from My List" arrow="true">
                     <IconButton
                       edge="start"

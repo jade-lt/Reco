@@ -75,7 +75,6 @@ export const Navbar = (props) => {
   return (
     <AppBar position="static">
       <Toolbar className="navbar">
-        {/* <Container className="navbar-display-flex"> */}
         <Box display="flex" flexGrow={1}>
           <Tooltip title="Home" arrow="true">
             <IconButton
@@ -148,7 +147,6 @@ export const Navbar = (props) => {
             </Tooltip>
           </span>
         )}
-        {/* </Container> */}
       </Toolbar>
     </AppBar>
   );

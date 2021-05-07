@@ -53,7 +53,10 @@ export const RecoUpdate = () => {
   return (
     <div className="main">
       <h1>Edit this Reco</h1>
-      <div>
+      <div className="reco-edit-page">
+      <img className="reco-img" src={reco.img} alt=""></img>
+      </div>
+      <div className="reco-edit-page">
         <form>
           <label>
             Category

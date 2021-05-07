@@ -34,7 +34,7 @@ export const MyRecos = () => {
   return (
     <div className="main">
       <div>
-        <h1>My Reco's</h1>
+        <h1>My Recommendations</h1>
       </div>
       <ButtonComponent buttonLabel="Create a New Reco" onClick={clickCreateHandler} />
       <RecoCard listToMap={recos} />

@@ -21,7 +21,7 @@ export const AllGenres = () => {
 
   return (
     <div className="main">
-      <h1>Genres</h1>
+      <h1>GENRES</h1>
       <GenreCard listToMap={genres} />
     </div>
   );

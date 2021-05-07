@@ -94,15 +94,15 @@ export const UserDashboard = () => {
 
   return (
     <div className="main">
-      <h2>My List</h2>
+      <h1>My List</h1>
       <ListCard listToMap={list} />
       <ButtonComponent buttonLabel="See All" onClick={clickAllListHandler} />
 
-      <h2>My Reco's</h2>
+      <h1>My Reco's</h1>
       <RecoCard listToMap={recos} />
       <ButtonComponent buttonLabel="See All" onClick={clickAllRecosHandler} />
 
-      <h2>My Clubs</h2>
+      <h1>My Clubs</h1>
       <ClubCard listToMap={clubs} />
       <ButtonComponent buttonLabel="See All" onClick={clickAllClubsHandler} />
     </div>

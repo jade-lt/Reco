@@ -32,7 +32,6 @@ export const ListDelete = () => {
 
   return (
     <div className="main">
-        <h1>Remove</h1>
       <h3 id="delete-text">
         Are you sure you want to remove this reco from your list?
       </h3>

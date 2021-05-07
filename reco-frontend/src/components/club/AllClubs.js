@@ -21,7 +21,7 @@ export const AllClubs = () => {
 
   return (
     <div className="main">
-      <h1>Clubs</h1>
+      <h1>CLUBS</h1>
       <ClubCard listToMap={clubs} />
     </div>
   );

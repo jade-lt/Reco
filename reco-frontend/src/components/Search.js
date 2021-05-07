@@ -35,10 +35,11 @@ export const Search = () => {
 
   return (
     <div className="main">
-      <div id="search">
+      <div >
         <input
+        id="search"
           type="text"
-          placeholder="Search for a Reco"
+          placeholder="Search"
           value={result}
           onChange={onChange}
         />

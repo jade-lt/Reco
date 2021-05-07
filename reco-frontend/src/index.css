@@ -225,14 +225,13 @@ form {
   max-width: 50%;
 }
 
-#reco-info-card-footer {
-  width: 100%;
-  text-align: right;
+.reco-edit-page {
+  float: left;
+  margin-left: 20%;
 }
 
-#edit-icon,
-#delete-icon {
-  text-align: right;
+#reco-info-card-footer {
+  width: 100%;
 }
 
 .genre-card {
@@ -300,4 +299,6 @@ form {
 
 #search {
   margin: 2%;
+  /* border: solid; */
+  width: 30%;
 }

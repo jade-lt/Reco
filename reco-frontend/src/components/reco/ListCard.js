@@ -52,7 +52,7 @@ export const ListCard = (props) => {
                   <Tooltip title="Remove from My List" arrow="true">
                     <IconButton
                       edge="start"
-                      color="inherit"
+                      style={{ color: grey[50] }}
                       component={Link}
                       to={`/list/delete/${el._id}`}
                     >

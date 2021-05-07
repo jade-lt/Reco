@@ -113,7 +113,7 @@ export const RecoInfoCard = () => {
                       <IconButton
                         id="edit-icon"
                         align="right"
-                        color="inherit"
+                        style={{ color: grey[50] }}
                         component={Link}
                         to={`/reco/edit/${reco._id}`}
                       >
@@ -123,7 +123,7 @@ export const RecoInfoCard = () => {
                     <Tooltip title="Delee" arrow="true">
                       <IconButton
                         edge="end"
-                        color="inherit"
+                        style={{ color: grey[50] }}
                         component={Link}
                         to={`/reco/delete/${reco._id}`}
                       >
@@ -138,7 +138,7 @@ export const RecoInfoCard = () => {
                     <Tooltip title="Add to My List" arrow="true">
                       <IconButton
                         edge="end"
-                        color="inherit"
+                        style={{ color: grey[50] }}
                         onClick={clickFavouriteHandler}
                       >
                         <Star fontSize="large" />

@@ -47,7 +47,7 @@ export const CommentCard = (props) => {
           <li key={el.id}>
             <div className="comment-card">
             <Card className={classes.root} variant="outlined">
-              <CardContent className="comment-card-header">
+              <CardContent className={`${props.club}-category-header`}>
               <Typography variant="p" component="p">
                   {el.subject}
                 </Typography>

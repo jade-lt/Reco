@@ -1,41 +1,28 @@
 # Reco
 
-A working full stack CRUD app for writing, sharing and finding recommendations for books, movies, TV shows and games.
+Overview:
 
-The app includes registration for new users, login/logout functionality, and protected routes for creating, updating or deleting recommendations, with users needing to be logged in to access these features.
+Reco is a working full stack CRUD app for creating, sharing, finding and saving recommendations for books, movies, TV shows and games.
 
-![Image of Home page](https://github.com/jade-lt/Reco/blob/main/images/Reco-home.png?raw=true)
+The app includes registration for new users, login/logout functionality, and protected routes for creating, updating, deleting of saving recommendations, with users needing to be logged in to access these features.
 
-![Image of Rego page](https://github.com/jade-lt/Reco/blob/main/images/reco-rego.png?raw=true)
+A full list of all recommendations is available without needing to log in, along with a search feature and lists of recommendations sorted by genre or category.
 
+![Image of Home page 1](https://github.com/jade-lt/Reco/blob/main/Home-1.png?raw=true)
 
-Once logged in, the user is routed to a list of recommendations, with each having a clickable edit or delete link. There is also the option to create a new recommendation or logout.
+![Image of Home page 2](https://github.com/jade-lt/Reco/blob/main/Home-2.png?raw=true)
 
-![Image of my recos 1](https://github.com/jade-lt/Reco/blob/main/images/my-recos-1.png?raw=true)
+Once logged in, the Navbar options change and the user is routed to their dashboard which has an overview of their list of saved recommendations, the things they are recommending, and the clubs they have joined.
 
-![Image of my recos 2](https://github.com/jade-lt/Reco/blob/main/images/my-recos-2.png?raw=true)
+![Image of Dashboard and Navbar](https://github.com/jade-lt/Reco/blob/main/Dashboard.png?raw=true)
 
-![Image of my recos 3](https://github.com/jade-lt/Reco/blob/main/images/my-recos-3.png?raw=true)
+The app features the ability for logged in users to create new recommendations, and this can be done either manually via a form or by using a search feature which calls an API and lists any movies/tv shows/books/games that match the search terms. 
 
+Users can edit or delete their own recommendations or favourite other user's recommednations, and these will be added to a list of things the user is interested in.
 
-When a user clicks to create a new recommendation, they are routed to a form to create a new entry that posts to the database.
-
-![Image of create 1](https://github.com/jade-lt/Reco/blob/main/images/reco-create-1.png?raw=true)
-
-![Image of create 2](https://github.com/jade-lt/Reco/blob/main/images/reco-create-2.png?raw=true)
+The app also features "Clubs" where users can find recommendations by category or interest along with a comment section to discuss the topic/category with other members of the club.
 
 
-
-The edit link 
-routes to a form with pre-filled input fields relevant to the recommendation, and from there a user can change the input fields and save the updates. The delete link routes to a component with the relevant recommendation name and image, and asks the user if they are sure they want to delete. Upon clicking the delete button, the recommendation is deleted from the database.
-
-![Image of edit 1](https://github.com/jade-lt/Reco/blob/main/images/reco-edit-1.png?raw=true)
-
-![Image of edit 2](https://github.com/jade-lt/Reco/blob/main/images/reco-edit-2.png?raw=true)
-
-![Image of delete 1](https://github.com/jade-lt/Reco/blob/main/images/reco-delete-1.png?raw=true)
-
-![Image of delete 2](https://github.com/jade-lt/Reco/blob/main/images/reco-delete-2.png?raw=true)
 
 
 Issues/things to fix

@@ -54,17 +54,13 @@ export const HomePage = () => {
 
   return (
     <div className="main">
-      <div className="header-text" id="header-home">
-        <h3 id="about">
-          Find and share recommendations <br /> of movies, TV-shows, books and
-          games
-          <br /> with Reco!
-        </h3>
-      </div>
+    <div  id="header-home">
+      <h1 id="header-text">RECO</h1>
+    </div>
 
-      <div id="home-options"></div>
-      <div>
-        <h1>Featured Reco's</h1>
+    <div id="home-options"></div>
+    <div>
+      <h1>Featured Recommendations</h1>
         <RecoCard listToMap={recos} />
         <ButtonComponent buttonLabel="See All" onClick={clickAllRecosHandler} />
 

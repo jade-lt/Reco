@@ -1,34 +1,31 @@
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   color: #ff5768;
   padding: 2%;
   /* margin: 2%; */
 }
-
 
 .button {
   color: #ff5768;
   padding: 2%;
 }
 
-
 .navbar {
   background-color: #ff5768;
-
 }
 
-  .navbar-display {
-      display: flex;
-      justify-content: space-between;
-      float: right;
-    }
+.navbar-display {
+  display: flex;
+  justify-content: space-between;
+  float: right;
+}
 
-  .navbar-links {
-    text-decoration: none;
-    text-transform: uppercase;
-    color: white;
-    
-  }
-
+.navbar-links {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
 
 .main {
   text-align: center;
@@ -48,9 +45,27 @@ h1, h2, h3 {
 }
 
 #header-home {
-  color: white;
   background: url("./header.png");
-  background-size: 100%
+  background-size: 100%;
+  max-height: 40%;
+  text-align: center;
+ padding: 8%;
+  /* width: 100%; */
+}
+
+#about {
+  color: white;
+}
+
+#header-text {
+  font-size: 1800%;
+  color: white;
+  font-weight: bolder;
+  /* border-style-top: solid; */
+  /* padding: 2% 10% 2% 10%; */
+  /* border-radius: 4%; */
+  /* width: 60%; */
+  /* text-align: center; */
 }
 
 #rego {
@@ -71,7 +86,6 @@ h1, h2, h3 {
 ul {
   list-style-type: none;
 }
-
 
 /* #user-recos-list-hoverable:hover {
   opacity: 70%;
@@ -110,18 +124,16 @@ ul {
   cursor: pointer;
 }
 
-
 #genre-list {
   padding: 10%;
   border-radius: 6%;
-  
+
   border-style: solid;
   /* color: aquamarine; */
 }
 
 .comment-cards-list {
   width: 50%;
-
 }
 
 .comment-card {
@@ -141,25 +153,25 @@ ul {
   filter: invert(100%);
 }
 
- /* .reco-name {
+/* .reco-name {
   text-align: center;
 } */
 
 /* #add-comment {
   /* float: left; */
-  /* margin-left: 18%;
+/* margin-left: 18%;
 } */
 /* 
 #comment-form {
   margin-left: 2%;
-} */ 
+} */
 
 .delete-reco {
   width: 30%;
   margin: 1%;
   border-radius: 6%;
   text-align: center;
-  padding: 5%; 
+  padding: 5%;
 }
 
 #delete-text {
@@ -185,7 +197,6 @@ ul {
 
 form {
   margin-bottom: 20%;
-  
 }
 
 .reco-card {
@@ -217,10 +228,10 @@ form {
 #reco-info-card-footer {
   width: 100%;
   text-align: right;
-
 }
 
-#edit-icon, #delete-icon {
+#edit-icon,
+#delete-icon {
   text-align: right;
 }
 
@@ -260,15 +271,16 @@ form {
 }
 
 .club-img {
-  float: left;
+  /* float: left; */
   max-width: 90%;
   height: auto;
+  max-height: 100%;
   border-radius: 5%;
   margin: 2% 2% 2% 5%;
+  padding: 2%;
   /* border-style: solid; */
   /* object-fit: scale-down; */
-  
-} 
+}
 
 .Book-category-header {
   background-color: #ffbf65;
@@ -280,12 +292,10 @@ form {
 
 .TV-category-header {
   background-color: #8dd78f;
-
 }
 
 .Game-category-header {
-  background-color: #ff96c5;
-
+  background-color: #b44ccb;
 }
 
 #search {

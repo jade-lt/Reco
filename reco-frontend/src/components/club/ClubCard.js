@@ -21,8 +21,9 @@ const useStyles = makeStyles((theme) => ({
     padding: "2%",
   },
   cardHover: {
-    cursor: "pointer",
-  },
+  cursor: "pointer",
+  
+  }
 }));
 
 export const ClubCard = (props) => {
@@ -35,41 +36,43 @@ export const ClubCard = (props) => {
       <ul>
         {props.listToMap.map((el) => (
           <li key={el.id}>
-            <div
-              className={"club-card"}
-              onClick={() => history.push(`/${el.category}-club`)}
+          <div
+            className={"club-card"}
+            onClick={() => history.push(`/${el.category}-club`)}
+          >
+            <Card
+              className={`${el.category}-category-header`}
+              id="card-hoverable"
             >
-              <Card
+              <CardHeader
                 className={`${el.category}-category-header`}
-                id="card-hoverable"
-              >
-                <CardHeader
-                  className={`${el.category}-category-header`}
-                  title={
-                    el.name.length > 18
-                      ? el.name.substring(0, 17) + "..."
-                      : el.name
-                  }
-                  style={{ color: grey[50] }}
-                />
-                <CardContent className={classes.media}>
-                  <img className="club-img" src={el.img} alt=""></img>
+                title={
+                  el.name.length > 18
+                    ? el.name.substring(0, 17) + "..."
+                    : el.name
+                }
+                style={{ color: grey[50] }}
+              />
+              <CardContent
+                className={classes.media}>
+                <img className="club-img" src={el.img} alt=""></img>
                 </CardContent>
-                <CardContent className={`${el.category}-category-header`}>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  ></Typography>
-                </CardContent>
-                <CardActions
-                  disableSpacing
-                  className={`${el.category}-category-header`}
-                ></CardActions>
-              </Card>
-            </div>
+              <CardContent className={`${el.category}-category-header`}>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  component="p"
+                ></Typography>
+              </CardContent>
+              <CardActions
+                disableSpacing
+                className={`${el.category}-category-header`}
+              ></CardActions>
+            </Card>
+          </div>
           </li>
         ))}
+        
       </ul>
     </div>
   );

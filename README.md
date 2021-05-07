@@ -8,13 +8,13 @@ The app includes registration for new users, login/logout functionality, and pro
 
 A full list of all recommendations is available without needing to log in, along with a search feature and lists of recommendations sorted by genre or category.
 
-![Image of Home page 1](https://github.com/jade-lt/Reco/blob/main/Home-1.png?raw=true)
+![Image of Home page 1](https://github.com/jade-lt/Reco/blob/main/reco-frontend/images%20for%20readme/Home-1.png?raw=true)
 
-![Image of Home page 2](https://github.com/jade-lt/Reco/blob/main/Home-2.png?raw=true)
+![Image of Home page 2](https://github.com/jade-lt/Reco/blob/main/reco-frontend/images%20for%20readme/Home-2.png?raw=true)
 
 Once logged in, the Navbar options change and the user is routed to their dashboard which has an overview of their list of saved recommendations, the things they are recommending, and the clubs they have joined.
 
-![Image of Dashboard and Navbar](https://github.com/jade-lt/Reco/blob/main/Dashboard.png?raw=true)
+![Image of Dashboard and Navbar](https://github.com/jade-lt/Reco/blob/main/reco-frontend/images%20for%20readme/Dashboard.png?raw=true)
 
 The app features the ability for logged in users to create new recommendations, and this can be done either manually via a form or by using a search feature which calls an API and lists any movies/tv shows/books/games that match the search terms. 
 
@@ -22,6 +22,9 @@ Users can edit or delete their own recommendations or favourite other user's rec
 
 The app also features "Clubs" where users can find recommendations by category or interest along with a comment section to discuss the topic/category with other members of the club.
 
+![Image of Club](https://github.com/jade-lt/Reco/blob/main/reco-frontend/images%20for%20readme/club.png?raw=true)
+
+![Image of Club comments](https://github.com/jade-lt/Reco/blob/main/reco-frontend/images%20for%20readme/club-comment.png?raw=true)
 
 
 

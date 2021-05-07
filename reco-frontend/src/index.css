@@ -1,7 +1,9 @@
-h1 {
+h1, h2 {
   color: #ff5768;
   padding: 2%;
+  /* margin: 2%; */
 }
+
 
 .button {
   color: #ff5768;

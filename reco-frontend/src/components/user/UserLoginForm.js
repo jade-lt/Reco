@@ -45,7 +45,7 @@ export function UserLoginForm(props) {
 
   return (
 
-      <div className="main" id="login-form">
+      <div className="main" >
         <h1>Login</h1>
         <form onSubmit={handleSubmit}>
           <label>

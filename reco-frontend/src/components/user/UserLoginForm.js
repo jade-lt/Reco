@@ -44,9 +44,9 @@ export function UserLoginForm(props) {
   };
 
   return (
-    <div>
+
       <div className="main" id="login-form">
-        <h1>Please Login</h1>
+        <h1>Login</h1>
         <form onSubmit={handleSubmit}>
           <label>
             Username: <br />
@@ -76,6 +76,5 @@ export function UserLoginForm(props) {
           onClick={() => history.push(`/register`)}
         />
       </div>
-    </div>
   );
 }

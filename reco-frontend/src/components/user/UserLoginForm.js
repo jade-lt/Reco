@@ -25,6 +25,8 @@ export function UserLoginForm(props) {
 
         const decodedUsername = decoded.user;
 
+        const decodedUserType = decoded.userType
+
         console.log("decoded username", decodedUsername);
 
         localStorage.setItem("token", token);
@@ -32,6 +34,9 @@ export function UserLoginForm(props) {
         localStorage.setItem("id", decodedUserId);
 
         localStorage.setItem("username", decodedUsername);
+
+        localStorage.setItem("userType", decodedUserType);
+
 
         props.setLoginStatus(true);
         updateHeaderOptions();

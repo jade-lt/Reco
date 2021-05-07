@@ -59,6 +59,8 @@ export const Navbar = (props) => {
     localStorage.removeItem("token");
     localStorage.removeItem("id");
     localStorage.removeItem("username");
+    localStorage.removeItem("userType");
+
 
     props.setLoginStatus(false);
     history.replace("/");

@@ -11,6 +11,7 @@ export const UserRegister = () => {
     phone: "",
     email: "",
     address: "",
+    userType: "",
   });
 
   const history = useHistory();
@@ -28,7 +29,16 @@ export const UserRegister = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(form),
+      body: JSON.stringify({
+        username: form.username,
+        password: form.password,
+        firstName: form.firstName,
+        lastName: form.lastName,
+        phone: form.phone,
+        email: form.email,
+        address: form.address,
+        userType: "standard",
+      })
     })
       .then((response) => response.json())
       .then(history.push("/login"));
@@ -36,7 +46,7 @@ export const UserRegister = () => {
 
   return (
     <div className="main">
-      <h1>Register</h1>
+      <h1>REGISTER</h1>
       <div>
         <form id="rego-form">
           <label>
@@ -116,7 +126,10 @@ export const UserRegister = () => {
             />
           </label>
           <br />
-          <ButtonComponent buttonLabel="Cancel" onClick={() => history.push(`/`)} />
+          <ButtonComponent
+            buttonLabel="Cancel"
+            onClick={() => history.push(`/`)}
+          />
 
           <ButtonComponent buttonLabel="Register" onClick={submitHandler} />
         </form>

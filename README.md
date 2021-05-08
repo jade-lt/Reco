@@ -4,7 +4,7 @@ Overview:
 
 Reco is a working full stack CRUD app for creating, sharing, finding and saving recommendations for books, movies, TV shows and games.
 
-The app includes registration for new users, login/logout functionality, and protected routes for creating, updating, deleting of saving recommendations, with users needing to be logged in to access these features.
+The app includes registration for new users, login/logout functionality, and protected routes for creating, updating, deleting or saving recommendations, with users needing to be logged in to access these features.
 
 A full list of all recommendations is available without needing to log in, along with a search feature and lists of recommendations sorted by genre or category. Reco's are displayed as cards and are colour-coded based on category eg all movies will display on a card with a blue background and all tv shows display on a green background.
 
@@ -49,6 +49,6 @@ Start the servers in both terminals by using the "npm start" commands. If not au
 
 Built using MongoDB, Express, React, Node, Material UI, Bootstrap, TMDb, Google Books and RAWG
 
-You can see initial wireframe here: https://www.figma.com/file/Rgm5ovPNVxM9xzCTyN5MVe/Reco-App?node-id=0%3A1
+You can find the initial wireframe for the project here: https://www.figma.com/file/Rgm5ovPNVxM9xzCTyN5MVe/Reco-App?node-id=0%3A1
 
 

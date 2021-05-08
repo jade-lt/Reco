@@ -67,10 +67,16 @@ export const GameCreate = () => {
             onChange={changeHandler}
           />
         </label> */}
-        <Button variant="primary" type="submit">
+        <Button variant="default"
+          style={{ color: "white", background: "#ff5768", marginLeft: "0.5%" }}
+          type="submit">
           Search
         </Button>
       </form>
+      <div className="api-credit">
+      <h6 className="api-credit-text">Powered by</h6>
+      <img className="api-logo-game" src={"https://media-exp1.licdn.com/dms/image/C4D0BAQEkfrEmDmspvQ/company-logo_200_200/0/1570710261259?e=2159024400&v=beta&t=0oqw9I47vUYgu-bqIlCC4vqCf64NtX7OSEdtqhhwICs"}></img>
+</div>
       <div>
         <ul>
           {searchResults.map((el) => (

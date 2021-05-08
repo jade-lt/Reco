@@ -47,7 +47,7 @@ Once cloned, start a terminal for both the frontend (reco-frontend) and backend 
 
 Start the servers in both terminals by using the "npm start" commands. If not automatically redirected, open a browser and enter http://localhost:3000/
 
-Built using MongoDB, Express, React, Node, Material UI, TMDb, Google Books and RAWG
+Built using MongoDB, Express, React, Node, Material UI, Bootstrap, TMDb, Google Books and RAWG
 
 You can see initial wireframe here: https://www.figma.com/file/Rgm5ovPNVxM9xzCTyN5MVe/Reco-App?node-id=0%3A1
 

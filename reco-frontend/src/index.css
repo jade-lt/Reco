@@ -160,6 +160,11 @@ ul {
   /* color: white; */
 }
 
+.create-button {
+  background-color: #ff5768;
+
+}
+
 .user-recos-list {
   float: left;
   max-width: 30%;
@@ -238,4 +243,20 @@ ul {
 
 .about-info {
  margin-bottom: 5%;
+}
+
+.credit {
+  margin-top: 5%;
+ }
+
+ .api-logo {
+   max-width: 8%;
+ }
+
+ .api-logo-game {
+  max-width: 3%;
+}
+
+.api-logo-book {
+  max-width: 10%;
 }

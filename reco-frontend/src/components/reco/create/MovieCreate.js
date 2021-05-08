@@ -7,7 +7,6 @@ export const MovieCreate = () => {
   const history = useHistory();
   const currentUserId = window.localStorage.getItem("id");
 
-
   const [searchResults, setSearchResults] = useState([]);
 
   const [form, setForm] = useState({
@@ -25,7 +24,6 @@ export const MovieCreate = () => {
 
   const nameInput = form.name;
 
-
   const inputUrl = encodeURI(
     `http://api.themoviedb.org/3/search/movie?api_key=dd5b5fb0f236579b40c792f17042106b&query=${nameInput}`
   );
@@ -41,26 +39,40 @@ export const MovieCreate = () => {
         const array = data.results;
         setSearchResults(array);
         console.log("setSearchResults ", searchResults);
-
       })
       .catch((err) => console.error(err));
   };
 
-
   return (
     <div className="main">
-    
       <h3>Add a Movie</h3>
       <form onSubmit={submitSearchHandler}>
         <label>
- 
-          <input name="name" value={form.name} placeholder="Enter a movie title" onChange={changeHandler} />
+          <input
+            name="name"
+            value={form.name}
+            placeholder="Enter a movie title"
+            onChange={changeHandler}
+          />
         </label>
-        
-        <Button variant="primary" type="submit">
+
+        <Button
+          variant="default"
+          style={{ color: "white", background: "#ff5768", marginLeft: "0.5%" }}
+          type="submit"
+        >
           Search
         </Button>
       </form>
+      <div className="api-credit">
+        <h6 className="api-credit-text">Powered by</h6>
+        <img
+          className="api-logo"
+          src={
+            "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+          }
+        ></img>
+      </div>
       <div>
         <ul>
           {searchResults.map((el) => (
@@ -74,13 +86,11 @@ export const MovieCreate = () => {
                   src={`https://image.tmdb.org/t/p/w200/${el.poster_path}`}
                   alt=""
                 ></img>
-                <br/>
+                <br />
 
                 <Button
                   variant="primary"
                   onClick={() => {
-
-                    
                     fetch("/api/recos", {
                       method: "POST",
                       headers: {
@@ -102,7 +112,6 @@ export const MovieCreate = () => {
                       .then(history.push("/my-recos"));
                   }}
                 >
-                  
                   Add to My Reco's
                 </Button>
               </li>

@@ -8,7 +8,6 @@ export const TvCreate = () => {
 
   const currentUserId = window.localStorage.getItem("id");
 
-
   const [searchResults, setSearchResults] = useState([]);
 
   const [form, setForm] = useState({
@@ -46,33 +45,39 @@ export const TvCreate = () => {
       .catch((err) => console.error(err));
   };
 
-
   return (
     <div className="main">
-
       <h3>Add a TV Show</h3>
       <form onSubmit={submitSearchHandler}>
         <label>
-          
-          <input name="name" value={form.name} placeholder="Enter a show title" onChange={changeHandler} />
-        </label>
-        {/* <label>
-          Category:
           <input
-            name="category"
-            value={form.category}
+            name="name"
+            value={form.name}
+            placeholder="Enter a show title"
             onChange={changeHandler}
           />
-        </label> */}
-        <Button variant="primary" type="submit">
+        </label>
+        <Button
+          variant="default"
+          style={{ color: "white", background: "#ff5768", marginLeft: "0.5%" }}
+          type="submit"
+        >
           Search
         </Button>
       </form>
+      <div className="api-credit">
+        <h6 className="api-credit-text">Powered by</h6>
+        <img
+          className="api-logo"
+          src={
+            "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
+          }
+        ></img>
+      </div>
       <div>
         <ul>
           {searchResults.map((el) => (
-                        <div className="search-new-reco-list">
-
+            <div className="search-new-reco-list">
               <li key={el.id}>
                 <h4>{el.name}</h4>
 
@@ -86,8 +91,6 @@ export const TvCreate = () => {
                 <Button
                   variant="primary"
                   onClick={() => {
-
-                    
                     fetch("/api/recos", {
                       method: "POST",
                       headers: {

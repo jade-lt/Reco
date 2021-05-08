@@ -25,6 +25,9 @@ export const About = () => {
             <div>
                 <ButtonComponent buttonLabel="Join Reco Now" onClick={() => history.push("./register")}/>
             </div>
+            <div className="credit">
+                <h5>Reco was built using MongoDB, Express, React, Node, Material UI, Bootstrap, TMDb, Google Books and RAWG<br/> but is not affiliated with or endorsed or certified by these technologies.</h5>
+            </div>
         </div>
     )
 }

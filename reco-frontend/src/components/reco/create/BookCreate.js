@@ -65,14 +65,22 @@ export const BookCreate = () => {
             onChange={changeHandler}
           />
         </label>
-        <Button variant="primary" type="submit">
+        <Button
+          variant="default"
+          style={{ color: "white", background: "#ff5768", marginLeft: "0.5%" }}
+          type="submit"
+        >
           Search
         </Button>
       </form>
+      <img
+        className="api-logo-book"
+        src={"https://books.google.com/googlebooks/images/poweredby.png"}
+      ></img>
       <div>
         <ul>
           {searchResults.map((el) => (
-                        <div className="search-new-reco-list">
+            <div className="search-new-reco-list">
               <li key={el.id_google}>
                 <h4>{el.volumeInfo.title}</h4>
 

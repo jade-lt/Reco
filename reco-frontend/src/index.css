@@ -89,50 +89,13 @@ ul {
   list-style-type: none;
 }
 
-/* #user-recos-list-hoverable:hover {
-  opacity: 70%;
-}
-
-#user-dashboard-recos-hoverable:hover {
-  opacity: 70%;
-}
-
-#user-dashboard-clubs-hoverable:hover {
-  opacity: 70%;
-}
-
-#recos-home-page-hoverable:hover {
-  opacity: 70%;
-}
-
-#clubs-home-page-hoverable:hover {
-  opacity: 70%;
-}
-
-#all-recos-hoverable:hover {
-  opacity: 70%;
-}
-
-#my-clubs-hoverable:hover {
-  opacity: 70%;
-}
-
-#genre-list-hoverable:hover {
-  opacity: 70%;
-} */
 
 #card-hoverable:hover {
   opacity: 70%;
   cursor: pointer;
 }
 
-#genre-list {
-  padding: 10%;
-  border-radius: 6%;
 
-  border-style: solid;
-  /* color: aquamarine; */
-}
 
 .comment-cards-list {
   width: 50%;
@@ -155,18 +118,32 @@ ul {
   filter: invert(100%);
 }
 
-/* .reco-name {
-  text-align: center;
-} */
+#genre-list {
+  padding: 10%;
+  border-radius: 6%;
 
-/* #add-comment {
-  /* float: left; */
-/* margin-left: 18%;
-} */
-/* 
-#comment-form {
-  margin-left: 2%;
-} */
+  border-style: solid;
+  /* color: aquamarine; */
+}
+
+.genre-card {
+  float: left;
+  width: 30%;
+  margin: 1%;
+  border-radius: 1%;
+}
+
+@media only screen and (max-width: 600px) {
+  .genre-card, .reco-card, .club-card, .comment-card {
+    min-width: 90%;
+  }
+  #header-home, #header-text {
+    max-width: 100%;
+    font-size: 200%;
+  }
+
+}
+
 
 .delete-reco {
   width: 30%;
@@ -236,12 +213,7 @@ form {
   width: 100%;
 }
 
-.genre-card {
-  float: left;
-  width: 30%;
-  margin: 1%;
-  border-radius: 1%;
-}
+
 
 #club-card-info {
   min-width: 50%;

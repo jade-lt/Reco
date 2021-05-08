@@ -154,9 +154,6 @@ ul {
 
 }
 
-
-
-
 .delete-reco {
   width: 30%;
   margin: 1%;
@@ -320,3 +317,6 @@ body {
   height: 90%;
 }
 
+.about-info {
+ margin-bottom: 5%;
+}

@@ -38,6 +38,7 @@ export const RecoDelete = () => {
         <h4 className="reco-name">{reco.name}</h4>
 
         <img className="reco-img" src={reco.img} alt=""></img>
+        <br/>
         <ButtonComponent
           buttonLabel="Cancel"
           onClick={() => history.push(`/reco/${reco._id}`)}

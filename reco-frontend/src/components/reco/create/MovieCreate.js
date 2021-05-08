@@ -64,7 +64,7 @@ export const MovieCreate = () => {
       <div>
         <ul>
           {searchResults.map((el) => (
-            <div className="user-recos-list" id="all-recos-hoverable">
+            <div className="search-new-reco-list">
               <li key={el.id}>
                 <h4>{el.title}</h4>
                 <h4>{el.name}</h4>
@@ -74,6 +74,7 @@ export const MovieCreate = () => {
                   src={`https://image.tmdb.org/t/p/w200/${el.poster_path}`}
                   alt=""
                 ></img>
+                <br/>
 
                 <Button
                   variant="primary"
@@ -101,6 +102,7 @@ export const MovieCreate = () => {
                       .then(history.push("/my-recos"));
                   }}
                 >
+                  
                   Add to My Reco's
                 </Button>
               </li>
@@ -109,12 +111,6 @@ export const MovieCreate = () => {
         </ul>
         <br />
       </div>
-      {/* <div>
-        <h3>Or add a new Reco manually</h3>
-        <Button variant="primary" onClick={clickAddManuallyHandler}>
-          Manualy Add a Reco
-        </Button>
-      </div> */}
     </div>
   );
 };

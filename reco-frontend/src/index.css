@@ -1,30 +1,9 @@
-h1,
-h2,
-h3 {
-  color: #ff5768;
-  padding: 2%;
-  /* margin: 2%; */
+html {
+  position: relative;
+  min-height: 100%;
 }
-
-.button {
-  color: #ff5768;
-  padding: 2%;
-}
-
-.navbar {
-  background-color: #ff5768;
-}
-
-.navbar-display {
-  display: flex;
-  justify-content: space-between;
-  float: right;
-}
-
-.navbar-links {
-  text-decoration: none;
-  text-transform: uppercase;
-  color: white;
+body {
+  margin-bottom: 500px;
 }
 
 .main {
@@ -33,8 +12,16 @@ h3 {
   min-width: 100%;
 }
 
-#home-options {
-  display: inline;
+.navbar {
+  background-color: #ff5768;
+}
+
+h1,
+h2,
+h3 {
+  color: #ff5768;
+  padding: 2%;
+  /* margin: 2%; */
 }
 
 .header-text {
@@ -55,10 +42,6 @@ h3 {
   /* width: 100%; */
 }
 
-#about {
-  color: white;
-}
-
 #header-text {
   font-size: 1800%;
   color: white;
@@ -68,21 +51,6 @@ h3 {
   /* border-radius: 4%; */
   /* width: 60%; */
   /* text-align: center; */
-}
-
-#rego {
-  margin-top: 2%;
-  margin-right: 20%;
-  text-align: right;
-  max-width: 30%;
-  float: right;
-}
-
-#login-form {
-  text-align: left;
-  margin-left: 15%;
-  margin-bottom: 20%;
-  max-width: 30%;
 }
 
 ul {
@@ -95,16 +63,12 @@ ul {
   cursor: pointer;
 }
 
-
-
 .comment-cards-list {
   width: 50%;
 }
 
 .comment-card {
-  /* border-style: solid; */
   margin: 1%;
-  /* border-radius: 10%; */
 }
 
 .comment-card-header {
@@ -114,16 +78,13 @@ ul {
 .genre-card-hoverable:hover {
   cursor: pointer;
   background-color: #00a897;
-  /* color: white; */
   filter: invert(100%);
 }
 
 #genre-list {
   padding: 10%;
   border-radius: 6%;
-
   border-style: solid;
-  /* color: aquamarine; */
 }
 
 .genre-card {
@@ -152,39 +113,6 @@ ul {
     font-size: 200%;
   }
 
-}
-
-.delete-reco {
-  width: 30%;
-  margin: 1%;
-  border-radius: 6%;
-  text-align: center;
-  padding: 5%;
-}
-
-#delete-text {
-  margin: 2%;
-}
-
-#login-text {
-  margin-left: 15%;
-}
-
-#rego-text {
-  margin-bottom: 7%;
-}
-
-#rego-form {
-  margin-top: 2%;
-}
-
-#my-reco-text {
-  text-align: left;
-  margin-left: 10%;
-}
-
-form {
-  margin-bottom: 20%;
 }
 
 .reco-card {
@@ -222,8 +150,6 @@ form {
   width: 100%;
 }
 
-
-
 #club-card-info {
   min-width: 50%;
   float: left;
@@ -244,7 +170,7 @@ form {
 }
 
 .reco-img {
-  max-width: 100%;
+  max-width: 30%;
   border-radius: 5%;
 }
 
@@ -253,15 +179,12 @@ form {
 }
 
 .club-img {
-  /* float: left; */
   max-width: 90%;
   height: auto;
   max-height: 100%;
   border-radius: 5%;
   margin: 2% 2% 2% 5%;
   padding: 2%;
-  /* border-style: solid; */
-  /* object-fit: scale-down; */
 }
 
 .Book-category-header {
@@ -282,16 +205,7 @@ form {
 
 #search {
   margin: 2%;
-  /* border: solid; */
   width: 30%;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-body {
-  margin-bottom: 500px;
 }
 
 .footer-overlap {

@@ -143,7 +143,7 @@ ul {
 
 .reco-edit-page {
   float: left;
-  margin-left: 20%;
+  margin-left: 25%;
 }
 
 #reco-info-card-footer {
@@ -171,6 +171,11 @@ ul {
 
 .reco-img {
   max-width: 30%;
+  border-radius: 5%;
+}
+
+.edit-img {
+  max-width: 100%;
   border-radius: 5%;
 }
 

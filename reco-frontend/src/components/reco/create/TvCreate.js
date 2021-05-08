@@ -71,7 +71,8 @@ export const TvCreate = () => {
       <div>
         <ul>
           {searchResults.map((el) => (
-            <div className="user-recos-list" id="all-recos-hoverable">
+                        <div className="search-new-reco-list">
+
               <li key={el.id}>
                 <h4>{el.name}</h4>
 
@@ -80,6 +81,7 @@ export const TvCreate = () => {
                   src={`https://image.tmdb.org/t/p/w200/${el.poster_path}`}
                   alt=""
                 ></img>
+                <br />
 
                 <Button
                   variant="primary"

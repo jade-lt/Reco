@@ -54,7 +54,7 @@ export const RecoUpdate = () => {
     <div className="main">
       <h1>Edit this Reco</h1>
       <div className="reco-edit-page">
-      <img className="reco-img" src={reco.img} alt=""></img>
+      <img className="edit-img" src={reco.img} alt=""></img>
       </div>
       <div className="reco-edit-page">
         <form>

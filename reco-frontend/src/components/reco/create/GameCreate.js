@@ -74,7 +74,8 @@ export const GameCreate = () => {
       <div>
         <ul>
           {searchResults.map((el) => (
-            <div className="user-recos-list" id="all-recos-hoverable" >
+                        <div className="search-new-reco-list">
+
               <li key={el.id}>
                 <h4>{el.name}</h4>
                 {/* <h4>{el.name}</h4> */}
@@ -84,6 +85,7 @@ export const GameCreate = () => {
                   src={el.background_image}
                   alt="">
                   </img>
+                  <br />
 
 
 

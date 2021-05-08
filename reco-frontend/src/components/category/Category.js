@@ -1,14 +1,14 @@
 import { RecoCard } from "../reco/RecoCard";
 import { useEffect, useState } from "react";
-import { ButtonComponent } from "../ButtonComponent";
-import { useHistory } from "react-router";
+// import { ButtonComponent } from "../ButtonComponent";
+// import { useHistory } from "react-router";
 
 export const Category = (props) => {
   const [recos, setRecos] = useState([]);
 
-  const currentUserType = window.localStorage.getItem("userType");
+  // const currentUserType = window.localStorage.getItem("userType");
 
-  const history = useHistory();
+  // const history = useHistory();
 
   useEffect(() => {
     fetch("/api/recos", {

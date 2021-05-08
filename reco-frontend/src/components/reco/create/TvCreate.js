@@ -72,6 +72,7 @@ export const TvCreate = () => {
           src={
             "https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg"
           }
+          alt=""
         ></img>
       </div>
       <div>
@@ -120,12 +121,6 @@ export const TvCreate = () => {
         </ul>
         <br />
       </div>
-      {/* <div>
-        <h3>Or add a new Reco manually</h3>
-        <Button variant="primary" onClick={clickAddManuallyHandler}>
-          Manualy Add a Reco
-        </Button>
-      </div> */}
     </div>
   );
 };

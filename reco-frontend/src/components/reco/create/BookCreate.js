@@ -76,6 +76,7 @@ export const BookCreate = () => {
       <img
         className="api-logo-book"
         src={"https://books.google.com/googlebooks/images/poweredby.png"}
+        alt=""
       ></img>
       <div>
         <ul>

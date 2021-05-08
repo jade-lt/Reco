@@ -1,6 +1,5 @@
 import { RecoCard } from "./reco/RecoCard";
 import { useState, useEffect } from "react";
-import { Footer } from "./Footer"
 import axios from "axios";
 
 export const Search = () => {
@@ -46,13 +45,6 @@ export const Search = () => {
         />
       </div>
       <RecoCard listToMap={reco} />
-      {/* <div className="footer-overlap">
-
-        </div>
-      <div>
-        <Footer />
-        
-        </div> */}
     </div>
   );
 };

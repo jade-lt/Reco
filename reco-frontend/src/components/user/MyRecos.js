@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { ButtonComponent } from "../ButtonComponent";
 
-
 export const MyRecos = () => {
   const [recos, setRecos] = useState([]);
 
@@ -36,7 +35,10 @@ export const MyRecos = () => {
       <div>
         <h1>My Recommendations</h1>
       </div>
-      <ButtonComponent buttonLabel="Create a New Reco" onClick={clickCreateHandler} />
+      <ButtonComponent
+        buttonLabel="Create a New Reco"
+        onClick={clickCreateHandler}
+      />
       <RecoCard listToMap={recos} />
     </div>
   );

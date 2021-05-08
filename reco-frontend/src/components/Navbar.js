@@ -1,11 +1,5 @@
 import * as React from "react";
-import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Button,
-  Box,
-} from "@material-ui/core";
+import { AppBar, Toolbar, IconButton, Button, Box } from "@material-ui/core";
 import { AccountCircle, Home, Search } from "@material-ui/icons";
 import { useHistory } from "react-router";
 import { Tooltip } from "@material-ui/core/";
@@ -60,7 +54,6 @@ export const Navbar = (props) => {
     localStorage.removeItem("id");
     localStorage.removeItem("username");
     localStorage.removeItem("userType");
-
 
     props.setLoginStatus(false);
     history.replace("/");

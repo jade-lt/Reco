@@ -23,9 +23,7 @@ export const AllCategories = () => {
     <div className="main">
       <h1>CATEGORIES</h1>
       <CategoryCard listToMap={categories} />
-      <div className="footer-overlap">
-
-</div>
+      <div className="footer-overlap"></div>
     </div>
   );
 };

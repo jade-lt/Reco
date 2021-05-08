@@ -35,9 +35,9 @@ export const Search = () => {
 
   return (
     <div className="main">
-      <div >
+      <div>
         <input
-        id="search"
+          id="search"
           type="text"
           placeholder="Search"
           value={result}

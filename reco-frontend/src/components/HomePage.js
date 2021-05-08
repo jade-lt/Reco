@@ -5,7 +5,6 @@ import { useHistory } from "react-router";
 import { ButtonComponent } from "./ButtonComponent";
 import { Footer } from "./Footer";
 
-
 export const HomePage = () => {
   const [recos, setRecos] = useState([]);
 
@@ -55,16 +54,15 @@ export const HomePage = () => {
 
   return (
     <div className="main">
-    <div  id="header-home">
-      <h1 id="header-text">RECO</h1>
-    </div>
+      <div id="header-home">
+        <h1 id="header-text">RECO</h1>
+      </div>
 
-    <div id="home-options"></div>
-    <div>
-      <h1>Featured Recommendations</h1>
+      <div id="home-options"></div>
+      <div>
+        <h1>Featured Recommendations</h1>
         <RecoCard listToMap={recos} />
         <ButtonComponent buttonLabel="See All" onClick={clickAllRecosHandler} />
-
       </div>
       <div>
         <h1>Featured Clubs</h1>
@@ -73,8 +71,7 @@ export const HomePage = () => {
       </div>
       <div>
         <Footer />
-        
-        </div>
+      </div>
     </div>
   );
 };

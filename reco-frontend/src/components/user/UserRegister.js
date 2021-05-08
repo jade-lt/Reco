@@ -38,7 +38,7 @@ export const UserRegister = () => {
         email: form.email,
         address: form.address,
         userType: "standard",
-      })
+      }),
     })
       .then((response) => response.json())
       .then(history.push("/login"));

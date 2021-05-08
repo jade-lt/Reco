@@ -12,7 +12,6 @@ import { useHistory } from "react-router";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 300,
-    
   },
   media: {
     height: "auto",
@@ -30,44 +29,43 @@ export const RecoCard = (props) => {
       <ul>
         {props.listToMap.map((el) => (
           <li key={el.id}>
-          <div
-            className={"reco-card"}
-            onClick={() => history.push(`/reco/${el._id}`)}
-          >
-            <Card
-              className={`${el.category}-category-header`}
-              id="card-hoverable"
+            <div
+              className={"reco-card"}
+              onClick={() => history.push(`/reco/${el._id}`)}
             >
-              <CardHeader
+              <Card
                 className={`${el.category}-category-header`}
-                title={
-                  el.name.length > 18
-                    ? el.name.substring(0, 17) + "..."
-                    : el.name
-                }
-                style={{ color: grey[50] }}
-              />
-              <CardMedia
-                className={classes.media}
-                image={el.img}
-                title={el.name}
-              />
-              <CardContent className={`${el.category}-category-header`}>
-                <Typography
-                  variant="body2"
-                  color="textSecondary"
-                  component="p"
-                ></Typography>
-              </CardContent>
-              <CardActions
-                disableSpacing
-                className={`${el.category}-category-header`}
-              ></CardActions>
-            </Card>
-          </div>
+                id="card-hoverable"
+              >
+                <CardHeader
+                  className={`${el.category}-category-header`}
+                  title={
+                    el.name.length > 18
+                      ? el.name.substring(0, 17) + "..."
+                      : el.name
+                  }
+                  style={{ color: grey[50] }}
+                />
+                <CardMedia
+                  className={classes.media}
+                  image={el.img}
+                  title={el.name}
+                />
+                <CardContent className={`${el.category}-category-header`}>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  ></Typography>
+                </CardContent>
+                <CardActions
+                  disableSpacing
+                  className={`${el.category}-category-header`}
+                ></CardActions>
+              </Card>
+            </div>
           </li>
         ))}
-        
       </ul>
     </div>
   );

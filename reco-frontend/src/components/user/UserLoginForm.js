@@ -25,7 +25,7 @@ export function UserLoginForm(props) {
 
         const decodedUsername = decoded.user;
 
-        const decodedUserType = decoded.userType
+        const decodedUserType = decoded.userType;
 
         console.log("decoded username", decodedUsername);
 
@@ -36,7 +36,6 @@ export function UserLoginForm(props) {
         localStorage.setItem("username", decodedUsername);
 
         localStorage.setItem("userType", decodedUserType);
-
 
         props.setLoginStatus(true);
         updateHeaderOptions();
@@ -49,37 +48,36 @@ export function UserLoginForm(props) {
   };
 
   return (
-
-      <div className="main" >
-        <h1>Login</h1>
-        <form onSubmit={handleSubmit}>
-          <label>
-            Username: <br />
-            <input
-              type="text"
-              name="username"
-              onChange={(e) => setUserName(e.currentTarget.value)}
-              value={username}
-            />
-          </label>
-          <br />
-          <label>
-            Password: <br />
-            <input
-              type="password"
-              name="password"
-              onChange={(e) => setPassword(e.currentTarget.value)}
-              value={password}
-            />
-          </label>
-          <br />
-          <ButtonComponent buttonLabel="Login" onClick={handleSubmit} />
-        </form>
-        <h3>Not a Member? Register Now!</h3>
-        <ButtonComponent
-          buttonLabel="Register"
-          onClick={() => history.push(`/register`)}
-        />
-      </div>
+    <div className="main">
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Username: <br />
+          <input
+            type="text"
+            name="username"
+            onChange={(e) => setUserName(e.currentTarget.value)}
+            value={username}
+          />
+        </label>
+        <br />
+        <label>
+          Password: <br />
+          <input
+            type="password"
+            name="password"
+            onChange={(e) => setPassword(e.currentTarget.value)}
+            value={password}
+          />
+        </label>
+        <br />
+        <ButtonComponent buttonLabel="Login" onClick={handleSubmit} />
+      </form>
+      <h3>Not a Member? Register Now!</h3>
+      <ButtonComponent
+        buttonLabel="Register"
+        onClick={() => history.push(`/register`)}
+      />
+    </div>
   );
 }

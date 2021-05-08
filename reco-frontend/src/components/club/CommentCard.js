@@ -46,31 +46,36 @@ export const CommentCard = (props) => {
         {results.map((el) => (
           <li key={el.id}>
             <div className="comment-card">
-            <Card className={classes.root} variant="outlined">
-              <CardContent className={`${props.club}-category-header`}>
-              <Typography variant="p" component="p">
-                  {el.subject}
-                </Typography>
+              <Card className={classes.root} variant="outlined">
+                <CardContent className={`${props.club}-category-header`}>
+                  <Typography variant="p" component="p">
+                    {el.subject}
+                  </Typography>
                 </CardContent>
                 <CardContent>
-                <Typography
-                  className={classes.title}
-                  color="textSecondary"
-                  gutterBottom
-                >
-                  {el.username}
-                </Typography>
-                <Typography className={classes.pos} variant="body2" component="p" color="textSecondary">
-                  {el.dateTime}
-                </Typography>
+                  <Typography
+                    className={classes.title}
+                    color="textSecondary"
+                    gutterBottom
+                  >
+                    {el.username}
+                  </Typography>
+                  <Typography
+                    className={classes.pos}
+                    variant="body2"
+                    component="p"
+                    color="textSecondary"
+                  >
+                    {el.dateTime}
+                  </Typography>
                 </CardContent>
                 <CardContent>
-                <Typography variant="body2" component="p">
-                  {el.comment}
-                  <br />
-                </Typography>
-              </CardContent>
-            </Card>
+                  <Typography variant="body2" component="p">
+                    {el.comment}
+                    <br />
+                  </Typography>
+                </CardContent>
+              </Card>
             </div>
           </li>
         ))}

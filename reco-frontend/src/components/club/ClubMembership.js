@@ -28,10 +28,10 @@ export const ClubMembership = (props) => {
   return (
     <div className="main">
       <h1>Welcome to {props.name}!</h1>
-    <ButtonComponent
-      buttonLabel="Join this Club"
-      onClick={clickJoinClubHandler}
-    />
+      <ButtonComponent
+        buttonLabel="Join this Club"
+        onClick={clickJoinClubHandler}
+      />
     </div>
   );
 };

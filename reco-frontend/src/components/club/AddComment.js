@@ -76,7 +76,6 @@ export const AddComment = (props) => {
           />
         </label>
         <br />
-
         <ButtonComponent
           buttonLabel="Add Comment"
           onClick={clickNewCommentHandler}

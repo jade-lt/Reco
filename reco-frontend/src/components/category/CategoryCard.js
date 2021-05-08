@@ -8,7 +8,6 @@ import Typography from "@material-ui/core/Typography";
 import { grey } from "@material-ui/core/colors";
 import { useHistory } from "react-router";
 
-
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 300,
@@ -27,7 +26,6 @@ export const CategoryCard = (props) => {
   const classes = useStyles();
 
   const history = useHistory();
-
 
   return (
     <div className="main">
@@ -60,8 +58,7 @@ export const CategoryCard = (props) => {
                 <CardActions
                   disableSpacing
                   className={`${el.name}-category-header`}
-                >
-                </CardActions>
+                ></CardActions>
               </Card>
             </div>
           </li>

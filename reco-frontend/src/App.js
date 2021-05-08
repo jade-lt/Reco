@@ -37,7 +37,7 @@ import { AddComment } from "./components/club/AddComment";
 function App() {
   const isLoggedIn = () => {
     const token = window.localStorage.getItem("token");
-    console.log("token", token)
+    console.log("token", token);
 
     if (token) {
       const decoded = jwt(token);
@@ -83,7 +83,6 @@ function App() {
             <GameCreate />
             <h3 className="main">Or add a Reco Manually</h3>
             <RecoCreateManually />
-
           </Route>
 
           <Route exact path="/reco/:id">
@@ -221,19 +220,19 @@ function App() {
           </Route>
 
           <Route exact path="/Movie-Club">
-          <ClubMembership
+            <ClubMembership
               category="Movie"
               name="Cinema Junkies"
               description="a club for people to find and chat about movies"
               img="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn0.iconfinder.com%2Fdata%2Ficons%2Ffood-and-drink-6%2F100%2Ffood-19-512.png&f=1&nofb=1"
-              />
+            />
             <Category category="Movie" />
             <CommentCard club="Movie" />
             <AddComment club="Movie" />
           </Route>
 
           <Route exact path="/TV-Club">
-          <ClubMembership
+            <ClubMembership
               category="TV"
               name="Couch Potatoes"
               description="a club for people to find and chat about tv shows"
@@ -245,7 +244,7 @@ function App() {
           </Route>
 
           <Route exact path="/Game-Club">
-          <ClubMembership
+            <ClubMembership
               category="Game"
               name="Gamers"
               description="a club for people to find and chat about games"
@@ -264,10 +263,7 @@ function App() {
             <HomePage />
           </Route>
         </Switch>
-        <div className="footer-overlap">
-
-        </div>
-
+        <div className="footer-overlap"></div>
       </div>
     </BrowserRouter>
   );

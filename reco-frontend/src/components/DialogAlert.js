@@ -1,21 +1,25 @@
-import { Button, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions } from "@material-ui/core";
-
+import {
+  Button,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+} from "@material-ui/core";
 
 export const DialogAlert = (props) => {
-
-
-return (
-
+  return (
     <Dialog open={props.open}>
-        <DialogTitle>{props.title}</DialogTitle>
-        <DialogContent>
+      <DialogTitle>{props.title}</DialogTitle>
+      <DialogContent>
         <DialogContentText>{props.description}</DialogContentText>
-        </DialogContent>
-        <DialogActions>
+      </DialogContent>
+      <DialogActions>
         <Button onClick={props.onCancelClick}>Cancel</Button>
-            <Button onConfirmClick={props.onConfirmClick}>{props.confirmButtonLabel}</Button>
-        </DialogActions>
+        <Button onConfirmClick={props.onConfirmClick}>
+          {props.confirmButtonLabel}
+        </Button>
+      </DialogActions>
     </Dialog>
-)
-
-}
+  );
+};

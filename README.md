@@ -35,6 +35,8 @@ When creating a new recommendation manually, a user can input anything for categ
 
 The user registration process should include required fields and input formats
 
+The navbar is not yet mobile optimized
+
 Future plans
 
 I plan to expand out the types of recommendations that can be made/saved eg travel, food, products etc

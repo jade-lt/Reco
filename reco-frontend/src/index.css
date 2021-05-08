@@ -133,6 +133,16 @@ ul {
   border-radius: 1%;
 }
 
+@media screen and (max-width: 992px) {
+  .genre-card, .reco-card, .club-card, .comment-card {
+    min-width: 45%;
+  }
+  #header-home, #header-text {
+    max-width: 100%;
+    font-size: 200%;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .genre-card, .reco-card, .club-card, .comment-card {
     min-width: 90%;
@@ -143,6 +153,8 @@ ul {
   }
 
 }
+
+
 
 
 .delete-reco {
